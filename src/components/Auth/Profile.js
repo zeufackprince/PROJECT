@@ -41,19 +41,6 @@ const Profile = () => {
 		fetchUser()
 	}, [userId])
 
-	useEffect(() => {
-		const fetchBookings = async () => {
-			try {
-				const response = await getBookingsByUserId(userId, token)
-				setBookings(response)
-			} catch (error) {
-				console.error("Error fetching bookings:", error.message)
-				setErrorMessage(error.message)
-			}
-		}
-
-		fetchBookings()
-	}, [userId])
 
 	const handleDeleteAccount = async () => {
 		const confirmed = window.confirm(

@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Details.css';
-import { getBelongingsById } from '../../utils/ApiFunctions';
+import { getAllPubById } from '../../utils/ApiFunctions';
 import { Carousel } from 'react-bootstrap'; // Import Carousel from react-bootstrap
 
 const Details = () => {
@@ -12,7 +12,7 @@ const Details = () => {
     const [errorMessage, setErrorMessage] = useState("");
 
     useEffect(() => {
-        getBelongingsById(id)
+        getAllPubById(id)
             .then((data) => {
                 setBien(data);
                 setIsLoading(false);
@@ -48,6 +48,7 @@ const Details = () => {
                 </Carousel>
             </div>
             <h3 className="price">{`${bien.prix} Fcfa`}</h3>
+            <h5 className="">{bien.description}</h5>
             <h5 className="description">{bien.type} - {bien.dimension}</h5>
             <h4 className="localisation">{bien.localisation}</h4>
             <button onClick={() => alert("Contactez l'agent immobilier")}>Contacter l'agent immobilier</button>

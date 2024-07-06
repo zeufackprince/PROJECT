@@ -7,7 +7,7 @@ import './Acceuil.css';
 import '../../components/root.css';
 import house7 from '../../images/houses/house7.jpg';
 
-import { getAllBelongings } from "../../components/utils/ApiFunctions"
+import { getAllPublication } from "../../components/utils/ApiFunctions"
 
 
 const Acceuil = ({ addFavori, favoris }) => {
@@ -23,7 +23,7 @@ const Acceuil = ({ addFavori, favoris }) => {
 
     useEffect(() => {
 		setIsLoading(true)
-		getAllBelongings()
+		getAllPublication()
 			.then((data) => {
 				setBiens(data)
 				setIsLoading(false)
@@ -84,6 +84,7 @@ const Acceuil = ({ addFavori, favoris }) => {
                             <img src={bien.posterUrl[0]} alt="" /> {/* Assuming posterUrl is an array of URLs */}
                             <p className="titreArticle">{bien.nom}</p>
                             <p className="price">{`${bien.prix}Fcfa`}</p>
+                            {/* <p className='description'>{bien.description}</p> */}
                             <FaHeart 
                                 className={`addToFavori ${favoris.some(favori => favori.id === bien.id) ? 'addedFavori' : ''}`} 
                                 onClick={() => handleAddFavori(bien)} 

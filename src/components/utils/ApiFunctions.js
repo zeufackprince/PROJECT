@@ -222,6 +222,17 @@ export async function getAllPublication() {
 	}
 }
 
+
+//get all publications
+export async function getAllPubById(bienId) {
+	try {
+		const result = await api.get(`/api/user/get-pub-id/${bienId}`)
+		return result.data
+	} catch (error) {
+		throw new Error("Error fetching Publication")
+	}
+}
+
 // create and delete Publication
 
 
