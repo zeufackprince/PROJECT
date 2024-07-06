@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
 import '../../root.css';
+import Profil from "../../../pages/UserProfile/index";
 import avatar from '../../../pages/UserProfile/profilImages/avatar.svg';
 import { FaBars, FaSearch, FaTimes, FaPen, FaHeart } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
@@ -73,16 +74,19 @@ function Header() {
                     <p className="usernameProfil"></p>
                 </div>
 
-                <div className="profileInformation">
-                    <Link to='/Favoris' className="favoriLink">Favoris <FaHeart className="favori" /></Link>
-                    <div className="userInfo">
-                        <p>Nom</p>
-                        <p>Prenom</p>
-                        <p>Email</p>
-                        <p>Telephone</p>
+                <div className="dashboard">
+                    <div className="profileInformation">
+                        <Link to='/Favoris' className="favoriLink">
+                            Favoris <FaHeart className="favori" />
+                        </Link>
+                        <div className="userInfo">
+                            <Profil />
+                        </div>
+                        <Link to='/UserProfile' className="logOut">
+                        Modifier
+                        </Link>
                     </div>
-                    <Link to='/UserProfile' className="logOut">Modifier</Link>
-                </div>
+                    </div>
             </div>
         </header>
 
