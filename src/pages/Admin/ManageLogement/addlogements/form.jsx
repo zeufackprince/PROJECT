@@ -95,41 +95,41 @@ const CreateObjectForm = () => {
 
               <div className="form-select">
                 <label htmlFor="type">Type :</label>
-                <select
-                  id="type"
-                  name="type"
-                  value={formData.type}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">------------</option>
-                  <option value="APPARTMENT">APPARTMENT</option>
-                  <option value="STUDIOS">STUDIOS</option>
-                  <option value="ROOM">ROOM</option>
-                </select>
+                  <select
+                    id="type"
+                    name="type"
+                    value={formData.type}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">------------</option>
+                    <option value="APPARTMENT">APPARTMENT</option>
+                    <option value="STUDIOS">STUDIOS</option>
+                    <option value="ROOM">ROOM</option>
+                  </select>
               </div>
 
               <div className="form-select">
                 <label htmlFor="ville/Localisation">Ville :</label>
-                <select
-                  id="ville"
-                  name="localisation"
-                  value={formData.localisation}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">------------</option>
-                  <option value="DOUALA">DOUALA</option>
-                  <option value="YAOUNDE">YAOUNDE</option>
-                  <option value="BAFOUSSAM">BAFOUSSAM</option>
-                  <option value="DSCHANG">DSCHANG</option>
-                  <option value="LIMBE">LIMBE</option>
-                  <option value="BUEA">BUEA</option>
-                  <option value="KRIBI">KRIBI</option>
-                  <option value="MAROUA">MAROUA</option>
-                  <option value="FOUMBAN">FOUMBAN</option>
-                  <option value="NGAOUNDERE">NGAOUNDERE</option>
-                </select>
+                  <select
+                    id="ville"
+                    name="localisation"
+                    value={formData.localisation}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">------------</option>
+                    <option value="DOUALA">DOUALA</option>
+                    <option value="YAOUNDE">YAOUNDE</option>
+                    <option value="BAFOUSSAM">BAFOUSSAM</option>
+                    <option value="DSCHANG">DSCHANG</option>
+                    <option value="LIMBE">LIMBE</option>
+                    <option value="BUEA">BUEA</option>
+                    <option value="KRIBI">KRIBI</option>
+                    <option value="MAROUA">MAROUA</option>
+                    <option value="FOUMBAN">FOUMBAN</option>
+                    <option value="NGAOUNDERE">NGAOUNDERE</option>
+                  </select>
               </div>
 
               <div className="form-input">

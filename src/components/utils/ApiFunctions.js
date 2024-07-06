@@ -101,7 +101,7 @@ export async function getAllUsersById(userId) {
 //update user information
 export async function updateUser(updateUser) {
 	try {
-		const response = await api.post(`/api/user/update`, updateUser, {
+		const response = await api.put(`/api/user/update`, updateUser, {
             headers: getHeaderMul()
         })
 		return response.data

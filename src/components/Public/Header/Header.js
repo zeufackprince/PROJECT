@@ -1,11 +1,13 @@
-import React, { useRef, useEffect, useContext } from "react";
+// src/components/Header/Header.js
+import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
 import '../../root.css';
 import Profil from "../../../pages/UserProfile/index";
 import avatar from '../../../pages/UserProfile/profilImages/avatar.svg';
-import { FaBars, FaSearch, FaTimes, FaPen, FaHeart } from 'react-icons/fa';
+import { FaBars, FaSearch, FaTimes, FaHeart } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
+import { useAuth } from "../../Auth/AuthProvider"; // Import the auth context
 import '../Search/Search.css';
 
 function Header() {
@@ -13,9 +15,7 @@ function Header() {
     const profileContainer = useRef(null); // Référence pour le conteneur du profil
     const navigate = useNavigate(); // Utilisation de la navigation
 
-    
-
-   
+    const { user, handleLogout } = useAuth(); // Use the auth context
 
     useEffect(() => {
         const listMenu = navLinksRef.current.querySelectorAll('ul li'); // Liste des éléments de menu
@@ -32,8 +32,6 @@ function Header() {
             item.addEventListener('click', closeMenu);
         });
 
-        
-
         // Nettoyer les gestionnaires d'événements
         return () => {
             listMenu.forEach(item => {
@@ -44,54 +42,56 @@ function Header() {
 
     return (
         <>
-        <header>
-            <nav className="navbar">
-                <NavLink className="logo" to='/'>IMMOBILIUS</NavLink>
-                <div className="nav-links" ref={navLinksRef}>
-                    <ul>
-                        <FaTimes className="closeMenu" onClick={() => navLinksRef.current.classList.remove('showMenu')} />
-                        <li><NavLink to='/'>Acceuil</NavLink></li>
-                        <li><NavLink to='/Acheter'>Acheter</NavLink></li>
-                        <li><NavLink to='/Louer'>Louer</NavLink></li>
-                        <li><NavLink to='/Contact'>Contact</NavLink></li>
-                        <Link to='/auth/login' className="loginLink"><span>Se connecter</span></Link>
-                    </ul>
-                    <button className="searchBtn">
-                        <Link to='/rechercher' href="#"><FaSearch className="fa-solid faSearch" /></Link>
-                    </button>
-                </div>
-                <div className="profil">
-                    <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} />
-                </div>
-                <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
-            </nav>
+            <header>
+                <nav className="navbar">
+                    <NavLink className="logo" to='/'>IMMOBILIUS</NavLink>
+                    <div className="nav-links" ref={navLinksRef}>
+                        <ul>
+                            <FaTimes className="closeMenu" onClick={() => navLinksRef.current.classList.remove('showMenu')} />
+                            <li><NavLink to='/'>Acceuil</NavLink></li>
+                            <li><NavLink to='/Acheter'>Acheter</NavLink></li>
+                            <li><NavLink to='/Louer'>Louer</NavLink></li>
+                            <li><NavLink to='/Contact'>Contact</NavLink></li>
+                            {user ? (
+                                <li><button onClick={handleLogout} className="loginLink">Logout</button></li>
+                            ) : (
+                                <li><NavLink to='/auth/login' className="loginLink">Se connecter</NavLink></li>
+                            )}
+                        </ul>
+                        <button className="searchBtn">
+                            <Link to='/rechercher'><FaSearch className="fa-solid faSearch" /></Link>
+                        </button>
+                    </div>
+                    <div className="profil">
+                        <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} />
+                    </div>
+                    <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
+                </nav>
 
-            <div className="showProfile" ref={profileContainer}>
-                <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
+                <div className="showProfile" ref={profileContainer}>
+                    <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
 
-                <div className="manageProfile">
-                    <img src={avatar} />
-                    <p className="usernameProfil"></p>
-                </div>
+                    {/* <div className="manageProfile">
+                        <img src={avatar} />
+                        <p className="usernameProfil"></p>
+                    </div> */}
 
-                <div className="dashboard">
-                    <div className="profileInformation">
-                        <Link to='/Favoris' className="favoriLink">
-                            Favoris <FaHeart className="favori" />
-                        </Link>
-                        <div className="userInfo">
-                            <Profil />
+                    <div className="dashboard">
+                        <div className="profileInformation">
+                            <Link to='/Favoris' className="favoriLink">
+                                Favoris <FaHeart className="favori" />
+                            </Link>
+                            <div className="userInfo">
+                                <Profil />
+                            </div>
+                            <Link to='/UserProfile' className="logOut">
+                                Modifier
+                            </Link>
                         </div>
-                        <Link to='/UserProfile' className="logOut">
-                        Modifier
-                        </Link>
                     </div>
-                    </div>
-            </div>
-        </header>
-
-       
-    </>
+                </div>
+            </header>
+        </>
     );
 }
 
