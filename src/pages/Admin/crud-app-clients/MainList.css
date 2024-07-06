@@ -45,3 +45,11 @@
   .mainList table tr td.btn-action i:hover {
     color: #f83737;
   }
+
+  .user-image {
+    width: 2cm;    /* Width of the image */
+    height: 2cm;   /* Height of the image */
+    border-radius: 50%;   /* Makes the image circular */
+    object-fit: cover;    /* Ensures the image covers the area without stretching */
+  }
+  

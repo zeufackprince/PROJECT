@@ -7,14 +7,15 @@ const Registration = () => {
 
     const navigate = useNavigate();
 
-    const [registration, setRegistration] = useState({
-        name: "",
-        email: "",
-        password: "",
-        telephone: "",
-        file: null,  // Handle file input
-        role: ""
-    });
+    
+        const [registration, setRegistration] = useState({
+            name: "",
+            email: "",
+            password: "",
+            telephone: 0, // Initialize as null or 0
+            file: null,  // Handle file input
+            role: ""
+        });
 
     const [errorMessage, setErrorMessage] = useState("");
     const [successMessage, setSuccessMessage] = useState("");
@@ -35,7 +36,7 @@ const Registration = () => {
     };
 
     const isCameroonianPhoneNumber = (phone) => {
-        const cameroonPhoneRegex = /^2376[0-9]{8}$/;
+        const cameroonPhoneRegex = /^02376[0-9]{8}$/;
         return cameroonPhoneRegex.test(phone);
     };
 
@@ -70,9 +71,9 @@ const Registration = () => {
 
         try {
             const result = await registerUser(formData);
-            setSuccessMessage(result.data.statusCode);
+            setSuccessMessage(result.statusCode);
             setErrorMessage("");
-            setRegistration({ name: "", email: "", password: "", telephone: "", file: null, role: "" });
+            setRegistration({ name: "", email: "", password: "", telephone: 0, file: null, role: "" });
 
             // Redirect to login page after successful registration
             const destination = "/auth/login"
