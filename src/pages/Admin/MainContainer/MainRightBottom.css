@@ -1,0 +1,61 @@
+/* MainRightBottom.css */
+
+.bottomRightCard {
+    padding: 20px;
+  }
+  
+  .bottomName {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .notifContainer {
+    margin-top: 20px;
+  }
+  
+  .notifactions {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .notifactions.read {
+    background-color: #f0f0f0; /* Grey background for read messages */
+  }
+  
+  .notif-image img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+  }
+  
+  .notif-name {
+    flex: 1;
+    margin-left: 10px;
+  }
+  
+  .notif-time {
+    margin-right: 20px;
+    color: #888;
+  }
+  
+  .button1.btn {
+    padding: 5px 10px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button1.btn:hover {
+    background-color: #0056b3;
+  }
+  

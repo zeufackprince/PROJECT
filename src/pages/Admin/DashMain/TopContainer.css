@@ -1,0 +1,66 @@
+/* TopContainer.css */
+
+.TopContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .container-title .main-title {
+    font-size: 24px;
+  }
+  
+  .profile-box {
+    display: flex;
+    align-items: center;
+  }
+  
+  .notif-icon {
+    margin-right: 15px;
+  }
+  
+  .profileImage img {
+    border-radius: 50%;
+  }
+  
+  .profileName {
+    margin-left: 10px;
+  }
+  
+  .menuChevron {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  
+  .menu-Container {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    width: 200px;
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateX(250px);
+    transition: transform 0.3s ease;
+  }
+  
+  .menu-Container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-Container ul li {
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .menu-Container ul li a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .menu-Container ul li a:hover {
+    color: #007bff;
+  }
+  
