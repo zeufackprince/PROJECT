@@ -40,6 +40,10 @@ function Header() {
         };
     }, []);
 
+    const logOut =()=>{
+        handleLogout();
+    }
+
     return (
         <>
             <header>
@@ -49,11 +53,11 @@ function Header() {
                         <ul>
                             <FaTimes className="closeMenu" onClick={() => navLinksRef.current.classList.remove('showMenu')} />
                             <li><NavLink to='/'>Acceuil</NavLink></li>
-                            <li><NavLink to='/Acheter'>Acheter</NavLink></li>
-                            <li><NavLink to='/Louer'>Louer</NavLink></li>
-                            <li><NavLink to='/Contact'>Contact</NavLink></li>
+                            <li><NavLink to='/acheter'>Acheter</NavLink></li>
+                            <li><NavLink to='/louer'>Louer</NavLink></li>
+                            <li><NavLink to='/contact'>Contact</NavLink></li>
                             {user ? (
-                                <li><button onClick={handleLogout} className="loginLink">Logout</button></li>
+                                <li><button onClick={logOut} className="loginLink">Logout</button></li>
                             ) : (
                                 <li><NavLink to='/auth/login' className="loginLink">Se connecter</NavLink></li>
                             )}
@@ -62,6 +66,7 @@ function Header() {
                             <Link to='/rechercher'><FaSearch className="fa-solid faSearch" /></Link>
                         </button>
                     </div>
+
                     <div className="profil">
                         <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} />
                     </div>

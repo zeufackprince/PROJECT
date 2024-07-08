@@ -16,10 +16,9 @@ const Footer =() =>{
               <h4>Navigation</h4>
               <ul>
                  <li><Link to = '/'>Acceuil</Link></li>
-                 <li><Link to = '/Acheter' >Acheter</Link></li>
-                  <li><Link to = '/Louer'>Louer</Link></li>
-                  <li><Link to = '/NosServices'>Nos services</Link></li>
-                  <li><Link to = '/Contact'>Contact</Link></li>
+                 <li><Link to = '/acheter' >Acheter</Link></li>
+                  <li><Link to = '/louer'>Louer</Link></li>
+                  <li><Link to = '/contact'>Contact</Link></li>
               </ul>
           </div>
           <div className="footer-section">

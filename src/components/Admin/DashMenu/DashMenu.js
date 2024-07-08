@@ -10,6 +10,8 @@ import {
   FaCog,
   FaBorderAll
 } from "react-icons/fa";
+import { useAuth } from '../../Auth/AuthProvider';
+
 
 function DashMenu() {
 
