@@ -14,6 +14,7 @@ import { useAuth } from '../../Auth/AuthProvider';
 
 
 function DashMenu() {
+  const { user, handleLogout } = useAuth()
 
   useEffect(() => {
     const mainMenuLi = document.getElementById("main-Menu").querySelectorAll("li");
@@ -38,7 +39,7 @@ function DashMenu() {
 
         <ul className='last-Menu'>
         <li><Link to='/dashboard'><FaCog /><span>Paramètres</span></Link></li>
-        <li><Link to='/dashboard'><FaSignOutAlt /><span>Déconnexion</span></Link></li>
+        <li><Link onClick={handleLogout}><FaSignOutAlt /><span>Déconnexion</span></Link></li>
         </ul>
     </menu>
   );
