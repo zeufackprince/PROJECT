@@ -36,7 +36,7 @@ const Registration = () => {
     };
 
     const isCameroonianPhoneNumber = (phone) => {
-        const cameroonPhoneRegex = /^02376[0-9]{8}$/;
+        const cameroonPhoneRegex = /^2376[0-9]{8}$/;
         return cameroonPhoneRegex.test(phone);
     };
 
@@ -145,7 +145,7 @@ const Registration = () => {
                             name="telephone"
                             type="number"
                             className="form-control"
-                            placeholder="2376"
+                            placeholder="6"
                             value={registration.telephone}
                             onChange={handleInputChange}
                         />

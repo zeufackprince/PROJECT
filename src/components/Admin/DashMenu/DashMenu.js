@@ -31,7 +31,7 @@ function DashMenu() {
           <li><Link to='/admin/crud-client'><FaUsers /><span>Clients</span></Link></li>
           <li><Link to='/admin/'><FaEnvelope /><span>Notifications</span></Link></li>
           <li><Link to='/admin/crud-app-logements'><FaBuilding /><span>Logements</span></Link></li>
-          <li><Link to='/'><FaChartLine /><span>Statistiques</span></Link></li>
+          <li><Link to='/admin/create-new-belonging'><FaChartLine /><span>Statistiques</span></Link></li>
         </ul>
 
         <ul className='last-Menu'>

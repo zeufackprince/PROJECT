@@ -30,7 +30,7 @@ const UserItem = ({ user, onDelete }) => {
     <tr>
       <td>{user.name}</td>
       <td>{user.email}</td>
-      <td>{user.numero}</td>
+      <td>{user.telephone}</td>
       <td><img src={user.posterUrl} alt={user.name} className="user-image" /></td>
       <td>
         <button onClick={() => onDelete(user.id)}>Delete</button>

@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import { createNewBelonging } from '../../../../components/utils/ApiFunctions';
-import "./form.css";
+import { useNavigate } from "react-router-dom";
+import "./CreateNewBelongingForm.css";
 
-const CreateObjectForm = () => {
+const CreateNewBelongingForm = () => {
+
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: '',
     type: '',
@@ -38,10 +42,13 @@ const CreateObjectForm = () => {
 
     try {
       const response = await createNewBelonging(data);
-      console.log(response.message);
-      // Optionally handle success, like displaying a success message
+      alert("belonging with name" + " " + response.nom + " " + "created succesfully ")
+      const destination = "/admin/dashboard"
+      navigate(destination, { replace: true });
+      
     } catch (error) {
       console.error('There was an error uploading the object!', error.message);
+
       // Handle error, show error message to user
     }
   };
@@ -156,4 +163,4 @@ const CreateObjectForm = () => {
   );
 };
 
-export default CreateObjectForm;
+export default CreateNewBelongingForm;
