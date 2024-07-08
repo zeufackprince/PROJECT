@@ -1,4 +1,3 @@
-// src/components/Header/Header.js
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
@@ -15,7 +14,7 @@ function Header() {
     const profileContainer = useRef(null); // Référence pour le conteneur du profil
     const navigate = useNavigate(); // Utilisation de la navigation
 
-    const { user, handleLogout } = useAuth(); // Use the auth context
+    const { user, handleLogout } = useAuth(); // Utiliser le contexte d'authentification
 
     useEffect(() => {
         const listMenu = navLinksRef.current.querySelectorAll('ul li'); // Liste des éléments de menu
@@ -40,7 +39,7 @@ function Header() {
         };
     }, []);
 
-    const logOut =()=>{
+    const logOut = () => {
         handleLogout();
     }
 
@@ -75,12 +74,6 @@ function Header() {
 
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
-
-                    {/* <div className="manageProfile">
-                        <img src={avatar} />
-                        <p className="usernameProfil"></p>
-                    </div> */}
-
                     <div className="dashboard">
                         <div className="profileInformation">
                             <Link to='/Favoris' className="favoriLink">

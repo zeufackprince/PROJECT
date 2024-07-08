@@ -1,42 +1,49 @@
-import React, { createContext, useContext, useState } from 'react';
-import { jwtDecode } from 'jwt-decode';
+import React, { createContext, useContext, useState, useEffect } from 'react';
+import { jwtDecode } from 'jwt-decode'; // Utiliser l'importation nommée
 
-// const AuthContext = createContext();
 export const AuthContext = createContext({
-	user: null,
-	handleRegistration: (token) => {},
-	handleLogin: (token) => {},
-	handleLogout: () => {}
-})
-
+    user: null,
+    handleRegistration: () => {},
+    handleLogin: (token, role) => {},
+    handleLogout: () => {}
+});
 
 export const AuthProvider = ({ children }) => {
-	const [user, setUser] = useState(null)
+    const [user, setUser] = useState(null);
 
-	const handleLogin = (token, role) => {
-		const decodedUser = jwtDecode(token)
-		localStorage.setItem("userId", decodedUser.sub)
-		localStorage.setItem("userRole", role)
-		localStorage.setItem("token", token)
-		setUser(decodedUser)
-	}
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        const role = localStorage.getItem("userRole");
+        if (token) {
+            const decodedUser = jwtDecode(token);
+            setUser(decodedUser);
+        }
+    }, []);
 
-	const handleLogout = () => {
-		localStorage.removeItem("userId")
-		localStorage.removeItem("userRole")
-		localStorage.removeItem("token")
-		setUser(null)
-	}
+     // Fonction pour gérer la connexion de l'utilisateur
+    const handleLogin = (token, role) => {
+        const decodedUser = jwtDecode(token);
+        localStorage.setItem("userId", decodedUser.sub);
+        localStorage.setItem("userRole", role);
+        localStorage.setItem("token", token);
+        setUser(decodedUser);
+    };
 
-	const handleRegistration = () => {
+    // Fonction pour gérer la déconnexion de l'utilisateur
+    const handleLogout = () => {
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userRole");
+        localStorage.removeItem("token");
+        setUser(null);
+    };
 
-		localStorage.removeItem("userId")
-		localStorage.removeItem("userRole")
-		localStorage.removeItem("token")
-		setUser(null)
-	}
-
-    // const getRole = () => auth.role;
+     // Fonction pour gérer l'inscription d'un nouvel utilisateur
+    const handleRegistration = () => {
+        localStorage.removeItem("userId");
+        localStorage.removeItem("userRole");
+        localStorage.removeItem("token");
+        setUser(null);
+    };
 
     return (
         <AuthContext.Provider value={{ user, handleLogin, handleRegistration, handleLogout }}>
