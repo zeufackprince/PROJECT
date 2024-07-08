@@ -39,9 +39,14 @@ function Header() {
         };
     }, []);
 
+    const handleRefresh = () => {
+        window.location.reload();
+      };// Actualise la page lorsqu'elle est appelée
+
     const logOut = () => {
         handleLogout();
-    }
+        handleRefresh(); 
+    } //Deconnecte l'utilisateur et rafraichi la page
 
     return (
         <>
