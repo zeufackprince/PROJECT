@@ -38,7 +38,7 @@ function DashMenu() {
 
         <ul className='last-Menu'>
         <li><Link to='/dashboard'><FaCog /><span>Paramètres</span></Link></li>
-        <li><Link to='/dashboard'><FaSignOutAlt /><span>Déconnexion</span></Link></li>
+        <li><Link to='/deconnexion'><FaSignOutAlt /><span>Déconnexion</span></Link></li>
         </ul>
     </menu>
   );
