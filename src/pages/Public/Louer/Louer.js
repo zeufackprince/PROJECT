@@ -51,7 +51,7 @@ const Louer = ({addFavori, favoris}) => {
     
         return (
            <section className="acheterImmo">   
-           <h1>ACHETER UN BIEN IMMOBILIER</h1>
+           <h1>LOUER UN BIEN IMMOBILIER</h1>
             {message && <p className="text-warning px-5">{message}</p>}
                    
              <div className="listBien">
