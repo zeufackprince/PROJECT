@@ -186,6 +186,29 @@ export async function getAllBelongings() {
 	}
 }
 
+/** FOnctions to get belongings by thier Status either Sale Or Rent */
+export async function getBelongingsByStatus() {
+	try {
+		const result = await api.get(`/api/user/belonging/VENDRE`, {
+			headers: getHeader()
+		})
+		return result.data
+	} catch (error) {
+		throw new Error(`Error fetching Belonging ${error.message}`)
+	}
+}
+
+export async function getBelongingsByStatus2() {
+	try {
+		const result = await api.get(`/api/user/belonging/LOUER`, {
+			headers: getHeader()
+		})
+		return result.data
+	} catch (error) {
+		throw new Error(`Error fetching Belonging ${error.message}`)
+	}
+}
+
 //get a belonging by it Id 
 export async function getBelongingsById(bienId) {
 	try {

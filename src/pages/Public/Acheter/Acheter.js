@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart } from "react-icons/fa";
 import { useLocation } from "react-router-dom"
-import { getAllPublication } from '../../../components/utils/ApiFunctions';
+import { getBelongingsByStatus } from '../../../components/utils/ApiFunctions';
 import './acheter.css'
 
 const Acheter = ({addFavori, favoris}) => {
@@ -18,7 +18,7 @@ const Acheter = ({addFavori, favoris}) => {
 
     useEffect(() => {
 		setIsLoading(true)
-		getAllPublication()
+		getBelongingsByStatus()
 			.then((data) => {
 				setBiens(data)
 				setIsLoading(false)
@@ -52,9 +52,7 @@ const Acheter = ({addFavori, favoris}) => {
        <section className="articlesImmo">   
        <h1>ACHETER UN BIEN IMMOBILIER</h1>
         {message && <p className="text-warning px-5">{message}</p>}
-                {currentUser && (
-                    <h6 className="text-success text-center"> You are logged-In as {currentUser}</h6>
-                )}
+               
          <div className="listBien">
                 {biens.map(bien => (
                 <div className="bienImmo" key={bien.id}>
