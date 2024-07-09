@@ -3,13 +3,13 @@ import { Navigate } from "react-router-dom";
 import { useAuth } from "./AuthProvider";
 
 const ProtectedRoute = ({ role, children }) => {
-    const auth = useAuth();
+    const { user, role: userRole } = useAuth();
 
-    if (!auth.user) {
+    if (!user) {
         return <Navigate to="/auth/login" />;
     }
 
-    if (auth.role === "USER") {
+    if (role && userRole !== role) {
         return <Navigate to="/" />;
     }
 

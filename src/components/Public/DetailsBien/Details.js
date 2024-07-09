@@ -40,18 +40,17 @@ const Details = () => {
             <div className="details">
                 <h1>{bien.nom}</h1>
                 <div id="carouselExample" className="carousel slide">
-                    <Carousel>
+                 
                         {bien.posterUrl.map((url, index) => (
-                            <Carousel.Item key={index} className={index === 0 ? 'active' : ''}>
                                 <img className="d-block w-100" src={url} alt={`Slide ${index}`} />
-                            </Carousel.Item>
                         ))}
-                    </Carousel>
+                    
                 </div>
                 <h3 className="price">{`${bien.prix} Fcfa`}</h3>
                 <h5 className="">{bien.description}</h5>
                 <h5 className="description">{bien.type} - {bien.dimension}</h5>
                 <h4 className="localisation">{bien.localisation}</h4>
+                <textarea/>
                 <button onClick={() => alert("Contactez l'agent immobilier")}>Contacter l'agent immobilier</button>
             </div>
 

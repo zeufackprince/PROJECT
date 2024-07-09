@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import './DashMenu.css';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   FaEnvelope,
   FaUsers,
@@ -15,7 +15,6 @@ import { useAuth } from '../../Auth/AuthProvider';
 
 function DashMenu() {
   const { user, handleLogout } = useAuth()
-  const navigate = useNavigate()
   
   useEffect(() => {
     const mainMenuLi = document.getElementById("main-Menu").querySelectorAll("li");
@@ -26,10 +25,7 @@ function DashMenu() {
     mainMenuLi.forEach((n) => n.addEventListener("click", changeActive))
   }, []);
 
-  const logOut =()=>{
-    handleLogout();
-    navigate('/');
-  }
+  
   return (
     <menu>
        <h1 className='logo'>IMMOBILIUS</h1>
@@ -44,7 +40,7 @@ function DashMenu() {
 
         <ul className='last-Menu'>
         <li><Link to='/dashboard'><FaCog /><span>Paramètres</span></Link></li>
-        <li><Link onClick={logOut}><FaSignOutAlt /><span>Déconnexion</span></Link></li>
+        <li><Link onClick={handleLogout}><FaSignOutAlt /><span>Déconnexion</span></Link></li>
         </ul>
     </menu>
   );

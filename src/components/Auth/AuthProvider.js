@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import { jwtDecode } from 'jwt-decode'; // Utiliser l'importation nommée
+import { jwtDecode } from 'jwt-decode'; // Importation nommée de la fonction jwtDecode
 
 export const AuthContext = createContext({
     user: null,
+    role: null,
     handleRegistration: () => {},
     handleLogin: (token, role) => {},
     handleLogout: () => {}
@@ -10,43 +11,45 @@ export const AuthContext = createContext({
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [role, setRole] = useState(null);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
-        const role = localStorage.getItem("userRole");
+        const storedRole = localStorage.getItem("userRole");
         if (token) {
             const decodedUser = jwtDecode(token);
             setUser(decodedUser);
+            setRole(storedRole);
         }
     }, []);
 
-     // Fonction pour gérer la connexion de l'utilisateur
     const handleLogin = (token, role) => {
         const decodedUser = jwtDecode(token);
         localStorage.setItem("userId", decodedUser.sub);
         localStorage.setItem("userRole", role);
         localStorage.setItem("token", token);
         setUser(decodedUser);
+        setRole(role);
     };
 
-    // Fonction pour gérer la déconnexion de l'utilisateur
     const handleLogout = () => {
         localStorage.removeItem("userId");
         localStorage.removeItem("userRole");
         localStorage.removeItem("token");
         setUser(null);
+        setRole(null);
     };
 
-     // Fonction pour gérer l'inscription d'un nouvel utilisateur
     const handleRegistration = () => {
         localStorage.removeItem("userId");
         localStorage.removeItem("userRole");
         localStorage.removeItem("token");
         setUser(null);
+        setRole(null);
     };
 
     return (
-        <AuthContext.Provider value={{ user, handleLogin, handleRegistration, handleLogout }}>
+        <AuthContext.Provider value={{ user, role, handleLogin, handleRegistration, handleLogout }}>
             {children}
         </AuthContext.Provider>
     );
