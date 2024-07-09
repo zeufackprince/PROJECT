@@ -22,7 +22,7 @@ class App extends React.Component {
                         } />
                         <Route path='/auth/*' element={<AuthRouter />}>
                             <Route path='inscription' element={<Registration />} />
-                            <Route path='login' element={<Login/>} />
+                            <Route path='login' element={<Login />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>

@@ -1,13 +1,12 @@
-
-
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllBelongings } from '../../../components/utils/ApiFunctions.js';
 import './MainContainer.css';
 import Banner from '../../../images/Admin/banner.jpg';
 import CardMain from './CardMain.js';
-import MainRightBottom from './MainRightBopttom.js';
+import MainRightBottom from './MainRightBottom.js';
 import MainRightTop from './MainRightTop.js';
+import Filters from '../crud-app-logements/Filters.js';
 
 function MainContainer() {
   const [publications, setPublications] = useState([]);
@@ -46,19 +45,7 @@ function MainContainer() {
         </div>
 
         <div className="Cards">
-          <div className="filters">
-            <div className="mine">
-              <h2>Features</h2>
-              <Link to='/' className="button2">New Belongings</Link>
-            </div>
-            <div className="filter_buttons">
-              <Link to='/' className="button1">All</Link>
-              <Link to='/' className="button2">Room</Link>
-              <Link to='/' className="button2">Studios</Link>
-              <Link to='/' className="button2">Apartment</Link>
-            </div>
-          </div>
-
+          <Filters />
           <main>
             {publications.map(pub => (
               <CardMain
