@@ -1,15 +1,16 @@
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Details.css';
 import { getAllPubById } from '../../utils/ApiFunctions';
-import { Carousel } from 'react-bootstrap';
+import '../../../components/root.css';
 
 const Details = () => {
     const { id } = useParams();
     const [bien, setBien] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
     useEffect(() => {
         getAllPubById(id)
@@ -35,31 +36,77 @@ const Details = () => {
         return <div>Bien not found</div>;
     }
 
+    const allImages = [bien.posterUrl[0], ...bien.posterUrl.slice(1)];
+
+    const openModal = (index) => {
+        setSelectedImageIndex(index);
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+        setSelectedImageIndex(0);
+    };
+
+    const nextImage = (e) => {
+        e.stopPropagation();
+        setSelectedImageIndex((prevIndex) => (prevIndex + 1) % allImages.length);
+    };
+
+    const prevImage = (e) => {
+        e.stopPropagation();
+        setSelectedImageIndex((prevIndex) => (prevIndex - 1 + allImages.length) % allImages.length);
+    };
+
     return (
         <>
             <div className="details">
-                <h1>{bien.nom}</h1>
-                <div id="carouselExample" className="carousel slide">
-                 
-                        {bien.posterUrl.map((url, index) => (
-                                <img className="d-block w-100" src={url} alt={`Slide ${index}`} />
+                <div className="imagesContainer">
+                    <div className='Principal-image'>
+                        <img 
+                            className="P-image" 
+                            src={allImages[0]} 
+                            alt="Principal Slide" 
+                            onClick={() => openModal(0)} 
+                        />
+                    </div>
+                    <div className='secondary-images'>
+                        {allImages.slice(1).map((url, index) => (
+                            <img 
+                                key={index} 
+                                className="S-image" 
+                                src={url} 
+                                alt={`Slide ${index + 2}`} 
+                                onClick={() => openModal(index + 1)} 
+                            />
                         ))}
-                    
+                    </div>
                 </div>
-                <h3 className="price">{`${bien.prix} Fcfa`}</h3>
-                <h5 className="">{bien.description}</h5>
-                <h5 className="description">{bien.type} - {bien.dimension}</h5>
-                <h4 className="localisation">{bien.localisation}</h4>
-                <textarea/>
+
+                <div className="belongInformations">
+                    <h1 className='titleBelong'>{bien.nom}</h1>
+                    <h1 className="price">{`${bien.prix} Fcfa`}</h1>
+                    <h5 className="belongDescription">{bien.description}</h5>
+                    <h5 className="description">{bien.type} - {bien.dimension} (m<sup>2</sup>)</h5>
+                    <h4 className="localisation">Ville : {bien.localisation}</h4>
+                </div>
+            </div>
+
+            <div className="contactAgent">
+                <textarea name='contact'> Contactez nous...</textarea>
                 <button onClick={() => alert("Contactez l'agent immobilier")}>Contacter l'agent immobilier</button>
             </div>
 
-            <div>
-                
-            </div>
+            {isModalOpen && (
+                <div className="modal" onClick={closeModal}>
+                    <span className="close" onClick={closeModal}>&times;</span>
+                    <img className="modal-content" src={allImages[selectedImageIndex]} alt="Full Screen" />
+                    <button className="prev" onClick={prevImage}>&#10094;</button>
+                    <button className="next" onClick={nextImage}>&#10095;</button>
+                </div>
+            )}
         </>
     );
 };
 
 export default Details;
-
