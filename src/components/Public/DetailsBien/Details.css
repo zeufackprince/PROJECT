@@ -1,6 +1,7 @@
 .details{
     margin: 20px 0;
     display: flex;
+    justify-content: center;
 }
 .imagesContainer{
     width: 700px;
@@ -12,7 +13,7 @@
     cursor: pointer;
 }
 .imagesContainer .S-image{
-    width: 25%;
+    width: 90px;
     border-radius: 10px;
     margin: 10px;
     cursor: pointer;
@@ -52,7 +53,7 @@
     margin-top: 1px 10px;
 }
 .contactAgent{
-    margin: 10px;
+    margin: 100px 10px 10px 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -64,9 +65,10 @@
     padding: 10px;
     border: 2px solid;
     margin: 5px;
+    border-radius: 12px;
 }
 .contactAgent button{
-    width: 400px;
+    width: 600px;
     height: 40px;
     border: 1px solid var(--fuscha);
     background: var(--fuscha);
@@ -93,10 +95,10 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.9);
@@ -152,5 +154,36 @@
 }
 
 @media screen and (max-width:800px) {
-    
+    .details{
+        display: block;
+    }
+    .imagesContainer{
+        width: 100%;
+        margin-right: 10px;
+    }
+    .belongInformations h1{
+        font-size: 40px;
+    }
+    .belongInformations .price{
+        font-size: 30px;
+    }
+    .belongInformations h5{
+        font-size: 18px;
+    }
+    .belongInformations .localisation {
+        font-size: 20px;
+    }
+    .contactAgent{
+        margin-top: 20px;
+    }
+    .contactAgent textarea{
+        width: 350px;
+        margin: 5px;
+    }
+    .contactAgent button{
+        width: 350px;
+    }
+    .secondary-images{
+        width: 350px;
+    }
 }
