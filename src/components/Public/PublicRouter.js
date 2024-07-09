@@ -42,8 +42,8 @@ const PublicRouter = () => {
                     <Route path="/UserProfile" element={<UserProfile />} />
                     <Route path="/Favoris" element={<Favoris favoris={favoris} removeFavori={removeFavori} />} />
                     <Route path="/detail/:id" element={<Details biens={biens} />} />
-                    <Route path="/acheter" element={<Acheter favoris={favoris} removeFavori={removeFavori}/>}/>
-                    <Route path="/louer" element={<Louer/>}/>
+                    <Route path="/acheter" element={<Acheter addFavori={addFavori} favoris={favoris}/>}/>
+                    <Route path="/louer" element={<Louer addFavori={addFavori} favoris={favoris}/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/rechercher" element={<Search />} />
                 </Route>
