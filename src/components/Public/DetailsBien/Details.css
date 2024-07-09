@@ -1,0 +1,155 @@
+.details{
+    margin: 20px 0;
+    display: flex;
+}
+.imagesContainer{
+    width: 700px;
+}
+.imagesContainer .P-image{
+    width: 100%;
+    border-radius: 10px;
+    margin: 10px 0 10px 10px;
+}
+.imagesContainer .S-image{
+    width: 25%;
+    border-radius: 10px;
+    margin: 10px;
+    cursor: pointer;
+}
+.secondary-images{
+    display: flex;
+    overflow-y: hidden;
+    width: 400px;
+    height: 100px;
+}
+.belongInformations{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    max-width: 950px;
+}
+.belongInformations h1{
+    font-size: 60px;
+}
+.belongInformations .price{
+    font-size: 40px;
+}
+.belongInformations h5{
+    font-size: 20px;
+    color: #0e0e0e;
+    font-weight: 200;
+    margin:10px
+}
+.belongInformations .belongDescription{
+    text-align: justify;
+}
+.belongInformations .description{
+    font-weight: bold;
+}
+.belongInformations h4{
+    font-size: 30px;
+    margin-top: 1px 10px;
+}
+.contactAgent{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.contactAgent textarea{
+    width: 600px;
+    height: 100px;
+    padding: 10px;
+    border: 2px solid;
+    margin: 5px;
+}
+.contactAgent button{
+    width: 400px;
+    height: 40px;
+    border: 1px solid var(--fuscha);
+    background: var(--fuscha);
+    color: var(--white);
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.contactAgent button:hover{
+    color: var(--lignt);
+    background: none;
+}
+
+/* Details.css */
+
+/* Ajoutez les styles de la modale */
+/* Details.css */
+
+/* Ajoutez les styles de la modale */
+.modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: var(--lignt);
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.prev{
+    left: 0;
+}
+.prev:hover, .next:hover {
+    background-color:var(--lignt);
+    color: var(--white);
+}
+
+@media screen and (max-width:800px) {
+    
+}

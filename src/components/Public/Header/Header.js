@@ -1,4 +1,3 @@
-// src/components/Header/Header.js
 import React, { useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
@@ -15,7 +14,7 @@ function Header() {
     const profileContainer = useRef(null); // Référence pour le conteneur du profil
     const navigate = useNavigate(); // Utilisation de la navigation
 
-    const { user, handleLogout } = useAuth(); // Use the auth context
+    const { user, handleLogout } = useAuth(); // Utiliser le contexte d'authentification
 
     useEffect(() => {
         const listMenu = navLinksRef.current.querySelectorAll('ul li'); // Liste des éléments de menu
@@ -40,6 +39,15 @@ function Header() {
         };
     }, []);
 
+    const handleRefresh = () => {
+        window.location.reload();
+      };// Actualise la page lorsqu'elle est appelée
+
+    const logOut = () => {
+        handleLogout();
+        handleRefresh(); 
+    } //Deconnecte l'utilisateur et rafraichi la page
+
     return (
         <>
             <header>
@@ -49,11 +57,11 @@ function Header() {
                         <ul>
                             <FaTimes className="closeMenu" onClick={() => navLinksRef.current.classList.remove('showMenu')} />
                             <li><NavLink to='/'>Acceuil</NavLink></li>
-                            <li><NavLink to='/Acheter'>Acheter</NavLink></li>
-                            <li><NavLink to='/Louer'>Louer</NavLink></li>
-                            <li><NavLink to='/Contact'>Contact</NavLink></li>
+                            <li><NavLink to='/acheter'>Acheter</NavLink></li>
+                            <li><NavLink to='/louer'>Louer</NavLink></li>
+                            <li><NavLink to='/contact'>Contact</NavLink></li>
                             {user ? (
-                                <li><button onClick={handleLogout} className="loginLink">Logout</button></li>
+                                <li><button onClick={logOut} className="loginLink">Logout</button></li>
                             ) : (
                                 <li><NavLink to='/auth/login' className="loginLink">Se connecter</NavLink></li>
                             )}
@@ -62,6 +70,7 @@ function Header() {
                             <Link to='/rechercher'><FaSearch className="fa-solid faSearch" /></Link>
                         </button>
                     </div>
+
                     <div className="profil">
                         <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} />
                     </div>
@@ -70,12 +79,6 @@ function Header() {
 
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
-
-                    {/* <div className="manageProfile">
-                        <img src={avatar} />
-                        <p className="usernameProfil"></p>
-                    </div> */}
-
                     <div className="dashboard">
                         <div className="profileInformation">
                             <Link to='/Favoris' className="favoriLink">
