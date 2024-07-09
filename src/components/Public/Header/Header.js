@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
 import '../../root.css';
@@ -8,6 +8,7 @@ import { FaBars, FaSearch, FaTimes, FaHeart } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
 import { useAuth } from "../../Auth/AuthProvider"; // Import the auth context
 import '../Search/Search.css';
+import { getAllUsersProfile } from "../../../components/utils/ApiFunctions"; // Import the function to fetch user profile
 
 function Header() {
     const navLinksRef = useRef(null); // Référence pour les liens de navigation
@@ -15,6 +16,23 @@ function Header() {
     const navigate = useNavigate(); // Utilisation de la navigation
 
     const { user, handleLogout } = useAuth(); // Utiliser le contexte d'authentification
+
+    const [profileImage, setProfileImage] = useState(avatar); // default to avatar
+
+    useEffect(() => {
+        const fetchUserProfile = async () => {
+            try {
+                const profileData = await getAllUsersProfile();
+                if (profileData.posterUrl) {
+                    setProfileImage(profileData.posterUrl);
+                }
+            } catch (error) {
+                console.error('Error fetching user profile:', error.message);
+            }
+        };
+
+        fetchUserProfile();
+    }, []);
 
     useEffect(() => {
         const listMenu = navLinksRef.current.querySelectorAll('ul li'); // Liste des éléments de menu
@@ -41,12 +59,12 @@ function Header() {
 
     const handleRefresh = () => {
         window.location.reload();
-      };// Actualise la page lorsqu'elle est appelée
+    }; // Actualise la page lorsqu'elle est appelée
 
     const logOut = () => {
         handleLogout();
-        handleRefresh(); 
-    } //Deconnecte l'utilisateur et rafraichi la page
+        handleRefresh();
+    }; // Deconnecte l'utilisateur et rafraichi la page
 
     return (
         <>
@@ -72,7 +90,11 @@ function Header() {
                     </div>
 
                     <div className="profil">
-                        <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} />
+                        <img 
+                            src={profileImage} 
+                            onClick={() => profileContainer.current.classList.toggle('activeProfile')} 
+                            alt="User profile" 
+                        />
                     </div>
                     <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
                 </nav>

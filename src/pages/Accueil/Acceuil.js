@@ -55,7 +55,6 @@ const Acceuil = ({ addFavori, favoris }) => {
 
     return (
         <>
-
             <section className="presentation">
                 {message && <p className="text-warning px-5">{message}</p>}
                 {currentUser && (

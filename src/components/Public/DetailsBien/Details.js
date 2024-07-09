@@ -89,13 +89,15 @@ const Details = () => {
                     <h5 className="belongDescription">{bien.description}</h5>
                     <h5 className="description">{bien.type} - {bien.dimension} (m<sup>2</sup>)</h5>
                     <h4 className="localisation">Ville : {bien.localisation}</h4>
+
+                    <div className="contactAgent">
+                        <textarea name='contact'> Contactez nous...</textarea>
+                        <button onClick={() => alert("Contactez l'agent immobilier")}>Contacter l'agent immobilier</button>
+                    </div>
                 </div>
             </div>
 
-            <div className="contactAgent">
-                <textarea name='contact'> Contactez nous...</textarea>
-                <button onClick={() => alert("Contactez l'agent immobilier")}>Contacter l'agent immobilier</button>
-            </div>
+           
 
             {isModalOpen && (
                 <div className="modal" onClick={closeModal}>
