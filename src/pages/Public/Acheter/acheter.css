@@ -1,0 +1,114 @@
+.articlesImmo{
+    width: 70%;
+    margin: auto;
+}
+
+.articlesImmo h1{
+    font-size: 40px;
+    margin: 35px;
+    text-align: center;
+    margin: 70px 40px;
+}
+.articlesImmo .listBien{
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fill,20%);
+    gap: 30px;
+}
+
+.listBien .bienImmo img{
+    width: 100%;
+    
+}
+
+.listBien .bienImmo{
+    text-align: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: 0.5s;
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius-8);
+    background: var(--white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+.listBien .bienImmo:hover{
+    transform: scale(1.06);
+}
+.titreArticle{
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+.price{
+    font-size: 25px;
+    font-weight: bold;
+    color: var(--yellow);
+    margin: 10px 0;
+}
+
+.bienImmo .more{
+    width: 90%;
+    border-radius: 8px;
+    border: none;
+    background: var(--fuscha);
+    color: var(--white);
+    font-weight: bold;
+    transition: 0.2s;
+    padding: 8px 0;
+    margin: 10px 0;
+}
+
+.bienImmo .more:hover{
+    background: none;
+    color: var(--lignt);
+    border: 1px solid var(--fuscha);
+}
+
+.addToFavori{
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    position: absolute;
+    right: 5px;
+    margin: 10px 8px;
+}
+.addToFavori.addedFavori{
+    color: #e60707;
+}
+.addToFavori:hover{
+    color: #e60707;
+}
+.favoriAddedMessage{
+    color: #6f6f6f;
+    font-size: 18px;
+    position: absolute;
+    top: 50px;
+    background: var(--white);
+    padding: 3px;
+}
+
+/*Responsive Liste articles*/
+@media screen and (max-width:1200px) {
+    .articlesImmo{
+        width: 90%;
+    }
+    .articlesImmo .listBien{
+        grid-template-columns: repeat(auto-fill,30%);
+    }
+}
+@media  (max-width:600px){
+    .articlesImmo .listBien{
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+    }
+
+    .articlesImmo h1{
+        font-size: 30px;
+    }
+    
+}
