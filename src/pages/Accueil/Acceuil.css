@@ -100,7 +100,7 @@
 }
 /* Quelques articles immobilier */ 
 .articlesImmo{
-    width: 90%;
+    width: 95%;
     margin: auto;
 }
 
@@ -114,7 +114,7 @@
     width: 100%;
     display: grid;
     justify-content: center;
-    grid-template-columns: repeat(auto-fill,32%);
+    grid-template-columns: repeat(auto-fill,20%);
     gap: 30px;
 }
 

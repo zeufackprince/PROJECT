@@ -49,7 +49,7 @@ const Acheter = ({addFavori, favoris}) => {
 	}
 
     return (
-       <section className="articlesImmo">   
+       <section className="acheterImmo">   
        <h1>ACHETER UN BIEN IMMOBILIER</h1>
         {message && <p className="text-warning px-5">{message}</p>}
                
