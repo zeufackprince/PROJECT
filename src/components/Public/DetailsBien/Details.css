@@ -1,6 +1,7 @@
 .details{
     margin: 20px 0;
     display: flex;
+    justify-content: center;
 }
 .imagesContainer{
     width: 700px;
@@ -64,9 +65,10 @@
     padding: 10px;
     border: 2px solid;
     margin: 5px;
+    border-radius: 12px;
 }
 .contactAgent button{
-    width: 400px;
+    width: 600px;
     height: 40px;
     border: 1px solid var(--fuscha);
     background: var(--fuscha);
@@ -137,6 +139,7 @@
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    z-index: 100;
 }
 
 .next {
@@ -152,5 +155,23 @@
 }
 
 @media screen and (max-width:800px) {
-    
+    .details{
+        display: block;
+    }
+    .imagesContainer{
+        width: 100%;
+        margin-right: 10px;
+    }
+    .belongInformations h1{
+        font-size: 40px;
+    }
+    .belongInformations .price{
+        font-size: 30px;
+    }
+    .belongInformations h5{
+        font-size: 18px;
+    }
+    .belongInformations .localisation {
+        font-size: 20px;
+    }
 }

@@ -71,8 +71,8 @@ function Header() {
                         </button>
                     </div>
 
-                    <div className="profil">
-                        <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} />
+                    <div className="profil">{/*Photo de profil de l'utilisateur*/}
+                        <img src={avatar} onClick={() => profileContainer.current.classList.toggle('activeProfile')} /> 
                     </div>
                     <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
                 </nav>
