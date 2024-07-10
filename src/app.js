@@ -18,9 +18,9 @@ class App extends React.Component {
                     <Routes>
                         <Route path='/*' element={<PublicRouter />} />
                         <Route path='/admin/*' element={
-                            //  <ProtectedRoute role="ADMIN">
-                                 <AdminRouter />
-                            //  </ProtectedRoute>
+                            // <ProtectedRoute role="ADMIN">
+                                <AdminRouter />
+                             // </ProtectedRoute>
                         } />
                         <Route path='/auth/*' element={<AuthRouter />}>
                             <Route path='inscription' element={<Registration />} />

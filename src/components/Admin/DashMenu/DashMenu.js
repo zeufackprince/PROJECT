@@ -16,7 +16,7 @@ function DashMenu() {
   const { user, handleLogout } = useAuth()
   
   useEffect(() => {
-    const mainMenuLi = document.getElementById("main-Menu").querySelectorAll("li");
+    const mainMenuLi = document.querySelectorAll("#main-Menu li")
     function changeActive() {
       mainMenuLi.forEach(n => n.classList.remove("active"));
       this.classList.add("active");
@@ -28,7 +28,6 @@ function DashMenu() {
   return (
     <menu>
        <h1 className='logo'>IMMOBILIUS</h1>
-
         <ul id="main-Menu">
           <li><Link to='/admin/dashboard'><FaBorderAll /><span>Dashboard</span> </Link></li>
           <li><Link to='/admin/crud-client'><FaUsers /><span>Clients</span></Link></li>

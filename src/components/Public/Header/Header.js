@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './Header.css';
 import '../../root.css';
-import Profil from "../../../pages/UserProfile/index";
+import Profil from "../../../pages/UserProfile/Profil";
 import avatar from '../../../pages/UserProfile/profilImages/avatar.svg';
 import { FaBars, FaSearch, FaTimes, FaHeart } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";

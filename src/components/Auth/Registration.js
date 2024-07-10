@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { registerUser } from "../utils/ApiFunctions";
 import { Link, useNavigate } from "react-router-dom";
+import './Registration.css'
 
 
 const Registration = () => {
 
     const navigate = useNavigate();
+    
 
     
         const [registration, setRegistration] = useState({
@@ -36,7 +38,7 @@ const Registration = () => {
     };
 
     const isCameroonianPhoneNumber = (phone) => {
-        const cameroonPhoneRegex = /^2376[0-9]{8}$/;
+        const cameroonPhoneRegex = /^2376[0-9]{8}$/; 
         return cameroonPhoneRegex.test(phone);
     };
 
@@ -44,7 +46,7 @@ const Registration = () => {
         e.preventDefault();
 
         if (!isCameroonianPhoneNumber(registration.telephone)) {
-            setErrorMessage("Please enter a valid Cameroonian phone number.");
+            setErrorMessage("Please enter a valid Cameroonian phone number(237600000000).");
             return;
         }
 
@@ -67,7 +69,7 @@ const Registration = () => {
             formData.append("file", registration.file);
         }
 
-        formData.append("role", registration.role);
+        // formData.append("role", registration.role);
 
         try {
             const result = await registerUser(formData);
@@ -94,7 +96,8 @@ const Registration = () => {
             {successMessage && <p className="alert alert-success">{successMessage}</p>}
 
             <h2>Register</h2>
-            <form onSubmit={handleRegistration} encType="multipart/form-data">
+            <form onSubmit={handleRegistration} encType="multipart/form-data"   >
+                
                 <div className="mb-3 row">
                     <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
@@ -138,21 +141,21 @@ const Registration = () => {
                 </div>
 
                 <div className="mb-3 row">
-                    <label htmlFor="telephone" className="col-sm-2 col-form-label">Tel</label>
+                    <label htmlFor="telephone" className="col-sm-2 col-form-label">Contact</label>
                     <div className="col-sm-10">
                         <input
                             id="telephone"
                             name="telephone"
                             type="number"
                             className="form-control"
-                            placeholder="6"
+                            placeholder="ex :2376"
                             value={registration.telephone}
                             onChange={handleInputChange}
                         />
                     </div>
                 </div>
 
-                <div className="mb-3 row">
+                {/* <div className="mb-3 row">
                     <label htmlFor="role" className="col-sm-2 col-form-label">Role</label>
                     <div className="col-sm-10">
                         <input
@@ -164,7 +167,7 @@ const Registration = () => {
                             onChange={handleInputChange}
                         />
                     </div>
-                </div>
+                </div> */}
 
                 <div className="mb-3 row">
                     <label htmlFor="file" className="col-sm-2 col-form-label">Profile file</label>
@@ -179,7 +182,7 @@ const Registration = () => {
                     </div>
                 </div>
 
-                <div className="mb-3">
+                <div className="mb-4">
                     <button type="submit" className="btn btn-hotel" style={{ marginRight: "10px" }}>
                         Register
                     </button>
@@ -188,6 +191,9 @@ const Registration = () => {
                     </span>
                 </div>
             </form>
+
+ 
+
         </section>
     );
 };

@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import "./index.css";
+import "./style.css";
 import { Link } from 'react-router-dom';
 import { PButton } from '../../components/_tools/_tools';
 import { getAllUsersProfile } from '../../components/utils/ApiFunctions';

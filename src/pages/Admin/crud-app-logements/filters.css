@@ -1,0 +1,55 @@
+
+
+.filters .button2 {
+    color: var(--lignt);
+}
+
+.filters .button1:hover,
+.filters .button2:hover {
+    color: var(--white);
+    font-weight: 600;
+    background: linear-gradient(#f83737, #da4343);
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -5px -10px 10px #d15454;
+    cursor: pointer;
+}
+.activeF{
+    color: var(--white);
+    font-weight: 600;
+    background: linear-gradient(#f83737, #da4343);
+    box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -5px -10px 10px #d15454;
+    }
+    /*responsive de filter */
+@media only screen and (max-width: 768px) {
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .filters .mine,
+    .filters .filter_buttons {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .filters .mine h2 {
+        font-size: 18px;
+    }
+
+    .filters .button1,
+    .filters .button2 {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .filters .mine h2 {
+        font-size: 16px;
+    }
+
+    .filters .button1,
+    .filters .button2 {
+        font-size: 14px;
+    }
+}
