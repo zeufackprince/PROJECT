@@ -9,6 +9,7 @@ import Registration from "./components/Auth/Registration";
 import Login from "./components/Auth/Login";
 import ResultSearch from "./pages/Public/ResultSearch/ResultSearch";
 import SearchRouter from "./components/Public/Search/SearchRouter";
+import AgentRouter from "./components/Agent/AgentRouter";
 
 class App extends React.Component {
     render() {
@@ -17,15 +18,20 @@ class App extends React.Component {
                 <BrowserRouter>
                     <Routes>
                         <Route path='/*' element={<PublicRouter />} />
+
                         <Route path='/admin/*' element={
                             // <ProtectedRoute role="ADMIN">
                                 <AdminRouter />
                              // </ProtectedRoute>
                         } />
+
+                        <Route path="/agent/*" element = {<AgentRouter/>}/>
+
                         <Route path='/auth/*' element={<AuthRouter />}>
                             <Route path='inscription' element={<Registration />} />
                             <Route path='login' element={<Login />} />
                         </Route>
+                        
                         <Route path="/rechercher/*" element ={<SearchRouter/>}>
                             <Route path="resultats" element={<ResultSearch/>}/>
                         </Route>
