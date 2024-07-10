@@ -6,7 +6,8 @@ import {
   FaUsers,
   FaSignOutAlt,
   FaBuilding,
-  FaBorderAll
+  FaBorderAll,
+  FaCog
 } from "react-icons/fa";
 import { useAuth } from '../../Auth/AuthProvider';
 
@@ -31,11 +32,12 @@ function DashMenu() {
         <ul id="main-Menu">
           <li><Link to='/admin/dashboard'><FaBorderAll /><span>Dashboard</span> </Link></li>
           <li><Link to='/admin/crud-client'><FaUsers /><span>Clients</span></Link></li>
-          <li><Link to='/admin/'><FaEnvelope /><span>Notifications</span></Link></li>
+          <li><Link to='/admin/notification'><FaEnvelope /><span>Notifications</span></Link></li>
           <li><Link to='/admin/crud-logements'><FaBuilding /><span>Logements</span></Link></li>
         </ul>
 
         <ul className='last-Menu'>
+        <li><Link to=''><FaCog /><span>Paramètres</span></Link></li>
         <li><Link onClick={handleLogout}><FaSignOutAlt /><span>Déconnexion</span></Link></li>
         </ul>
     </menu>

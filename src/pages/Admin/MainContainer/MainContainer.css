@@ -1,8 +1,7 @@
 /*  MainContainer  */
 
 .MainContainer {
-    width: 100%;
-    height: calc(100% - 70px);
+    height: calc(100%);
     display: flex;
     padding-top: 15px;
     gap: 10px;
@@ -12,6 +11,7 @@
 
 .MainContainer .left {
     width: calc(100% - 30%);
+    height: 100vh;
     overflow: scroll;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -109,10 +109,11 @@
 .MainContainer .left .Cards main .Card-Main {
     background: #fafcf3;
     border-radius: 0.5em;
+    height: auto;
     overflow: hidden;
-    max-width: 320px;
-    padding-bottom: 20px;
-    margin: 15px 10px;
+    width: 350px;
+    padding-bottom: 10px;
+    margin: 15px 8px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -276,7 +277,7 @@
 
 .MainContainer .right .bottomRightCard .notifContainer {
     overflow-y: scroll;
-    height: 425px;
+    height: auto;
     padding: 5px 10px;
 }
 

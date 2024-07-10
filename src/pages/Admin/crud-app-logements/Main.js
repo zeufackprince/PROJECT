@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import CardMain from '../MainContainer/CardMain';
 import { getAllBelongings } from '../../../components/utils/ApiFunctions';
 import './Main.css';

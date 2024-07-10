@@ -1,0 +1,28 @@
+.notificationContainer {
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .notificationMessage {
+    margin: 0;
+  }
+  
+  .disableButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .disableButton:hover {
+    background-color: #0056b3;
+  }
+  
+  .disabledText {
+    color: #888;
+  }
+  

@@ -4,11 +4,14 @@ import ALayout from './ALayout';
 import DashMain from '../../pages/Admin/DashMain/DashMain'
 import MainList from '../../pages/Admin/crud-app-clients/MainList';
 import CreateNewBelongingForm from '../../pages/Admin/ManageLogement/addlogements/CreateNewBelongingForm'
-import Logout from '../Auth/Logout';
 import Logements from '../../pages/Admin/crud-app-logements/Main';
 import Room from '../../pages/Admin/ManageLogement/Room';
 import Studios from '../../pages/Admin/ManageLogement/Studios';
 import Apartements from '../../pages/Admin/ManageLogement/Apartement';
+import Notification from '../../pages/Admin/Notifications/Main';
+import miseAJourLogementForm from '../../pages/Admin/ManageLogement/updateLogement/miseAJourLogementForm';
+import PublishLogement from '../../pages/Admin/ManageLogement/publicationLogement/Main';
+import Logout from '../Auth/Logout';
 
 const AdminRouter = () => {
     return (
@@ -22,6 +25,9 @@ const AdminRouter = () => {
                 <Route path='/room' element={<Room />} />
                 <Route path='/studios' element={<Studios />} />
                 <Route path='/apartement' element={<Apartements />} />
+                <Route path='/notification' element={<Notification />} />
+                <Route path='/update-Logement' element={<miseAJourLogementForm />} />
+                <Route path='/publish-Logement' element={<PublishLogement />} />
                 <Route path='/deconnexion' element={<Logout/>} />
             </Route>
         </Routes>            
