@@ -35,9 +35,9 @@ function TopContainer() {
           <Link to='/' id=""><FaBell /></Link>     
         </i>
         <div className="profileImage">
-          <Link to='/'><img src={userProfile.posterUrl} alt="User profile" width="50px" /></Link>
+          <Link to='/'><img src={userProfile.posterUrl} alt="User profile" /></Link>
         </div>
-        <p className="profileName"><span>{userProfile.name}</span> {userProfile.email}</p>
+        <p className="profileName"><span>{userProfile.email}</span></p>
       </div>
     </div>
   );

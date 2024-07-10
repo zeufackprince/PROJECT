@@ -1,42 +1,106 @@
-import React, { useState } from 'react';
-import './Main.css'
+
+
+// import React, { useState, useEffect } from 'react';
+// import './Main.css';
+// import { getAllNotificationAgent } from '../../../components/utils/ApiFunctions'; // Assurez-vous que le chemin est correct
+
+// function Main() {
+//   const [notifications, setNotifications] = useState([]);
+
+//   useEffect(() => {
+//     const fetchNotifications = async () => {
+//       try {
+//         const result = await getAllNotificationAgent();
+//         setNotifications(result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+//       } catch (error) {
+//         console.error('Error fetching notifications:', error);
+//       }
+//     };
+
+//     fetchNotifications();
+//   }, []);
+
+//   const handleToggleNotification = (id) => {
+//     setNotifications(
+//       notifications.map(notification =>
+//         notification.notif_id === id ? { ...notification, isActive: !notification.isActive } : notification
+//       )
+//     );
+//   };
+
+//   return (
+//     <div className="container">
+//       <h1>Notifications</h1>
+//       {notifications.map(notification => (
+//         <div key={notification.notif_id} className="notification-item">
+//           <div className="notification-message">{notification.not_message}</div>
+//           <button
+//             className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
+//             onClick={() => handleToggleNotification(notification.notif_id)}
+//           >
+//             {notification.isActive ? 'Désactiver' : 'Réactiver'}
+//           </button>
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+// export default Main;
+
+import React, { useState, useEffect } from 'react';
+import './Main.css';
+import { getAllNotificationAgent } from '../../../components/utils/ApiFunctions';  // Assurez-vous que le chemin est correct
 
 function Main() {
-  const [notifications, setNotifications] = useState([
-    { id: 1, message: "Notification 1", isActive: true },
-    { id: 2, message: "Notification 2", isActive: true },
-    { id: 3, message: "Notification 3", isActive: true },
-    { id: 4, message: "Notification 4", isActive: true },
-    { id: 5, message: "Notification 5", isActive: true },
-    { id: 6, message: "Notification 6", isActive: true },
-    { id: 7, message: "Notification 7", isActive: true },
-    { id: 8, message: "Notification 8", isActive: true },
-    { id: 9, message: "Notification 9", isActive: true },
-    { id: 10, message: "Notification 10", isActive: true }
-  ]);
+  const [notifications, setNotifications] = useState([]);
+  const [loading, setLoading] = useState(true); // Ajout d'un état de chargement
+
+  useEffect(() => {
+    const fetchNotifications = async () => {
+      try {
+        const result = await getAllNotificationAgent();
+        setNotifications(result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
+      } catch (error) {
+        console.error('Error fetching notifications:', error);
+      } finally {
+        setLoading(false); // Arrêter le chargement une fois les données récupérées
+      }
+    };
+
+    fetchNotifications();
+  }, []);
 
   const handleToggleNotification = (id) => {
     setNotifications(
       notifications.map(notification =>
-        notification.id === id ? { ...notification, isActive: !notification.isActive } : notification
+        notification.notif_id === id ? { ...notification, isActive: !notification.isActive } : notification
       )
     );
   };
 
+  if (loading) {
+    return <div className="container">Chargement...</div>;
+  }
+
   return (
     <div className="container">
       <h1>Notifications</h1>
-      {notifications.map(notification => (
-        <div key={notification.id} className="notification-item">
-          <div className="notification-message">{notification.message}</div>
-          <button
-            className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
-            onClick={() => handleToggleNotification(notification.id)}
-          >
-            {notification.isActive ? 'Désactiver' : 'Réactiver'}
-          </button>
-        </div>
-      ))}
+      {notifications.length === 0 ? (
+        <p>Aucune notification disponible</p>
+      ) : (
+        notifications.map(notification => (
+          <div key={notification.notif_id} className="notification-item">
+            <div className="notification-message">{notification.not_message}</div>
+            <button
+              className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
+              onClick={() => handleToggleNotification(notification.notif_id)}
+            >
+              {notification.isActive ? 'Désactiver' : 'Réactiver'}
+            </button>
+          </div>
+        ))
+      )}
     </div>
   );
 }
