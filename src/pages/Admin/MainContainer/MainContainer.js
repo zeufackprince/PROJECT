@@ -50,6 +50,7 @@ function MainContainer() {
             {belongings.map(pub => (
               <CardMain
                 key={pub.id}
+                bienId={pub.id}
                 imgSrc={pub.posterUrl[0]}
                 title={pub.nom}
                 type={pub.type}

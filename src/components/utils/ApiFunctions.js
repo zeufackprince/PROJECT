@@ -279,11 +279,11 @@ export async function createNewPublication(createPub) {
 
 /*ICI SONT TOUTE LES FUNCTION RELIER A L'ENVOIE DES NOTIFICATION AINAI QUE A LEUR RETRAITE DE LA BD */
 
-//get all notifications
+//Send notifications
 export async function sendNotification(sendNotification) {
 	try {
-		const result = await api.get("/api/user/notifications/send-message", sendNotification, {
-			headers: getHeader()
+		const result = await api.post("/api/user/notifications/send-message", sendNotification, {
+			headers: getHeaderMul()
 		})
 		return result.data
 	} catch (error) {

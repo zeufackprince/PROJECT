@@ -1,12 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { createNewPublication } from '../../../../components/utils/ApiFunctions'; // Assurez-vous que le chemin est correct
 
 function MainPublication() {
+  const location = useLocation();
   const [titre, setTitre] = useState('');
   const [description, setDescription] = useState('');
   const [status, setStatus] = useState('ACHETER');
   const [belonging_id, setBelongingId] = useState('');
   const [message, setMessage] = useState('');
+
+  useEffect(() => {
+    if (location.state && location.state.bienId) {
+      setBelongingId(location.state.bienId);
+    }
+  }, [location.state]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,8 +54,7 @@ function MainPublication() {
           </select>
         </div>
         <div>
-          <label>Belonging ID :</label>
-          <input type="text" value={belonging_id} onChange={(e) => setBelongingId(e.target.value)} required />
+          <input type="hidden" value={belonging_id} onChange={(e) => setBelongingId(e.target.value)} required readOnly />
         </div>
         <button type="submit">Publier</button>
       </form>
