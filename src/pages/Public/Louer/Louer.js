@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart } from "react-icons/fa";
 import { useLocation } from "react-router-dom"
-import { getBelongingsByStatus } from '../../../components/utils/ApiFunctions';
+import { getBelongingsByStatus2 } from '../../../components/utils/ApiFunctions';
 import './louer.css'
 
 const Louer = ({addFavori, favoris}) => {
@@ -19,7 +19,7 @@ const Louer = ({addFavori, favoris}) => {
     
         useEffect(() => {
             setIsLoading(true)
-            getBelongingsByStatus()
+            getBelongingsByStatus2()
                 .then((data) => {
                     setBiens(data)
                     setIsLoading(false)
