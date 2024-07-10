@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useFormik } from 'formik';
+import { Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { registerUser } from "../utils/ApiFunctions";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,6 +7,10 @@ import './Registration.css'
 
 
 const Registration = () => {
+
+    // < Formik
+    // validationSchema={checkoutSchema}
+    // ></Formik>
 
     const navigate = useNavigate();
     
@@ -148,6 +152,7 @@ const Registration = () => {
                         <input
                             id="telephone"
                             name="telephone"
+                            min={0}
                             type="number"
                             className="form-control"
                             placeholder="6"
@@ -185,10 +190,10 @@ const Registration = () => {
                 </div>
 
                 <div className="mb-4">
-                    <button type="submit" className="btn btn-hotel" style={{ marginRight: "10px" }}>
+                    <button type="submit" className="btn btn-hotel" >
                         Register
                     </button>
-                    <span style={{ marginLeft: "10px" }}>
+                    <span style={{ marginLeft: "0px" }}>
                         Already have an account? <Link to={"/auth/login"}>Login</Link>
                     </span>
                 </div>
