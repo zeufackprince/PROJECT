@@ -9,19 +9,19 @@ import MainRightTop from './MainRightTop.js';
 import Filters from '../crud-app-logements/Filters.js';
 
 function MainContainer() {
-  const [publications, setPublications] = useState([]);
+  const [belongings, setBelongings] = useState([]);
 
   useEffect(() => {
-    const fetchPublications = async () => {
+    const fetchBelongings = async () => {
       try {
         const data = await getAllBelongings();
-        setPublications(data);
+        setBelongings(data);
       } catch (error) {
         console.error('Error fetching publications:', error.message);
       }
     };
     
-    fetchPublications();
+    fetchBelongings();
   }, []);
 
   return (
@@ -47,7 +47,7 @@ function MainContainer() {
         <div className="Cards">
           <Filters />
           <main>
-            {publications.map(pub => (
+            {belongings.map(pub => (
               <CardMain
                 key={pub.id}
                 imgSrc={pub.posterUrl[0]}

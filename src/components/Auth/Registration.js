@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-import { Formik, useFormik } from 'formik';
-import * as Yup from 'yup';
 import { registerUser } from "../utils/ApiFunctions";
 import { Link, useNavigate } from "react-router-dom";
 import './Registration.css'
-
+import '../root.css'
 
 const Registration = () => {
 
@@ -52,7 +50,7 @@ const Registration = () => {
         e.preventDefault();
 
         if (!isCameroonianPhoneNumber(registration.telephone)) {
-            setErrorMessage("Please enter a valid Cameroonian phone number.");
+            setErrorMessage("Please enter a valid Cameroonian phone number(237600000000).");
             return;
         }
 
@@ -109,7 +107,7 @@ const Registration = () => {
                     <div className="col-sm-10">
                         <input
                             id="name"
-                            name="namee"
+                            name="name"
                             type="text"
                             className="form-control"
                             value={registration.name}
@@ -155,7 +153,7 @@ const Registration = () => {
                             min={0}
                             type="number"
                             className="form-control"
-                            placeholder="6"
+                            placeholder="ex :2376"
                             value={registration.telephone}
                             onChange={handleInputChange}
                         />
