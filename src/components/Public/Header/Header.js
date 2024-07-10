@@ -79,9 +79,9 @@ function Header() {
                             <li><NavLink to='/louer'>Louer</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>
                             {user ? (
-                                <li><button onClick={logOut} className="loginLink">Logout</button></li>
+                                <button onClick={logOut} className="loginLink">Logout</button>
                             ) : (
-                                <li><NavLink to='/auth/login' className="loginLink">Se connecter</NavLink></li>
+                                <NavLink to='/auth/login' className="loginLink"><span>Se connecter</span></NavLink>
                             )}
                         </ul>
                         <button className="searchBtn">
