@@ -20,13 +20,22 @@
     margin-right: 15px;
   }
   
+  .profileImage {
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+  }
+
   .profileImage img {
+    width: 80px;
+    height: 80px;
     border-radius: 50%;
+    cursor: pointer;
   }
   
-  .profileName {
+  /* .profileName {
     margin-left: 10px;
-  }
+  } */
   
   .menu-Container ul {
     list-style: none;
