@@ -56,6 +56,7 @@ function MainContainer() {
                 localisation={pub.localisation}
                 prix={pub.prix}
                 dimension={pub.dimension}
+                status={pub.status}
                 likes={"35"} // This can be replaced with actual data if available
               />
             ))}

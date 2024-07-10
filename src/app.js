@@ -7,6 +7,8 @@ import ProtectedRoute from './components/Auth/ProtectedRoute';
 import { AuthProvider } from './components/Auth/AuthProvider';
 import Registration from "./components/Auth/Registration";
 import Login from "./components/Auth/Login";
+import ResultSearch from "./pages/Public/ResultSearch/ResultSearch";
+import SearchRouter from "./components/Public/Search/SearchRouter";
 
 class App extends React.Component {
     render() {
@@ -23,6 +25,9 @@ class App extends React.Component {
                         <Route path='/auth/*' element={<AuthRouter />}>
                             <Route path='inscription' element={<Registration />} />
                             <Route path='login' element={<Login />} />
+                        </Route>
+                        <Route path="/rechercher/*" element ={<SearchRouter/>}>
+                            <Route path="resultats" element={<ResultSearch/>}/>
                         </Route>
                     </Routes>
                 </BrowserRouter>

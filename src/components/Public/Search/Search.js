@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import '../../../components/root.css'
+import { useNavigate } from 'react-router-dom';
 
 
-const quartiersParVille = {
+
+/*const quartiersParVille = {
     Douala: ['Bonapriso', 'Akwa', 'Bonanjo', 'Deido'],
     Yaoundé: ['Bastos', 'Mokolo', 'Nlongkak', 'Etoudi'],
     Bafoussam: ['Tougang', 'Djeleng', 'Banengo'],
     Dschang: ['Tchoualé', 'Nkong-Ni', 'Foréké'],
-};
+};*/
 
 const Seacrh = () => {
     const [typeLogement, setTypeLogement] = useState('');
@@ -28,6 +30,7 @@ const Seacrh = () => {
         
     };
 
+    const Navigate = useNavigate();
     return (
         <>
             <h1 className='titleSearch'>Quel type de bien immobilier voulez-vous ?</h1>

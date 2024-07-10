@@ -3,7 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Acceuil from "../../pages/Accueil/Acceuil";
 import UserProfile from "../../pages/UserProfile/UpdateUserProfile/UserProfile";
 import Favoris from "../../components/Public/Favoris/Favoris";
-import Search from "../../components/Public/Search/Search";
 import Details from "../../components/Public/DetailsBien/Details"; 
 import Acheter from "../../pages/Public/Acheter/Acheter"
 import house1 from '../../images/houses/house1.jpg';
@@ -11,6 +10,8 @@ import house2 from '../../images/houses/house2.jpg';
 import Layout from "./Layout";
 import Louer from "../../pages/Public/Louer/Louer";
 import Contact from "../../pages/Public/Contact/Contact";
+import Seacrh from "./Search/Search";
+
 
 const PublicRouter = () => {
     const [favoris, setFavoris] = useState(JSON.parse(localStorage.getItem('favoris')) || []);
@@ -42,10 +43,9 @@ const PublicRouter = () => {
                     <Route path="/UserProfile" element={<UserProfile />} />
                     <Route path="/Favoris" element={<Favoris favoris={favoris} removeFavori={removeFavori} />} />
                     <Route path="/detail/:id" element={<Details biens={biens} />} />
-                    <Route path="/acheter" element={<Acheter/>}/>
-                    <Route path="/louer" element={<Louer/>}/>
+                    <Route path="/acheter" element={<Acheter addFavori={addFavori} favoris={favoris}/>}/>
+                    <Route path="/louer" element={<Louer addFavori={addFavori} favoris={favoris}/>}/>
                     <Route path="/contact" element={<Contact/>}/>
-                    <Route path="/rechercher" element={<Search />} />
                 </Route>
             </Routes>
     );

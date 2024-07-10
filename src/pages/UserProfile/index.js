@@ -1,49 +1,15 @@
-// import React from 'react'
-// import "./style.css"
-// import { Link } from 'react-router-dom';
-// import { PButton } from '../../components/_tools';
-
-// const Profil = () => {
-//   const user = "/user.png";
-//   const deconnexion = () => { }
-//   const modifier = () => { }
-//   const changer = () => { }
-
-//   return (
-//     <div className='profil'>
-//       <div className="userp">
-//         <div className='userp-img-wrapper'>
-//           <div className="userp-img">
-//             <img src={user} alt="" />
-//             <PButton changer={changer} />
-//           </div>
-//         </div>
-//       </div>
-//       <div className='info-container'>
-//         <p>Noms</p>
-//         <p>Prenoms</p>
-//         <p>Ville</p>
-//         <p>Contact</p>
-//         <p>email</p>
-//         <Link to="/profil update">
-//           <PButton modifier={modifier} />
-//         </Link>
-//       </div>
-//       <PButton deconnexion={deconnexion} />
-//     </div>
-//   )
-// }
-
-// export default Profil
 
 import React, { useEffect, useState } from 'react';
 import "./style.css";
 import { Link } from 'react-router-dom';
 import { PButton } from '../../components/_tools/_tools';
 import { getAllUsersProfile } from '../../components/utils/ApiFunctions';
+import { useAuth } from '../../components/Auth/AuthProvider';
+import { FaPen,FaHeart } from 'react-icons/fa';
 
 const Profil = () => {
   const [userProfile, setUserProfile] = useState(null);
+  const {auth , handleLogOut} = useAuth();
 
   useEffect(() => {
     const fetchUserProfile = async () => {
@@ -71,31 +37,35 @@ const Profil = () => {
   };
 
   return (
-    <div className='profil'>
+    <div className='profilU'>
       {userProfile ? (
         <>
-          <div className="userp">
-            <div className='userp-img-wrapper'>
               <div className="userp-img">
                 <img src={userProfile.posterUrl} alt={userProfile.name} className="user-image" />
-                <PButton changer={changer} />
+                <button changer={changer}><FaPen/></button>
               </div>
-            </div>
-          </div>
           <div className='info-container'>
             <p>{userProfile.name}</p>
             <p>{userProfile.role}</p>
             <p>{userProfile.telephone}</p>
             <p>{userProfile.email}</p>
-            <Link to="/profil-update">
-              <PButton modifier={modifier} />
+          
+          </div>
+          <div className='profileBtns'>
+          <button onClick={handleLogOut} >deconnecion </button>
+          <Link to='/UserProfile'>
+              <button modifier={modifier}> modifier </button>
             </Link>
           </div>
-          <PButton deconnexion={deconnexion} />
+          <Link to='/Favoris' className="favoriLink">Favoris <FaHeart className="favori" /></Link>
+            
         </>
       ) : (
         <p>Loading...</p>
       )}
+
+          
+            
     </div>
   );
 };

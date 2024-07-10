@@ -12,7 +12,8 @@ const CreateNewBelongingForm = () => {
     type: '',
     dimension: '',
     localisation: '',
-    prix: ''
+    prix: '',
+    status: ''
   });
   const [images, setImages] = useState([]);
 
@@ -35,6 +36,7 @@ const CreateNewBelongingForm = () => {
     data.append('dimension', formData.dimension);
     data.append('localisation', formData.localisation);
     data.append('prix', formData.prix);
+    data.append('status', formData.status)
 
     for (let i = 0; i < images.length; i++) {
       data.append('images', images[i]);
@@ -136,6 +138,21 @@ const CreateNewBelongingForm = () => {
                     <option value="MAROUA">MAROUA</option>
                     <option value="FOUMBAN">FOUMBAN</option>
                     <option value="NGAOUNDERE">NGAOUNDERE</option>
+                  </select>
+              </div>
+
+              <div className="form-select">
+                <label htmlFor="status">Status :</label>
+                  <select
+                    id=""
+                    name="status"
+                    value={formData.status}
+                    onChange={handleChange}
+                    required
+                  >
+                    <option value="">------------</option>
+                    <option value="ACHETER">A Vendre</option>
+                    <option value="LOUER">A Louer</option>
                   </select>
               </div>
 

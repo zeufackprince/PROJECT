@@ -63,8 +63,17 @@ function Header() {
 
     const logOut = () => {
         handleLogout();
+        navigate('/'); // Redirige l'utilisateur vers la route '/'
         handleRefresh();
     }; // Deconnecte l'utilisateur et rafraichi la page
+
+    const handleProfileClick = () => {
+        if (user) {
+            profileContainer.current.classList.toggle('activeProfile'); // Active le profil si l'utilisateur est connecté
+        } else {
+            navigate('/auth/login'); // Redirige vers la route '/auth/login' si l'utilisateur n'est pas connecté
+        }
+    };
 
     return (
         <>
@@ -79,9 +88,9 @@ function Header() {
                             <li><NavLink to='/louer'>Louer</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>
                             {user ? (
-                                <li><button onClick={logOut} className="loginLink">Logout</button></li>
+                                <button onClick={logOut} className="loginLink">Logout</button>
                             ) : (
-                                <li><NavLink to='/auth/login' className="loginLink">Se connecter</NavLink></li>
+                                <NavLink to='/auth/login' className="loginLink"><span>Se connecter</span></NavLink>
                             )}
                         </ul>
                         <button className="searchBtn">
@@ -92,7 +101,7 @@ function Header() {
                     <div className="profil">
                         <img 
                             src={profileImage} 
-                            onClick={() => profileContainer.current.classList.toggle('activeProfile')} 
+                            onClick={handleProfileClick} 
                             alt="User profile" 
                         />
                     </div>
@@ -101,19 +110,11 @@ function Header() {
 
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
-                    <div className="dashboard">
                         <div className="profileInformation">
-                            <Link to='/Favoris' className="favoriLink">
-                                Favoris <FaHeart className="favori" />
-                            </Link>
-                            <div className="userInfo">
                                 <Profil />
-                            </div>
-                            <Link to='/UserProfile' className="logOut">
-                                Modifier
-                            </Link>
+                               
                         </div>
-                    </div>
+                    
                 </div>
             </header>
         </>
