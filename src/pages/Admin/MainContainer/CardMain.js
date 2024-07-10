@@ -28,8 +28,8 @@ function CardMain({imgSrc, title, likes, type, prix, dimension, localisation,sta
         </div>
 
         <div className="card-button">
-            <Link to='/' className="button1 btn">Publication</Link>
-            <Link to='/' className="button2 btn">Modify</Link>
+            <Link to='/admin/publish-Logement' className="button1 btn">Publication</Link>
+            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
         </div>
     </div>
   )

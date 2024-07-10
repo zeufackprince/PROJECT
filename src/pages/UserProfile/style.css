@@ -1,59 +1,105 @@
-.profilU {
+.userp {
     display: flex;
-    flex-direction: column;
+    padding: 8px;
+   margin: 10px;
+}
+
+.userp-img-wrapper {
     justify-content: center;
     align-items: center;
+    display: flex;
+
 }
-/*Photo de profil*/
-.profilU .userp-img{
-    position: relative;
-}
-.profilU .userp-img img{
-    width: 120px;
-    height: 120px;
-    margin: 10px;
-}
-.profilU .userp-img button{
-    position: absolute;
-    bottom: 10px;
-    right: 25px;
+
+
+
+.userp-img img {
+    height: 300px;
+    cursor: pointer;
+    width: 300px;
     border-radius: 50%;
-    padding: 5px 6px;
-    cursor: pointer;
-    background: var(--fuscha);
-    border: 1px solid var(--fuscha);
-    color: var(--white);
-    transition: 0.2s ease-in-out;
-}
-.profilU .userp-img button:hover{
-    color: var(--lignt);
-    background: none;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 12px;
+    overflow: hidden;
+
 }
 
-/*Informations du user */
-.info-container p{
-    margin: 10px;
-    font-weight: bold;
-    text-align: center;
-}
-.profileBtns{
-    margin: 10px;
-}
-.profileBtns button{
-    margin: 10px;
-    background-color: var(--fuscha);
-    padding: 10px 20px;
-    border-radius: 10px;
-    transition: all 0.2s ease;
-    border: 1px solid var(--fuscha);
-    text-decoration: none;
-    cursor: pointer;
-    font-weight: bold;
-    color: var(--white);
-    transition: 0.2s ease;
+.profil {
+    display: flex;
+    flex-direction: row;
+    padding: 2.5rem;
+    
+   
 }
 
-.profileBtns button:hover{
-    color: var(--lignt);
-    background: none;
+.info-container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    padding: 1.5rem;
+    justify-content: center;
+    background-color: rgba(248, 241, 241, 0.842);
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 4px;
+    gap: 3;
+    padding: 2.5rem;
+    justify-content: center;
+
+}
+
+p {
+
+    gap: 8px;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.info-container p {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    border: none;
+    border-bottom: 2px solid gray;
+    line-height: 23px;
+    outline: none;
+    font-size: 0.95rem;
+    transition: all ease-in-out 0.15s;
+    color: gray;
+
+}
+
+
+.btn {
+    justify-content:center;
+    display: flex;
+}
+
+.btn .btn-dg {
+    font-size: 15px;
+    align-self:self-start;
+    justify-content:right;
+    padding: 0.95rem;
+    background-color: whitesmoke;
+    color: red;
+    cursor: pointer;
+}
+
+.btn button {
+    font-size: 15px;
+    padding: 0.95rem;
+    background-color: whitesmoke;
+    color: black;
+    cursor: pointer;
+    align-self: center;
+}
+
+.btn button:hover {
+    font-size: larger;
+    transition: ease-in-out 0.25s;
 }
