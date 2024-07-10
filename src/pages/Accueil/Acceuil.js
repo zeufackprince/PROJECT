@@ -77,7 +77,7 @@ const Acceuil = ({ addFavori, favoris }) => {
             </section>
             <section className="articlesImmo">
                 <h1>Achetez/ louer un bien immobilier sur immobilius</h1>
-                <div className="listBien">
+                <div className="listBien">{/*Affiche les biens immobilier sur la page acceuil*/}
                     {biens.map(bien => (
                         <div className="bienImmo" key={bien.id}>
                             <img src={bien.posterUrl[0]} alt="" /> {/* Assuming posterUrl is an array of URLs */}
