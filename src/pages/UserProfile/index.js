@@ -52,13 +52,13 @@ const Profil = () => {
           
           </div>
           <div className='profileBtns'>
-            <button onClick={handleLogOut} >deconnecion </button>
-            <Link to='/UserProfile'>
-                <button modifier={modifier}> modifier </button>
-              </Link>
+          <button onClick={handleLogOut} >deconnecion </button>
+          <Link to='/UserProfile'>
+              <button modifier={modifier}> modifier </button>
+            </Link>
           </div>
-         
-            <Link to='/Favoris' className="favoriLink">Favoris <FaHeart className="favori" /></Link>
+          <Link to='/Favoris' className="favoriLink">Favoris <FaHeart className="favori" /></Link>
+            
         </>
       ) : (
         <p>Loading...</p>
