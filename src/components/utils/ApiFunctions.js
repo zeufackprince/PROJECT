@@ -256,6 +256,22 @@ export async function getAllPubById(bienId) {
 	}
 }
 
+/*this functoin is to create new Publication*/
+export async function createNewPublication(createPub) {
+	try {
+		const response = await api.post("/api/agent/new-publication", createPub, {
+            headers: getHeader()
+        })
+		return response.data
+	} catch (error) {
+		if (error.reeponse && error.response.data) {
+			throw new Error(error.response.data)
+		} else {
+			throw new Error(`Erreur lors de la creation du Bien Immobilier : ${error.message}`)
+		}
+	}
+}
+
 
 
 // create and delete Publication
