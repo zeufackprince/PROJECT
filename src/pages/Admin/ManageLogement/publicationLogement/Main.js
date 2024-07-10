@@ -36,7 +36,7 @@ function MainPublication() {
         </div>
         <div>
           <label>Description :</label>
-          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required />
+          <textarea value={description} onChange={(e) => setDescription(e.target.value)} required cols={60} rows={10}></textarea>
         </div>
         <div>
           <label>Status :</label>

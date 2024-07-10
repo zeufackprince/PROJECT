@@ -187,9 +187,9 @@ export async function getAllBelongings() {
 }
 
 /** FOnctions to get belongings by thier Status either Sale Or Rent */
-export async function getBelongingsByStatus() {
+export async function getPublicationByStatus() {
 	try {
-		const result = await api.get(`/api/user/belonging/VENDRE`, {
+		const result = await api.get(`/api/user/get-pub-by-status/ACHETER`, {
 			headers: getHeader()
 		})
 		return result.data
@@ -198,9 +198,9 @@ export async function getBelongingsByStatus() {
 	}
 }
 
-export async function getBelongingsByStatus2() {
+export async function getPublicationByStatus2() {
 	try {
-		const result = await api.get(`/api/user/belonging/LOUER`, {
+		const result = await api.get(`/api/user/get-pub-by-status/LOUER`, {
 			headers: getHeader()
 		})
 		return result.data
