@@ -6,7 +6,7 @@ function MainPublication() {
   const location = useLocation();
   const [titre, setTitre] = useState('');
   const [description, setDescription] = useState('');
-  const [status, setStatus] = useState('ACHETER');
+  const [status, setStatus] = useState('');
   const [belonging_id, setBelongingId] = useState('');
   const [message, setMessage] = useState('');
 
@@ -26,7 +26,7 @@ function MainPublication() {
       // Réinitialiser les champs du formulaire
       setTitre('');
       setDescription('');
-      setStatus('ACHETER');
+      setStatus('');
       setBelongingId('');
     } catch (error) {
       setMessage(`Erreur lors de la création de la publication : ${error.message}`);
@@ -54,7 +54,7 @@ function MainPublication() {
           </select>
         </div>
         <div>
-          <input type="hidden" value={belonging_id} onChange={(e) => setBelongingId(e.target.value)} required readOnly />
+          <input type="text" value={belonging_id} onChange={(e) => setBelongingId(e.target.value)} required readOnly />
         </div>
         <button type="submit">Publier</button>
       </form>

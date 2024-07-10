@@ -106,6 +106,7 @@ const Details = () => {
                     <h1 className="price">{`${bien.prix} Fcfa`}</h1>
                     <h5 className="belongDescription">{bien.description}</h5>
                     <h5 className="description">{bien.type} - {bien.dimension} (m<sup>2</sup>)</h5>
+                    <h5 className='status'>Ce bien est a : {bien.status}</h5>
                     <h4 className="localisation">Ville : {bien.localisation}</h4>
 
                     <div className="contactAgent">

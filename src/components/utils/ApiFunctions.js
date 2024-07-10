@@ -222,9 +222,31 @@ export async function getBelongingsById(bienId) {
 }
 
 //get a belonging by it type(Room, appartment or studios) 
-export async function getBelongingsBytype(type) {
+export async function getBelongingsBytype1() {
 	try {
-		const result = await api.get(`/user/belongings/${type}`, {
+		const result = await api.get(`/api/user/belongings/ROOM`, {
+			headers: getHeader()
+		})
+		return result.data
+	} catch (error) {
+		throw new Error(`Error fetching Belonging ${error.message}`)
+	}
+}
+
+export async function getBelongingsBytype2() {
+	try {
+		const result = await api.get(`/api/user/belongings/STUDIOS`, {
+			headers: getHeader()
+		})
+		return result.data
+	} catch (error) {
+		throw new Error(`Error fetching Belonging ${error.message}`)
+	}
+}
+
+export async function getBelongingsBytype3(type) {
+	try {
+		const result = await api.get(`/api/user/belongings/APPARTMENT`, {
 			headers: getHeader()
 		})
 		return result.data
