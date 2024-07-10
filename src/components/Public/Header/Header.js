@@ -101,19 +101,10 @@ function Header() {
 
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
-                    <div className="dashboard">
                         <div className="profileInformation">
-                            <Link to='/Favoris' className="favoriLink">
-                                Favoris <FaHeart className="favori" />
-                            </Link>
-                            <div className="userInfo">
                                 <Profil />
-                            </div>
-                            <Link to='/UserProfile' className="logOut">
-                                Modifier
-                            </Link>
                         </div>
-                    </div>
+                    
                 </div>
             </header>
         </>
