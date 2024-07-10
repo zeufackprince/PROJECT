@@ -42,19 +42,21 @@ h2 {
 
 /* Boutons */
 .btn {
-    background-color: #007bff;
+    background-color: var(--fuscha);
     color: white;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    border: 1px solid var(--fuscha);
+    border-radius: 12px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
     align-content: center;
+    font-weight: bold;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background: none;
+    color: var(--lignt);
 }
 
 /* Messages d'alerte */

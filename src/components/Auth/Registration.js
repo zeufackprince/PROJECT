@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { registerUser } from "../utils/ApiFunctions";
 import { Link, useNavigate } from "react-router-dom";
 import './Registration.css'
-
+import '../root.css'
 
 const Registration = () => {
 
