@@ -1,9 +1,6 @@
 /* Footer.css */
 
 .footer {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
     background-color: #000;
     color: white;
     padding: 20px 0;

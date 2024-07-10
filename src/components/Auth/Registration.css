@@ -8,7 +8,7 @@ body {
 
 /* Conteneur principal */
 .container {
-    background-color: #ffffff;
+    background-color: var(--white);
     padding: 30px;
     margin: 50px auto;
     border-radius: 10px;
@@ -35,7 +35,7 @@ h2 {
 }
 
 .form-control:focus {
-    border-color: #007bff;
+    border-color: var(--fuscha);
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
