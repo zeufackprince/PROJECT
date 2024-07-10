@@ -2,7 +2,7 @@ import React from 'react';
 import { FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-function CardMain({imgSrc, title, likes, type, prix, dimension, localisation}) {
+function CardMain({imgSrc, title, likes, type, prix, dimension, localisation,status}) {
   return (
     <div className='Card-Main'>
         <img src={imgSrc} alt="" />
@@ -21,6 +21,7 @@ function CardMain({imgSrc, title, likes, type, prix, dimension, localisation}) {
         
         <div className="stats">
             <p>Prix <span>{prix}FCFA</span></p>
+            <p>Etat <span>{status}</span></p>
             <p>Dimension<span>{dimension}</span></p>
             <p>Localisation<span>{localisation}</span></p>
 
