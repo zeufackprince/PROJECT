@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBell } from "react-icons/fa";
 import { getAllUsersProfile } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
-import './TopContainer.css'; // Add the necessary CSS file if not already added
 
 function TopContainerAgent() {
   const [userProfile, setUserProfile] = useState({

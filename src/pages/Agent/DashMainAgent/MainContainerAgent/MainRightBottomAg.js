@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllNotificationAgent } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
-import './MainRightBottom.css'; // Add the necessary CSS file if not already added
+import { getAllNotificationAgent } from '../../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
 
 const profile = process.env.PUBLIC_URL + '/images/images.png';
 
