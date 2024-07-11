@@ -29,23 +29,23 @@ h2 {
     width: 100%;
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--white);
     border-radius: 5px;
     margin-bottom: 10px;
 }
 
 .form-control:focus {
-    border-color: #007bff;
+    border-color: var(--fuscha);
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Boutons */
 .btn {
-    background-color: #007bff;
+    background-color: var(--fuscha);
     color: white;
     padding: 10px 20px;
-    border: none;
+    border: 1px solid var(--fuscha);
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
@@ -54,7 +54,7 @@ h2 {
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: var(--fuscha);
 }
 
 /* Messages d'alerte */
