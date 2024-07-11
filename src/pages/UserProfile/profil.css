@@ -13,6 +13,7 @@
     height: 120px;
     margin: 10px;
 }
+/*Crayon modifier le profil */
 .profilU .userp-img button{
     position: absolute;
     bottom: 10px;
@@ -25,9 +26,12 @@
     color: var(--white);
     transition: 0.2s ease-in-out;
 }
+.profilU.userp-img button a {
+    text-decoration: none;
+}
 .profilU .userp-img button:hover{
     color: var(--lignt);
-    background: none;
+    background: var(--red);
 }
 
 /*Informations du user */

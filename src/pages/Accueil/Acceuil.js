@@ -47,18 +47,26 @@ const Acceuil = ({ addFavori, favoris }) => {
     };
 
     if (isLoading) {
-		return <div >Loading rooms....</div>
+		return (
+            <div class="loader-container">
+                <div class="bouncing-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+            )// ...loading icons...
 	}
 	if (errorMessage) {
-		return <div>Error : {errorMessage}</div>
-	}
+		return <div className='error-message'>Error : {errorMessage}</div>
+	}// Message d'erreur
 
     return (
         <>
             <section className="presentation">
                 {message && <p className="text-warning px-5">{message}</p>}
                 {currentUser && (
-                    <h6 className="text-success text-center"> You are logged-In as {currentUser}</h6>
+                    <h6 className="text-success text-center succes-message"> You are logged-In as {currentUser}</h6>
                 )}
                 <div className="txtPres">
                     <h1>BIENVENU SUR IMMOBILIUS</h1>

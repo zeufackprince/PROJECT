@@ -27,7 +27,7 @@ import './MainList.css';
 
 const UserItem = ({ user, onDelete }) => {
   return (
-    <tr>
+    <tr className='UserCrudContainer'>
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td>{user.telephone}</td>

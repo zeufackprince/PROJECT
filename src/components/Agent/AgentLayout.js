@@ -7,6 +7,8 @@ const AgentLayout = () => {
         <div className='ALayout'>
             <AgentMenu/>
             <Outlet/>
+
+            
         </div>
     );
 };

@@ -112,6 +112,7 @@ const Registration = () => {
                             className="form-control"
                             value={registration.name}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -126,6 +127,7 @@ const Registration = () => {
                             className="form-control"
                             value={registration.email}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -140,6 +142,7 @@ const Registration = () => {
                             name="password"
                             value={registration.password}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -183,6 +186,7 @@ const Registration = () => {
                             type="file"
                             className="form-control"
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>

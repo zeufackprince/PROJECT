@@ -43,11 +43,19 @@ const Details = () => {
     };
 
     if (isLoading) {
-        return <div>Loading details...</div>;
+        return(
+            <div class="loader-container">
+                <div class="bouncing-dots">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
+            </div>
+        )
     }
 
     if (errorMessage) {
-        return <div>Error: {errorMessage}</div>;
+        return <div className='error-message'>Error: {errorMessage}</div>;
     }
 
     if (!bien) {
@@ -102,6 +110,7 @@ const Details = () => {
                 </div>
 
                 <div className="belongInformations">
+
                     <h1 className='titleBelong'>{bien.nom}</h1>
                     <h1 className="price">{`${bien.prix} Fcfa`}</h1>
                     <h5 className="belongDescription">{bien.description}</h5>
@@ -119,8 +128,8 @@ const Details = () => {
                             Contacter l'agent immobilier
                         </button>
                     </div>
-                    {successMessage && <div className="successMessage">{successMessage}</div>}
-                    {errorMessage && <div className="errorMessage">{errorMessage}</div>}
+                    {successMessage && <div className="success-message">{successMessage}</div>}
+                    {errorMessage && <div className="error-message">{errorMessage}</div>}
                 </div>
             </div>
 
@@ -132,6 +141,7 @@ const Details = () => {
                     <button className="next" onClick={nextImage}>&#10095;</button>
                 </div>
             )}
+            
         </>
     );
 };
