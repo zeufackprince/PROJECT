@@ -44,7 +44,8 @@ function Parametre() {
         <div className="setting-container">
 
             <div className="profile-section">
-                <h2>ADMIN PROFILE</h2>
+                <h3>ADMIN PROFILE</h3>
+                <p className='barre barre-profil'></p>
                 {errorMessage && <p className="error-message">{errorMessage}</p>}
 
                 <div className='back-color'></div>
@@ -53,20 +54,18 @@ function Parametre() {
                     <img src={profile.posterUrl} alt={profile.name} className="profile-image" />
 
                     <div className="profile-info">
-                        <p><strong>Name:</strong> {profile.name}</p>
-                        <p><strong>Email:</strong> {profile.email}</p>
-                        <p><strong>Role:</strong> {profile.role}</p>
+                        <p className='admin-name'>{profile.name}</p>
+                        <p className='admin-email'>{profile.email}</p>
+                        <p className='admin-role'><strong>Role:</strong> {profile.role}</p>
                         <Link to='/admin/editer-profil' className="edit-profile-button"><FaPen/> Edit Profile</Link>
                     </div>
 
                 </div>
-
+                    <h3>PARAMETRES</h3>
+                    <p className='barre'></p>
                 <div className="action-buttons">
-                    <h3>Parametres</h3>
-                    <p></p>
-                        <Link to='/admin/new-agent' className="full-width-button">Create New Agent</Link>
-                       <Link to='/' className="full-width-button delete-button">Delete Account</Link>
-                    
+                       <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.  <Link to='/admin/new-agent' className="full-width-button">Create New Agent</Link></div>
+                       <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/' className="full-width-button delete-button">Delete Account</Link></div>
                 </div>
             </div>
 
