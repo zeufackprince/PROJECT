@@ -1,5 +1,5 @@
+/* Existing styles */
 menu {
-  
     height: 100%;
     background-color: #fff;
     display: flex;
@@ -51,7 +51,7 @@ menu ul li a::before {
     left: -15px;
     width: 0px;
     height: 20px;
-    background: #f83737;;
+    background: #f83737;
     border-radius: 50%;
 }
 
@@ -88,5 +88,56 @@ menu ul.last-Menu {
     menu ul li a::before {
         top: 5px;
     }
-    
+}
+
+/* New styles for the logout button */
+.logout-button {
+    font-size: 24px;
+    color: #8c8a95;
+    background-color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 2px 5px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.logout-button span {
+    padding: 0 8px;
+}
+
+.logout-button:hover {
+    color: #f83737;
+}
+
+.logout-button:hover::before {
+    width: 20px;
+    transition: all 0.3s;
+}
+
+.logout-button::before {
+    position: absolute;
+    content: '';
+    top: 10px;
+    left: -15px;
+    width: 0px;
+    height: 20px;
+    background: #f83737;
+    border-radius: 50%;
+}
+
+.logout-button.active {
+    color: #f83737;
+}
+
+.logout-button.active::before {
+    width: 20px;
+    transition: all 0.3s;
+}
+
+.logout-button span {
+    padding: 0 8px;
 }

@@ -2,7 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaHeart } from "react-icons/fa";
 import { useLocation } from "react-router-dom"
-import { getBelongingsByStatus } from '../../../components/utils/ApiFunctions';
+import { getPublicationByStatus } from '../../../components/utils/ApiFunctions';
 import './acheter.css'
 
 const Acheter = ({addFavori, favoris}) => {
@@ -18,7 +18,7 @@ const Acheter = ({addFavori, favoris}) => {
 
     useEffect(() => {
 		setIsLoading(true)
-		getBelongingsByStatus()
+		getPublicationByStatus()
 			.then((data) => {
 				setBiens(data)
 				setIsLoading(false)

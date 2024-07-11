@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './Details.css';
 import { getAllPubById } from '../../utils/ApiFunctions';
+import { sendNotification } from '../../utils/ApiFunctions';
 import '../../../components/root.css';
 
 const Details = () => {
@@ -9,8 +10,10 @@ const Details = () => {
     const [bien, setBien] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState("");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
+    const [contactMessage, setContactMessage] = useState("");
 
     useEffect(() => {
         getAllPubById(id)
@@ -23,6 +26,21 @@ const Details = () => {
                 setIsLoading(false);
             });
     }, [id]);
+
+    const handleSendNotification = async () => {
+        try {
+            const notificationData = {
+                message: contactMessage,
+                publicationId: id
+            };
+            const result = await sendNotification(notificationData);
+            setSuccessMessage("Message sent successfully");
+            setErrorMessage("");
+        } catch (error) {
+            setSuccessMessage("");
+            setErrorMessage(`Error: ${error.message}`);
+        }
+    };
 
     if (isLoading) {
         return <div>Loading details...</div>;
@@ -88,16 +106,23 @@ const Details = () => {
                     <h1 className="price">{`${bien.prix} Fcfa`}</h1>
                     <h5 className="belongDescription">{bien.description}</h5>
                     <h5 className="description">{bien.type} - {bien.dimension} (m<sup>2</sup>)</h5>
+                    <h5 className='status'>Ce bien est a : {bien.status}</h5>
                     <h4 className="localisation">Ville : {bien.localisation}</h4>
 
                     <div className="contactAgent">
-                        <textarea name='contact'> Contactez nous...</textarea>
-                        <button onClick={() => alert("Contactez l'agent immobilier")}>Contacter l'agent immobilier</button>
+                        <textarea 
+                            name='contact' 
+                            value={contactMessage}
+                            onChange={(e) => setContactMessage(e.target.value)}
+                        > Contactez nous...</textarea>
+                        <button onClick={handleSendNotification}>
+                            Contacter l'agent immobilier
+                        </button>
                     </div>
+                    {successMessage && <div className="successMessage">{successMessage}</div>}
+                    {errorMessage && <div className="errorMessage">{errorMessage}</div>}
                 </div>
             </div>
-
-           
 
             {isModalOpen && (
                 <div className="modal" onClick={closeModal}>

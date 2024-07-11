@@ -6,6 +6,10 @@ import '../root.css'
 
 const Registration = () => {
 
+    // < Formik
+    // validationSchema={checkoutSchema}
+    // ></Formik>
+
     const navigate = useNavigate();
     
 
@@ -146,6 +150,7 @@ const Registration = () => {
                         <input
                             id="telephone"
                             name="telephone"
+                            min={0}
                             type="number"
                             className="form-control"
                             placeholder="ex :2376"
@@ -183,10 +188,10 @@ const Registration = () => {
                 </div>
 
                 <div className="mb-4">
-                    <button type="submit" className="btn btn-hotel" style={{ marginRight: "10px" }}>
+                    <button type="submit" className="btn btn-hotel" >
                         Register
                     </button>
-                    <span style={{ marginLeft: "10px" }}>
+                    <span style={{ marginLeft: "0px" }}>
                         Already have an account? <Link to={"/auth/login"}>Login</Link>
                     </span>
                 </div>

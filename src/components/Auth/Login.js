@@ -97,8 +97,8 @@ const Login = () => {
 					</div>
 				</div>
 
-				<div className="mb-3">
-					<button type="submit" className="btn btn-hotel" style={{ marginRight: "10px" }}>
+				<div className="mb-4">
+					<button type="submit" className="btn btn-hotel" >
 						Login
 					</button>
 					<span style={{ marginLeft: "10px" }}>
