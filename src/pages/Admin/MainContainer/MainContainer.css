@@ -4,7 +4,6 @@
     height: 100vh;
     width: 100%;
     display: flex;
-    padding-top: 15px;
     gap: 10px;
 }
 
@@ -90,7 +89,7 @@
 
 .MainContainer .left .Cards .filters .mine {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .MainContainer .left .Cards .filters .mine h2 {
@@ -99,6 +98,12 @@
     color: #da4343;
     margin-right: 10px;
 }
+
+.MainContainer .left .Cards .filters .filter_buttons {
+    display: flex;
+    align-items: baseline;
+}
+
 
 .MainContainer .left .Cards main {
     display: flex;

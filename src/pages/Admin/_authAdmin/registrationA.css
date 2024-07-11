@@ -12,7 +12,6 @@ body {
 .container {
     background-color: var(--white);
     padding: 30px;
-    margin: 50px auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(255, 255, 255, .2);
     max-width: 600px;

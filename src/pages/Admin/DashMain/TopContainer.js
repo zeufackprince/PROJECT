@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBell } from "react-icons/fa";
 import { getAllUsersProfile } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
-import './TopContainer.css'; // Add the necessary CSS file if not already added
+import './DashMain.css'; // Add the necessary CSS file if not already added
 
 function TopContainer() {
   const [userProfile, setUserProfile] = useState({
@@ -35,7 +35,7 @@ function TopContainer() {
           <Link to='/' id=""><FaBell /></Link>     
         </i>
         <div className="profileImage">
-          <Link to='/'><img src={userProfile.posterUrl} alt="User profile" /></Link>
+          <img src={userProfile.posterUrl} alt="User profile" />
         </div>
         <p className="profileName"><span>{userProfile.email}</span></p>
       </div>

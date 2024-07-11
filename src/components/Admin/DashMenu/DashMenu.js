@@ -34,7 +34,7 @@ function DashMenu() {
     <menu>
        <h1 className='logo'>IMMOBILIUS</h1>
         <ul id="main-Menu">
-          <li><Link to='/admin/dashboard'><FaBorderAll /><span>Dashboard</span></Link></li>
+          <li className='active'><Link to='/admin/dashboard'><FaBorderAll /><span>Dashboard</span></Link></li>
           <li><Link to='/admin/crud-client'><FaUsers /><span>Clients</span></Link></li>
           <li><Link to='/admin/notification'><FaEnvelope /><span>Notifications</span></Link></li>
           <li><Link to='/admin/crud-logements'><FaBuilding /><span>Logements</span></Link></li>

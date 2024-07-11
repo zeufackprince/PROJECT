@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllBelongings } from '../../../../components/utils/ApiFunctions.js';
 import Banner from '../../../../images/Admin/banner.jpg';
-import CardMainAg from './CardMainAg.js';
-import FiltersAg from '../../crud-logement-agent/FiltersAg.js'
-import MainRightBottomAg from './MainRightBottomAg.js';
-import MainRightTopAg from './MainRightTopAg.js';
+import CardMain from './CardMainAg.js';
+import Filters from '../../crud-logement-agent/FiltersAg.js'
+import MainRightBottom from './MainRightBottomAg.js';
+import '../../../Admin/MainContainer/MainContainer.css';
 
 function MainContainerAgent() {
   const [belongings, setBelongings] = useState([]);
@@ -44,11 +44,12 @@ function MainContainerAgent() {
         </div>
 
         <div className="Cards">
-          <FiltersAg />
+          <Filters />
           <main>
             {belongings.map(pub => (
-              <CardMainAg
+              <CardMain
                 key={pub.id}
+                bienId={pub.id}
                 imgSrc={pub.posterUrl[0]}
                 title={pub.nom}
                 type={pub.type}
@@ -63,7 +64,7 @@ function MainContainerAgent() {
         </div>
       </div>
       <div className="right">
-        <MainRightBottomAg />
+        <MainRightBottom />
       </div>
     </div>
   );
