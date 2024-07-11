@@ -1,4 +1,4 @@
-.user-settings {
+/*.user-settings {
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
@@ -78,4 +78,103 @@
 
 .error {
     color: red;
+}*/
+
+.setting-container{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    width: 100%;
+    position: relative;
 }
+
+/*Informations du profile*/
+.setting-container .profile-section{
+}
+.profile-section{
+    
+}
+
+.profile-details{
+    display: flex;
+    padding: 10px;
+    margin: 10px;
+    margin-top: -90px;
+}
+
+.back-color{
+    background-image: url('../../images/corver-banner.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 300px;
+}/*image de couverture*/
+
+
+ /*Image du profil*/
+.profile-details img{
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+/*Informations de l'admin */
+.profile-details .profile-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 15px;
+}
+.profile-details p{
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--lignt);
+}
+.profile-details .edit-profile-button{
+    background: var(--fuscha);
+    text-align: center;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 12px;
+    color: var(--white);
+    font-weight: bold;
+    border: 1px solid var(--fuscha);
+    transition: 0.2s ease;
+}
+
+.profile-details .edit-profile-button:hover{
+    background: none;
+    color: var(--lignt);
+}
+
+/*Les bouttons d'actions*/
+
+.action-buttons{
+    margin: 15px;
+    margin: 20px 30px;
+}
+.action-buttons p{
+    width: 100%;
+    height: 2px;
+    background: black;
+    margin-bottom: 30px;
+}
+
+
+.action-buttons a{
+    margin: 15px;
+    text-align: center;
+    background: var(--fuscha);
+    padding: 15px;
+    border-radius: 12px;
+    color: var(--white);
+    font-weight: bold;
+    border: 1px solid var(--fuscha);
+    transform: 0.2s ease;
+}
+.action-buttons a:hover{
+    background: none;
+    color: var(--lignt);
+}
+

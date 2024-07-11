@@ -63,7 +63,6 @@ function MainContainerAgent() {
         </div>
       </div>
       <div className="right">
-        <MainRightTopAg/>
         <MainRightBottomAg />
       </div>
     </div>
