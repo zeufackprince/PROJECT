@@ -41,7 +41,7 @@ function DashMenu() {
         </ul>
 
         <ul className='last-Menu'>
-          <li><Link to=''><FaCog /><span>Paramètres</span></Link></li>
+          <li><Link to='/admin/parametre'><FaCog /><span>Paramètres</span></Link></li>
           <li><button onClick={handleLogout} className="logout-button"><FaSignOutAlt /><span>Déconnexion</span></button></li>
         </ul>
     </menu>
