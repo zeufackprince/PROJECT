@@ -43,10 +43,18 @@ const Louer = ({addFavori, favoris}) => {
         };
     
         if (isLoading) {
-            return <div >Loading rooms....</div>
+            return (
+                <div class="loader-container">
+                    <div class="bouncing-dots">
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            )
         }
         if (errorMessage) {
-            return <div>Error : {errorMessage}</div>
+            return <div className='error-message'>Error : {errorMessage}</div>
         }
     
         return (

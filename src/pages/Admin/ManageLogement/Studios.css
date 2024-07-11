@@ -1,0 +1,53 @@
+.room-container {
+    max-height: 100vh;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.Card-Main {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.belonging-image {
+    height: 5cm;
+    width: 7cm;
+    object-fit: cover;
+}
+
+.card_main_name {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.stats {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.card-button {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.button1, .button2 {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+
+button.btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button.btn:hover {
+    background-color: #0056b3;
+}

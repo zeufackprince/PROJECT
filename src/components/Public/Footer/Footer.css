@@ -71,7 +71,7 @@
 .social-links .igLk:hover{
     color: #8a3ab9 ;
 }
-
+ /* Responsive */
 @media (max-width: 768px) {
     .footer-container {
         flex-direction: column;

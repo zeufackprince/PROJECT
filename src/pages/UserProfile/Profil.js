@@ -42,7 +42,7 @@ const Profil = () => {
         <>
               <div className="userp-img">
                 <img src={userProfile.posterUrl} alt={userProfile.name} className="user-image" />
-                <button changer={changer}><FaPen/></button>
+                <button changer={changer}><Link to='/UserProfile'><FaPen/></Link></button>
               </div>
           <div className='info-container'>
             <p>{userProfile.name}</p>

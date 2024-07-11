@@ -12,14 +12,29 @@ import Notification from '../../pages/Admin/Notifications/Main';
 import miseAJourLogementForm from '../../pages/Admin/ManageLogement/updateLogement/miseAJourLogementForm';
 import PublishLogement from '../../pages/Admin/ManageLogement/publicationLogement/Main';
 import Logout from '../Auth/Logout';
+import Parametre from '../../pages/Parametre/Parametre';
+import RegistrationA from '../../pages/Admin/_authAdmin/RegistrationA';
+import EditAProfile from '../../pages/Admin/_authAdmin/EditAProfile';
 
 const AdminRouter = () => {
     return (
          <Routes>
             <Route element ={<ALayout/>}>
                 <Route index element ={<DashMain/>}/>
+
+                {/* vers le menu de l'admin */}
                 <Route path='/dashboard' element ={<DashMain/>}/>
+
+                {/* vers la list des utilisateur */}
                 <Route path='/crud-client' element={<MainList/>}/>
+
+                {/* vers le formulaire d'ajoute d'agent */}
+                <Route path='/new-agent' element={<RegistrationA/>} />
+
+                {/* vers la list des utilisateur */}
+                <Route path='/editer-profil' element={<EditAProfile/>} />
+
+                {/*  */}
                 <Route path='/crud-logements' element={<Logements/>}/>
                 <Route path='/create-new-belonging' element={<CreateNewBelongingForm />} />
                 <Route path='/room' element={<Room />} />
@@ -28,6 +43,7 @@ const AdminRouter = () => {
                 <Route path='/notification' element={<Notification />} />
                 <Route path='/update-Logement' element={<miseAJourLogementForm />} />
                 <Route path='/publish-Logement' element={<PublishLogement />} />
+                <Route path='/parametre' element={<Parametre/>} />
                 <Route path='/deconnexion' element={<Logout/>} />
             </Route>
         </Routes>            
