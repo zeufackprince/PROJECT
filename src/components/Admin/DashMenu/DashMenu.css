@@ -1,5 +1,6 @@
 /* Existing styles */
 menu {
+    padding-top: 25px;
     height: 100%;
     background-color: #fff;
     display: flex;
@@ -7,11 +8,6 @@ menu {
     flex-direction: column;
     align-items: center;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
-}
-
-menu img {
-    width: 3em;
-    padding-top: 25px;
 }
 
 menu ul {
@@ -41,9 +37,11 @@ menu ul li a {
     display: flex;
     align-items: center;
 }
+
 menu ul li a span{
     padding: 0 8px;
 }
+
 menu ul li a::before {
     position: absolute;
     content: '';
@@ -55,11 +53,11 @@ menu ul li a::before {
     border-radius: 50%;
 }
 
-menu ul li:hover a {
+menu ul li:hover a{
     color: #f83737;
 }
 
-menu ul li:hover a::before {
+menu ul li:hover a::before{
     width: 20px;
     transition: all 0.3s;
 }

@@ -65,7 +65,6 @@ function MainContainer() {
         </div>
       </div>
       <div className="right">
-       
         <MainRightBottom />
       </div>
     </div>

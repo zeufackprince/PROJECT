@@ -1,4 +1,5 @@
 .Main {
+    margin: 0;
     overflow: scroll;
     height: 100vh;
 }
@@ -18,14 +19,14 @@
 
 .filters {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: space-between;
     padding: 5px 30px;
 }
 
 .filters .mine {
     display: flex;
-    align-items: center;
+    align-items: baseline;
 }
 
 .filters .mine h2 {

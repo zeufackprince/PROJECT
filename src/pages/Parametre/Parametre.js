@@ -53,7 +53,7 @@ function Parametre() {
                     <img src={profile.posterUrl} alt={profile.name} className="profile-image" />
 
                     <div className="profile-info">
-                        <p><strong>Name:</strong> {profile.name}</p>
+                        <p><strong>Username:</strong> {profile.name}</p>
                         <p><strong>Email:</strong> {profile.email}</p>
                         <p><strong>Role:</strong> {profile.role}</p>
                         <Link to='/admin/editer-profil' className="edit-profile-button"><FaPen/> Edit Profile</Link>
