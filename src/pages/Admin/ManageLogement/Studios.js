@@ -3,7 +3,7 @@ import Filters from '../crud-app-logements/Filters';
 import { getBelongingsBytype2 } from '../../../components/utils/ApiFunctions'; // Import the API function
 import { FaHeart } from 'react-icons/fa'; // Import the FaHeart icon
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing
-import './Studios.css'; // Import the CSS file
+import './typebelongings.css'; // Import the CSS file
 
 function Studios() {
     const [belongings, setBelongings] = useState([]);

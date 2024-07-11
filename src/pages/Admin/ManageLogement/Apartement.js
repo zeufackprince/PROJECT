@@ -3,7 +3,7 @@ import Filters from '../crud-app-logements/Filters';
 import { getBelongingsBytype3 } from '../../../components/utils/ApiFunctions'; // Import the API function
 import { FaHeart } from 'react-icons/fa'; // Import the FaHeart icon
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing
-import './Room.css'; // Import the CSS file
+import './typebelongings.css'; // Import the CSS file
 
 function Apartement() {
     const [belongings, setBelongings] = useState([]);

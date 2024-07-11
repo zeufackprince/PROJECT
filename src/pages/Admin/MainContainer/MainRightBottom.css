@@ -45,7 +45,7 @@
     color: #888;
   }
   
-  .button1.btn {
+  .btn {
     padding: 5px 10px;
     border: none;
     background-color: #007bff;
@@ -55,7 +55,7 @@
     transition: background-color 0.3s ease;
   }
   
-  .button1.btn:hover {
+  .btn:hover {
     background-color: #0056b3;
   }
   

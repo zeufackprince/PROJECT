@@ -9,6 +9,7 @@ import Registration from "./components/Auth/Registration";
 import Login from "./components/Auth/Login";
 import ResultSearch from "./pages/Public/ResultSearch/ResultSearch";
 import SearchRouter from "./components/Public/Search/SearchRouter";
+import './App.css'
 import AgentRouter from "./components/Agent/AgentRouter";
 
 class App extends React.Component {
