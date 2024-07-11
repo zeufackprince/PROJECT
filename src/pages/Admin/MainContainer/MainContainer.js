@@ -5,7 +5,7 @@ import './MainContainer.css';
 import Banner from '../../../images/Admin/banner.jpg';
 import CardMain from './CardMain.js';
 import MainRightBottom from './MainRightBottom.js';
-import MainRightTop from './MainRightTop.js';
+
 import Filters from '../crud-app-logements/Filters.js';
 
 function MainContainer() {
@@ -65,7 +65,7 @@ function MainContainer() {
         </div>
       </div>
       <div className="right">
-        <MainRightTop />
+       
         <MainRightBottom />
       </div>
     </div>
