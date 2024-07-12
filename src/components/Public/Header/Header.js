@@ -110,7 +110,7 @@ function Header() {
             setTheme(parsedTheme);
             applyTheme(parsedTheme);
         }
-    }, []);// Savegarde le theme choisis
+    }, []);// Savegarde le theme choisi
 
     const applyTheme = (theme) => {
         for (const [key, value] of Object.entries(theme)) {
