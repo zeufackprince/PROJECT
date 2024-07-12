@@ -10,6 +10,30 @@ import { useAuth } from "../../Auth/AuthProvider"; // Import the auth context
 import '../Search/Search.css';
 import { getAllUsersProfile } from "../../../components/utils/ApiFunctions"; // Import the function to fetch user profile
 
+//Couleurs du theme clair
+const lightTheme = {
+    '--white': '#fff',
+    '--lignt': '#222831',
+    '--desaturate-fuscha': 'hsla(162, 94%, 57%, 0.15)',
+    '--desaturate-fuscha-2': 'hsla(160, 94%, 57%, 0.1)',
+    '--color-shadow': 'rgba(73, 73, 73, 0.35)',
+    '--text-color-primary': '#314657',
+    '--text-color-secondary': '#58626e',
+    '--text-color-third': '#9db3be'
+};
+
+//Couleurs du theme sombre
+const darkTheme = {
+    '--white': '#222831',
+    '--lignt': '#fff',
+    '--desaturate-fuscha': 'hsla(162, 94%, 57%, 0.30)',
+    '--desaturate-fuscha-2': 'hsla(160, 94%, 57%, 0.20)',
+    '--color-shadow': 'rgba(255, 255, 255, 0.35)',
+    '--text-color-primary': '#ffffff',
+    '--text-color-secondary': '#ffffff',
+    '--text-color-third': '#ffffff'
+};
+
 function Header() {
     const navLinksRef = useRef(null); // Référence pour les liens de navigation
     const profileContainer = useRef(null); // Référence pour le conteneur du profil
@@ -75,6 +99,33 @@ function Header() {
         }
     };
 
+
+    const [theme, setTheme] = useState(lightTheme);// Definition de l'etat du theme
+
+    
+    useEffect(() => {
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            const parsedTheme = JSON.parse(savedTheme);
+            setTheme(parsedTheme);
+            applyTheme(parsedTheme);
+        }
+    }, []);// Savegarde le theme choisis
+
+    const applyTheme = (theme) => {
+        for (const [key, value] of Object.entries(theme)) {
+            document.documentElement.style.setProperty(key, value);
+        }
+    };
+
+    const toggleTheme = () => {
+        const newTheme = theme === lightTheme ? darkTheme : lightTheme;
+        setTheme(newTheme);
+        applyTheme(newTheme);
+        localStorage.setItem('theme', JSON.stringify(newTheme));
+    };
+
+
     return (
         <>
             <header>
@@ -88,14 +139,15 @@ function Header() {
                             <li><NavLink to='/louer'>Louer</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>
                             {user ? (
-                                <button onClick={logOut} className="loginLink">Logout</button>
+                                <button onClick={logOut} className="loginLink">Deconnexion</button>
                             ) : (
                                 <NavLink to='/auth/login' className="loginLink"><span>Se connecter</span></NavLink>
                             )}
                         </ul>
-                        <button className="searchBtn">
-                            <Link to='/rechercher'><FaSearch className="fa-solid faSearch" /></Link>
-                        </button>
+                        
+                        <Link to='/rechercher' className="searchBtn">
+                            <FaSearch className="fa-solid faSearch" />
+                        </Link>
                     </div>
 
                     <div className="profil">
@@ -106,16 +158,20 @@ function Header() {
                         />
                     </div>
                     <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
+                        {/*Switcher de theme*/}
+                <div className="App">
+                    <button onClick={toggleTheme} className="loginLink">Theme</button>
+                </div>
                 </nav>
-
+                
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
                         <div className="profileInformation">
                                 <Profil />
-                               
                         </div>
                     
                 </div>
+               
             </header>
         </>
     );

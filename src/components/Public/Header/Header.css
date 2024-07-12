@@ -13,7 +13,7 @@ html{
 
 body{
     background-color: var(--white);
-    color: var(--text-color-primary);
+    color: var(--lignt);
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
     overflow-x: hidden;
 }
@@ -29,7 +29,7 @@ body{
     width: 100%;
     box-sizing: border-box;
     height: 50px;
-    background-color: #fff;
+    background-color: var(--white);
     z-index: 99;
 }
 
@@ -143,14 +143,15 @@ body{
 
 .searchBtn{
     background: var(--fuscha);
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
     border: none;
     cursor: pointer;
     font-size: 18px;
     margin: auto 20px;
+    padding: 15px 18px;
+    text-align: center;
 }
+
 .searchBtn .fa-solid{
     color: var(--white);
 }
@@ -359,3 +360,6 @@ body{
         width: 60%;
     }
 }
+
+/*TOGGLE SWITCH THEME*/
+

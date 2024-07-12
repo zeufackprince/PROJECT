@@ -3,6 +3,7 @@ import { registerUser } from "../utils/ApiFunctions";
 import { Link, useNavigate } from "react-router-dom";
 import './Registration.css'
 import '../root.css'
+import agenceImg from '../../images/agence-immo.jpg'
 
 const Registration = () => {
 
@@ -95,13 +96,16 @@ const Registration = () => {
     };
 
     return (
-        <section className="container col-6 mt-5 mb-5">
-            {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
-            {successMessage && <p className="alert alert-success">{successMessage}</p>}
+        <section className="auth-container">
+           <div className="auth-form">
+                <div className="auth-image">
+                    <img src={agenceImg} alt="" />
+                </div>
+           <form onSubmit={handleRegistration} encType="multipart/form-data"   >
+                {errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
+                {successMessage && <p className="alert alert-success">{successMessage}</p>}
 
-            <h2>Register</h2>
-            <form onSubmit={handleRegistration} encType="multipart/form-data"   >
-                
+                <h2>Inscription</h2>
                 <div className="mb-3 row">
                     <label htmlFor="name" className="col-sm-2 col-form-label">Name</label>
                     <div className="col-sm-10">
@@ -191,15 +195,17 @@ const Registration = () => {
                     </div>
                 </div>
 
-                <div className="mb-4">
+                <div className="auth-btns">
                     <button type="submit" className="btn btn-hotel" >
                         Register
                     </button>
                     <span style={{ marginLeft: "0px" }}>
-                        Already have an account? <Link to={"/auth/login"}>Login</Link>
+                        Avez vous déjà un compte? <Link to={"/auth/login"}>Se connecter</Link>
                     </span>
                 </div>
             </form>
+           </div>
+            
 
  
 

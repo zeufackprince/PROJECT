@@ -5,10 +5,10 @@
 .searchForm {
     margin: 20px auto;
     padding: 20px;
-    border: 1px solid #fff;
+    border: 1px solid var(--var(--white));
     border-radius: 10px;
     max-width: 400px;
-    background-color: #fff;
+    background-color: var(--var(--white));
     box-shadow: var(--box-shadow);
     padding: 60px 30px;
     display: flex;
@@ -34,7 +34,7 @@
 }
 .searchForm input {
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #454545;
     border-radius: 5px;
     width: 96%;
 }
@@ -43,7 +43,7 @@
 .SearchBtn {
     padding: 10px 20px;
     background-color: var(--fuscha);
-    color: white;
+    color: var(--white);
     border: 1px solid var(--fuscha);
     border-radius: 10px;
     font-weight: bold;

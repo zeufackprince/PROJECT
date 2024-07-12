@@ -25,7 +25,6 @@
     overflow-y: hidden;
     width: 700px;
     height: 100px;
-    background: #949494;
     border-radius: 12px;
 }
 
@@ -34,8 +33,9 @@
 .belongInformations{
     display: flex;
     flex-direction: column;
-    margin: 15px;
+    margin: 15px 30px ;
     max-width: 950px;
+    color: var(--lignt);
 }
 .belongInformations h1{
     font-size: 60px;
@@ -47,7 +47,8 @@
     font-size: 20px;
     color: #0e0e0e;
     font-weight: 200;
-    margin:10px
+    margin:10px;
+    color: var(--lignt);
 }
 .belongInformations .belongDescription{
     text-align: justify;

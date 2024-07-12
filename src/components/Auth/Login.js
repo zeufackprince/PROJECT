@@ -3,6 +3,8 @@ import { loginUser } from "../utils/ApiFunctions"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "./AuthProvider"
 import './Login.css'
+import agenceImg from '../../images/agence-immo.jpg'
+
 const Login = () => {
 	const [errorMessage, setErrorMessage] = useState("")
 	const [login, setLogin] = useState({
@@ -61,51 +63,58 @@ const Login = () => {
 	// }
 
 	return (
-		<section className="container col-6 mt-5 mb-5">
-			{errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
-			<h2>Login</h2>
-			<form onSubmit={handleSubmit}>
-				<div className="row mb-3">
-					<label htmlFor="email" className="col-sm-2 col-form-label">
-						Email
-					</label>
-					<div>
-						<input
-							id="email"
-							name="email"
-							type="email"
-							className="form-control"
-							value={login.email}
-							onChange={handleInputChange}
-						/>
+		<section className="auth-container">
+			
+			<div className="auth-form">
+				<div className="auth-image">
+					<img src={agenceImg} alt="illustration agence immobiliere"/>
+				</div>
+				<form onSubmit={handleSubmit}>
+					{errorMessage && <p className="alert alert-danger">{errorMessage}</p>}
+					<h2>Connexion</h2>
+					<div className="row mb-3">
+						<label htmlFor="email" className="col-sm-2 col-form-label">
+							Email
+						</label>
+						<div>
+							<input
+								id="email"
+								name="email"
+								type="email"
+								className="form-control"
+								value={login.email}
+								onChange={handleInputChange}
+							/>
+						</div>
 					</div>
-				</div>
 
-				<div className="row mb-3">
-					<label htmlFor="password" className="col-sm-2 col-form-label">
-						Password
-					</label>
-					<div>
-						<input
-							id="password"
-							name="password"
-							type="password"
-							className="form-control"
-							value={login.password}
-							onChange={handleInputChange}
-						/>
+					<div className="row mb-3">
+						<label htmlFor="password" className="col-sm-2 col-form-label">
+							Password
+						</label>
+						<div>
+							<input
+								id="password"
+								name="password"
+								type="password"
+								className="form-control"
+								value={login.password}
+								onChange={handleInputChange}
+							/>
+						</div>
 					</div>
-				</div>
 
-				<div className="mb-4">
-					<button type="submit" className="btn btn-hotel" >
-						Login
-					</button>
-					<span style={{ marginLeft: "10px" }}>
-						Don't' have an account yet?<Link to={"/auth/inscription"}> Register</Link>
-					</span>
-				</div>
-			</form>
+					<div className="auth-btns">
+						<button type="submit" className="btn btn-hotel" >
+							Login
+						</button>
+						<span style={{ marginLeft: "10px" }}>
+							Vous n'avez pas de compte ?<Link to={"/auth/inscription"}> S'inscrire</Link>
+						</span>
+					</div>
+				</form>
+			</div>
+			
 		</section>
 	)
 }

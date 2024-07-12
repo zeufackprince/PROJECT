@@ -7,40 +7,58 @@ body {
 }
 
 /* Conteneur principal */
-.container {
-    background-color: #ffffff;
-    padding: 30px;
+.auth-container{
+    background-color: var(--white);
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 600px;
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
 }
 
 /* Titres */
-h2 {
+.auth-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     text-align: center;
 }
 
-/* Champs du formulaire */
-.form-control {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid var(--white);
-    border-radius: 5px;
-    margin-bottom: 10px;
+/*Image de coté */
+.auth-form{
+    display: flex;
+}
+.auth-form .auth-image img{
+    width: 500px;
 }
 
-.form-control:focus {
+/*Formulaire*/
+.auth-container form{
+    margin: 0 15px;
+    padding: 30px 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Champs du formulaire */
+.auth-form .form-control {
+    display: block;
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--lignt);
+    border-radius: 5px;
+    margin: 10px 15px;
+}
+
+.auth-form .form-control:focus {
     border-color: var(--fuscha);
     outline: none;
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
 /* Boutons */
-.btn {
+.auth-btns .btn {
     background-color: var(--fuscha);
     color: white;
     padding: 10px 20px;
@@ -48,11 +66,14 @@ h2 {
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition:  0.2s;
+    font-weight: bold;
+    margin: 10px;
+    display: block;
 }
 
-.btn:hover {
-    background-color: var(--fuscha);
+.auth-btns .btn:hover {
+    background: none;
 }
 
 /* Messages d'alerte */
@@ -71,14 +92,14 @@ h2 {
 }
 
 /* Liens */
-a {
+.auth-btns a {
     color: #007bff;
     text-decoration: none;
     transition: color 0.3s;
 }
 
-a:hover {
-    color: #0056b3;
+.auth-btns a:hover {
+    color: #ff0404;
 }
 
 /* Alignement des labels et des champs */
@@ -100,7 +121,7 @@ a:hover {
 }
 
 /* Marges pour le formulaire */
-form {
+.auth-login form {
     margin-top: 20px;
 }
 
@@ -108,11 +129,7 @@ form {
 .mb-3 {
     margin-bottom: 15px;
 }
-.mb-4 {
-    /* align-items: center;
-    margin-left: 30px; */
-    /* margin-left: 90px; */
-}
+
 
 .mt-5 {
     margin-top: 50px;
