@@ -26,8 +26,8 @@ function Apartement() {
         fetchBelongings();
     }, []);
 
-    const handlePublishClick = (id) => {
-        navigate('/admin/publish-Logement', { state: { id } });
+    const handlePublishClick = (bienId) => {
+        navigate('/admin/publish-Logement', { state: { bienId } });
     };
 
     if (isLoading) {

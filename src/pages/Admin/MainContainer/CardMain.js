@@ -1,12 +1,16 @@
 import React from 'react';
 import { FaHeart } from "react-icons/fa";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 
 function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localisation, status }) {
   const navigate = useNavigate();
 
   const handlePublishClick = () => {
     navigate('/admin/publish-Logement', { state: { bienId } });
+  };
+
+  const handleUpdateClick = () => {
+    navigate('/admin/update-Logement', { state: { bienId } });
   };
 
   return (
@@ -34,7 +38,7 @@ function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localis
 
         <div className="card-button">
             <button onClick={handlePublishClick} className="button1 btn">Publication</button>
-            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
+            <button onClick={handleUpdateClick} className="button1 btn">Modifier</button>
         </div>
     </div>
   );

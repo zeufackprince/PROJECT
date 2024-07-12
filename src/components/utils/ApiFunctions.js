@@ -160,9 +160,9 @@ export async function createNewBelonging(createBien) {
 }
 
 //update Belonging information
-export async function updateBelonging(updateBelonging) {
+export async function updateBelonging(bienId ,updateBelonging) {
 	try {
-		const response = await api.post(`/api/agent/update`, updateBelonging, {
+		const response = await api.put(`/api/agent/update/${bienId}`, updateBelonging, {
             headers: getHeaderMul()
         })
 		return response.data

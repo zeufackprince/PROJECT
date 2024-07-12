@@ -1,11 +1,20 @@
-import { useNavigate } from "react-router-dom";
-import React, {useState} from "react";
+import { useNavigate, useLocation } from "react-router-dom";
+import React, {useState , useEffect } from "react";
 import { updateBelonging } from "../../../../components/utils/ApiFunctions";
 
 const MiseAJourLogementForm = () => {
+  const location = useLocation();
+  const [belonging_id, setBelongingId] = useState('');
+
+  useEffect(() => {
+    if (location.state && location.state.bienId) {
+      setBelongingId(location.state.bienId);
+    }
+  }, [location.state]);
 
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
+        belongingId: belonging_id,
         name: '',
         type: '',
         dimension: '',
@@ -29,6 +38,7 @@ const MiseAJourLogementForm = () => {
       const handleSubmit = async (e) => {
         e.preventDefault();
         const data = new FormData();
+        data.append('belongingId', formData.belongingId)
         data.append('name', formData.name);
         data.append('type', formData.type);
         data.append('dimension', formData.dimension);
@@ -70,7 +80,7 @@ const MiseAJourLogementForm = () => {
                       type="text"
                       id="nomBatiment"
                       name="name"
-                      value={formData.name}
+                      value={belonging_id}
                       onChange={handleChange}
                       required
                     />

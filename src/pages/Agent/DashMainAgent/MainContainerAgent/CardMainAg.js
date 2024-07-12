@@ -1,8 +1,19 @@
 import React from 'react';
 import { FaHeart } from "react-icons/fa";
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function CardMainAg({bienId, imgSrc, title, likes, type, prix, dimension, localisation,status}) {
+
+    const navigate = useNavigate();
+  
+    const handlePublishClick = () => {
+      navigate('/agent/publish-Logement', { state: { bienId } });
+    };
+  
+    const handleUpdateClick = () => {
+      navigate('/agent/update-Logement', { state: { bienId } });
+    };
+  
   return (
     <div className='Card-Main'>
         <img src={imgSrc} alt="" />
@@ -28,11 +39,9 @@ function CardMainAg({bienId, imgSrc, title, likes, type, prix, dimension, locali
         </div>
 
         <div className="card-button">
-        {/* Link to Publication with bienId */}
-        <Link to={`/agent/publish-Logement/${bienId}`} className="button1 btn">Publication</Link>
-        {/* Link to Update with bienId */}
-        <Link to={`/agent/update-Logement/${bienId}`} className="button2 btn">Modify</Link>
-      </div>
+            <button onClick={handlePublishClick} className="button1 btn">Publication</button>
+            <button onClick={handleUpdateClick} className="button1 btn">Modifier</button>
+        </div>
     </div>
   )
 }
