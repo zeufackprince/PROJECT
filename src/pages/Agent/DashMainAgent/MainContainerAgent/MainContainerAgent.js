@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom';
 import { getAllBelongings } from '../../../../components/utils/ApiFunctions.js';
 import Banner from '../../../../images/Admin/banner.jpg';
 import CardMain from './CardMainAg.js';
-import Filters from '../../crud-logement-agent/FiltersAg.js'
 import MainRightBottom from './MainRightBottomAg.js';
 import '../../../Admin/MainContainer/MainContainer.css';
+import Filters from '../../../Admin/crud-app-logements/Filters.js';
 
 function MainContainerAgent() {
   const [belongings, setBelongings] = useState([]);

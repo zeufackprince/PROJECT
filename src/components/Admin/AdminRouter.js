@@ -12,9 +12,9 @@ import Notification from '../../pages/Admin/Notifications/Main';
 import miseAJourLogementForm from '../../pages/Admin/ManageLogement/updateLogement/miseAJourLogementForm';
 import PublishLogement from '../../pages/Admin/ManageLogement/publicationLogement/Main';
 import Logout from '../Auth/Logout';
-import Parametre from '../../pages/Parametre/Parametre';
 import RegistrationA from '../../pages/Admin/_authAdmin/RegistrationA';
 import EditAProfile from '../../pages/Admin/_authAdmin/EditAProfile';
+import Parametre from '../../pages/Parametre/Parametre';
 
 const AdminRouter = () => {
     return (
@@ -31,7 +31,7 @@ const AdminRouter = () => {
                 {/* vers le formulaire d'ajoute d'agent */}
                 <Route path='/new-agent' element={<RegistrationA/>} />
 
-                {/* vers la list des utilisateur */}
+                {/* */}
                 <Route path='/editer-profil' element={<EditAProfile/>} />
 
                 {/*  */}

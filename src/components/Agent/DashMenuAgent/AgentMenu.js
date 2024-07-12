@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
-import './agentMenu.css';
 import { Link } from 'react-router-dom';
 import {
   FaEnvelope,
-  FaUsers,
   FaSignOutAlt,
   FaBuilding,
   FaBorderAll,
@@ -35,7 +33,7 @@ function AgentMenu() {
         </ul>
 
         <ul className='last-Menu'>
-        <li><Link to=''><FaCog /><span>Paramètres</span></Link></li>
+        <li><Link to='/agent/parametre'><FaCog /><span>Paramètres</span></Link></li>
         <li><Link onClick={handleLogout}><FaSignOutAlt /><span>Déconnexion</span></Link></li>
         </ul>
     </menu>

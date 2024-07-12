@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './parametre.css';
-import { getAllUsersProfile } from '../../components/utils/ApiFunctions';
+import './parametreAgent.css';
+import { getAllUsersProfile } from '../../../components/utils/ApiFunctions';
 import { FaPen } from 'react-icons/fa';
 
-function Parametre() {
+function ParametreAgent() {
     const [profile, setProfile] = useState(null);
     const [errorMessage, setErrorMessage] = useState('');
     
@@ -51,8 +51,7 @@ function Parametre() {
                     <h3>PARAMETRES</h3>
                     <p className='barre'></p>
                 <div className="action-buttons">
-                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.  <Link to='/admin/new-agent' className="full-width-button">Create New Agent</Link></div>
-                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/' className="full-width-button delete-button">Delete Account</Link></div>
+                       <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/' className="full-width-button delete-button">Delete Account</Link></div>
                 </div>
             </div>
 
@@ -61,4 +60,4 @@ function Parametre() {
     );
 }
 
-export default Parametre;
+export default ParametreAgent;

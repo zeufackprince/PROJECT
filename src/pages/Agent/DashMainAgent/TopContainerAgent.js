@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBell } from "react-icons/fa";
 import { getAllUsersProfile } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
+
 function TopContainerAgent() {
   const [userProfile, setUserProfile] = useState({
     name: '',
@@ -33,7 +34,7 @@ function TopContainerAgent() {
           <Link to='/' id=""><FaBell /></Link>     
         </i>
         <div className="profileImage">
-          <Link to='/'><img src={userProfile.posterUrl} alt="User profile" /></Link>
+          <img src={userProfile.posterUrl} alt="User profile" />
         </div>
         <p className="profileName"><span>{userProfile.email}</span></p>
       </div>
