@@ -2,7 +2,7 @@ import React from 'react';
 import { FaHeart } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
-function CardMainAg({imgSrc, title, likes, type, prix, dimension, localisation,status}) {
+function CardMainAg({bienId, imgSrc, title, likes, type, prix, dimension, localisation,status}) {
   return (
     <div className='Card-Main'>
         <img src={imgSrc} alt="" />
@@ -28,9 +28,11 @@ function CardMainAg({imgSrc, title, likes, type, prix, dimension, localisation,s
         </div>
 
         <div className="card-button">
-            <Link to='/admin/publish-Logement' className="button1 btn">Publication</Link>
-            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
-        </div>
+        {/* Link to Publication with bienId */}
+        <Link to={`/agent/publish-Logement/${bienId}`} className="button1 btn">Publication</Link>
+        {/* Link to Update with bienId */}
+        <Link to={`/agent/update-Logement/${bienId}`} className="button2 btn">Modify</Link>
+      </div>
     </div>
   )
 }

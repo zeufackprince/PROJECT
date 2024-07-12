@@ -9,18 +9,21 @@ import Room from '../../pages/Admin/ManageLogement/Room';
 import Studios from '../../pages/Admin/ManageLogement/Studios';
 import Apartements from '../../pages/Admin/ManageLogement/Apartement';
 import Notification from '../../pages/Admin/Notifications/Main';
-import miseAJourLogementForm from '../../pages/Admin/ManageLogement/updateLogement/miseAJourLogementForm';
+import MiseAJourLogementForm from '../../pages/Admin/ManageLogement/updateLogement/miseAJourLogementForm';
 import PublishLogement from '../../pages/Admin/ManageLogement/publicationLogement/Main';
 import Logout from '../Auth/Logout';
 import RegistrationA from '../../pages/Admin/_authAdmin/RegistrationA';
 import EditAProfile from '../../pages/Admin/_authAdmin/EditAProfile';
 import Parametre from '../../pages/Parametre/Parametre';
+import Acceuil from '../../pages/Accueil/Acceuil';
 
 const AdminRouter = () => {
     return (
          <Routes>
             <Route element ={<ALayout/>}>
                 <Route index element ={<DashMain/>}/>
+
+                <Route path='/' element={<Acceuil/>}/>
 
                 {/* vers le menu de l'admin */}
                 <Route path='/dashboard' element ={<DashMain/>}/>
@@ -41,7 +44,7 @@ const AdminRouter = () => {
                 <Route path='/studios' element={<Studios />} />
                 <Route path='/apartement' element={<Apartements />} />
                 <Route path='/notification' element={<Notification />} />
-                <Route path='/update-Logement' element={<miseAJourLogementForm />} />
+                <Route path='/update-Logement' element={<MiseAJourLogementForm />} />
                 <Route path='/publish-Logement' element={<PublishLogement />} />
                 <Route path='/parametre' element={<Parametre/>} />
                 <Route path='/deconnexion' element={<Logout/>} />

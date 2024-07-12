@@ -45,7 +45,7 @@ const CreateNewBelongingForm = () => {
     try {
       const response = await createNewBelonging(data);
       alert(`Belonging with name ${response.nom} created successfully`);
-      const destination = "/admin/dashboard"
+      const destination = "/agent/dashboard"
       navigate(destination, { replace: true });
       
     } catch (error) {

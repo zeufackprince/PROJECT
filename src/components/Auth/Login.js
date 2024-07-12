@@ -15,9 +15,6 @@ const Login = () => {
 	const navigate = useNavigate()
 	const auth = useAuth()
 	const location = useLocation()
-	// let redirectUrl = location.state?.path || "/"
-	// let token = null
-	// let Role = null
 
 	const handleInputChange = (e) => {
 		setLogin({ ...login, [e.target.name]: e.target.value })
@@ -31,8 +28,14 @@ const Login = () => {
 			const role = success.role
 			auth.handleLogin(token, role)
 
-			const redirectUrl = role === 'ADMIN' ? '/admin' : '/';
-            // navigate(destination, { replace: true });
+			let redirectUrl = ''
+			if(role === 'ADMIN'){
+				redirectUrl = '/admin'
+			}else if(role === 'AGENT'){
+				redirectUrl = '/agent'
+			}else{
+				redirectUrl = '/'
+			}
 
 			navigate(redirectUrl, { replace: true })
 		} else {
@@ -43,24 +46,6 @@ const Login = () => {
 		}, 4000)
 	}
 	
-
-	// const handleSubmit = async (e) => {
-	// 		e.preventDefault()
-	// 		const success = await loginUser(login)
-	// 		// ... (existing code)
-	// 	if (success) {
-	// 		   token = success.data.token;
-	// 		   Role = success.data.role;
-	// 		  auth.handleLogin(token);
-	// 		  const destination = Role === 'ADMIN' ? '/admin' : '/';
-	// 		  navigate(destination, { replace: true });
-	// 	} else {
-	// 		setErrorMessage("Invalid username or password. Please try again." + token)
-	// 	}
-	// 	setTimeout(() => {
-	// 		setErrorMessage("")
-	// 	}, 4000)
-	// }
 
 	return (
 		<section className="auth-container">

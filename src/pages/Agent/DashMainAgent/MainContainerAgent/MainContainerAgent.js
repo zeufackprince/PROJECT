@@ -37,7 +37,7 @@ function MainContainerAgent() {
             <h2>2.500 $</h2>
             <p>Uploaded by Marc Annil</p>
             <div className="bid">
-              <Link to='/' className="button1">Rent now</Link>
+              <Link to='/admin' className="button1">Rent now</Link>
               <p>Ending In <span>5d:13h:20m</span></p>
             </div>
           </div>

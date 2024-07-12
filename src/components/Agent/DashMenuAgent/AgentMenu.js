@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect , useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   FaEnvelope,
+  FaHome,
   FaSignOutAlt,
   FaBuilding,
   FaBorderAll,
   FaCog
 } from "react-icons/fa";
-import { useAuth } from '../../Auth/AuthProvider';
+import { AuthContext } from "../../Auth/AuthProvider"
 
 
 function AgentMenu() {
-  const { user, handleLogout } = useAuth()
+
+  const auth = useContext(AuthContext);
+  const navigate = useNavigate()
   
   useEffect(() => {
     const mainMenuLi = document.querySelectorAll("#main-Menu li")
@@ -22,11 +25,17 @@ function AgentMenu() {
     mainMenuLi.forEach((n) => n.addEventListener("click", changeActive))
   }, []);
 
+  const handleLogout = () => {
+    auth.handleLogout();
+    navigate('/', { state: { message: "You have been logged out!" } });
+  }
+
   
   return (
     <menu>
        <h1 className='logo'>IMMOBILIUS</h1>
         <ul id="main-Menu">
+          <li><Link to='/'><FaHome /><span>Accuile</span> </Link></li>
           <li><Link to='/agent/dashboard'><FaBorderAll /><span>Dashboard</span> </Link></li>
           <li><Link to='/agent/notification'><FaEnvelope /><span>Notifications</span></Link></li>
           <li><Link to='/agent/crud-logements'><FaBuilding /><span>Logements</span></Link></li>
@@ -34,7 +43,7 @@ function AgentMenu() {
 
         <ul className='last-Menu'>
         <li><Link to='/agent/parametre'><FaCog /><span>Paramètres</span></Link></li>
-        <li><Link onClick={handleLogout}><FaSignOutAlt /><span>Déconnexion</span></Link></li>
+        <li><button onClick={handleLogout} className="logout-button"><FaSignOutAlt /><span>Déconnexion</span></button></li>
         </ul>
     </menu>
   );

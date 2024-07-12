@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllNotificationAgent } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
+import { getAllNotificationAdmin } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
 import './MainRightBottom.css'; // Add the necessary CSS file if not already added
 
 const profile = process.env.PUBLIC_URL + '/images/images.png';
@@ -11,7 +11,7 @@ function MainRightBottom() {
   useEffect(() => {
     const fetchNotifications = async () => {
       try {
-        const result = await getAllNotificationAgent();
+        const result = await getAllNotificationAdmin();
         setNotifications(result.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)));
       } catch (error) {
         console.error('Error fetching notifications:', error);
@@ -31,7 +31,7 @@ function MainRightBottom() {
     <div className='bottomRightCard'>
       <div className="bottomName">       
         <h2>Messages</h2>
-        <Link to='/'>View More</Link>
+        <Link to='/admin/notification'>View More</Link>
       </div>
 
       <div className='notifContainer'>

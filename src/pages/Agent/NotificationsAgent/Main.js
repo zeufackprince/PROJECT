@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import '../../Admin/Notifications/Main.css';
 import { getAllNotificationAgent } from '../../../components/utils/ApiFunctions';  // Assurez-vous que le chemin est correct
 
+const profile = process.env.PUBLIC_URL + '/images/images.png'
+
 function Main() {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true); // Ajout d'un état de chargement
@@ -41,7 +43,10 @@ function Main() {
       ) : (
         notifications.map(notification => (
           <div key={notification.notif_id} className="notification-item">
-            <div className="notification-message">{notification.not_message}</div>
+            <div className="notif-image">
+                <img src={notification.posterUrl || profile} alt="photo de profile" /> {/* Use a default image if posterUrl is not available */}
+                <div className="notification-message">{notification.not_message}</div>
+            </div>
             <button
               className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
               onClick={() => handleToggleNotification(notification.notif_id)}
