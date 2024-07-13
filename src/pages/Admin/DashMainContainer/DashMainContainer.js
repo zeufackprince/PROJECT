@@ -4,7 +4,7 @@ import { getAllBelongings } from '../../../components/utils/ApiFunctions.js';
 import './DashMainContainer.css';
 import Banner from '../../../images/Admin/banner.jpg';
 import CardMain from './CardMain.js';
-import MainRightBottom from './AdminMessages.js';
+import AdminMessages from './AdminMessages.js';
 
 import Filters from '../crud-app-logements/Filters.js';
 
@@ -26,7 +26,7 @@ function MainContainer() {
 
   return (
     <div className='MainContainer'>
-      <div className="left">
+      <div className="Main-Section">
         <div className="banner" style={{
           background: `url(${Banner})`,
           backgroundRepeat: 'no-repeat',
@@ -64,9 +64,7 @@ function MainContainer() {
           </main>
         </div>
       </div>
-      <div className="right">
-        <MainRightBottom />
-      </div>
+      <AdminMessages />
     </div>
   );
 }

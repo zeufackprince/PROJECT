@@ -32,30 +32,31 @@ function Main() {
   };
 
   if (loading) {
-    return <div className="container">Chargement...</div>;
+    return <div className="Container">Chargement...</div>;
   }
 
   return (
-    <div className="container">
+    <div className="Container">
       <h1>Notifications</h1>
       {notifications.length === 0 ? (
         <p>Aucune notification disponible</p>
       ) : (
         notifications.map(notification => (
-          
-          <div key={notification.notif_id} className="notification-item">
-            <div className="notif-image">
-                <img src={notification.posterUrl || profile} alt="photo de profile" /> {/* Use a default image if posterUrl is not available */}
-                <div className="notification-message">{notification.not_message}</div>
-            </div>
-            
-            <button
-              className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
-              onClick={() => handleToggleNotification(notification.notif_id)}
-            >
-              {notification.isActive ? 'Désactiver' : 'Réactiver'}
-            </button>
-          </div>
+          <div className='notification-Block'>
+             <div key={notification.notif_id} className="notification-item">
+              <div className="notif-image">
+                  <img src={notification.posterUrl || profile} alt="photo de profile" /> {/* Use a default image if posterUrl is not available */}
+                  <div className="notification-message">{notification.not_message}</div>
+              </div>
+              
+              <button
+                className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
+                onClick={() => handleToggleNotification(notification.notif_id)}
+              >
+                {notification.isActive ? 'Désactiver' : 'Réactiver'}
+              </button>
+            </div>           
+          </div>          
         ))
       )}
     </div>

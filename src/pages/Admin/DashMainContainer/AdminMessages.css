@@ -1,14 +1,13 @@
-/* MainRightBottom.css */
 
   .MessagesContainer {
     background: #f8f8f8;
-    width: 100%;
-    max-height: 840px !important;
+    width: calc(100% - 70%);
+    height: auto !important;
     border-radius: 0.5em;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
     padding: 10px 20px;
-    overflow-y: auto;
-    transition: overflow-y 0.3s ease;
+    overflow-y: hidden;
+    transition: all 0.3s ease-in-out;
   }
 
   .MessagesContainer::-webkit-scrollbar {

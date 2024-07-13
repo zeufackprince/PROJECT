@@ -5,14 +5,21 @@
     background-color: #f0f0f0;
   }
   
-  .container {
+  .Notif-Container {
     width: 100%;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
     padding: 20px;
+    overflow-y: scroll;
   }
   
+  .notification-Block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+
+  }
+
   .notification-item {
     display: flex;
     justify-content: space-between;
@@ -27,6 +34,11 @@
   .notification-message {
     flex-grow: 1;
     margin-right: 20px;
+  }
+
+  .notif-image img{
+    width: 80px;
+    height: 80px;
   }
   
   .notification-button {

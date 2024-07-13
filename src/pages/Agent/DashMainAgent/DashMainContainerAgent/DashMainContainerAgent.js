@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { getAllBelongings } from '../../../../components/utils/ApiFunctions.js';
 import Banner from '../../../../images/Admin/banner.jpg';
 import CardMain from './CardMainAg.js'
-import MainRightBottom from './AgentMessages.js';
+import AdminMessages from './AgentMessages.js';
 import '../../../Admin/DashMainContainer/DashMainContainer.css';
 import Filters from '../../crud-app-logements/FiltersAg.js';
 
@@ -63,9 +63,7 @@ function MainContainerAgent() {
           </main>
         </div>
       </div>
-      <div className="right">
-        <MainRightBottom />
-      </div>
+      <AdminMessages />
     </div>
   );
 }
