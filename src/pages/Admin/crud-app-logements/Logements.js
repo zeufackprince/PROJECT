@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import CardMain from '../MainContainer/CardMain';
+import CardMain from '../DashMainContainer/CardMain';
 import { getAllBelongings } from '../../../components/utils/ApiFunctions';
 import './Main.css';
 import Filters from './Filters';

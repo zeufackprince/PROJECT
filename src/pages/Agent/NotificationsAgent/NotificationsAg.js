@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../../Admin/Notifications/Main.css';
+import '../../Admin/Notifications/NotificationsAdmin.css';
 import { getAllNotificationAgent } from '../../../components/utils/ApiFunctions';  // Assurez-vous que le chemin est correct
 
 const profile = process.env.PUBLIC_URL + '/images/images.png'

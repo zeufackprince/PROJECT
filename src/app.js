@@ -26,7 +26,7 @@ class App extends React.Component {
                              // </ProtectedRoute>
                         } />
 
-                        <Route path="/agent/*" element = {<AgentRouter/>}/>
+                        <Route path="/agent/*" element = {<AgentRouter />}/>
 
                         <Route path='/auth/*' element={<AuthRouter />}>
                             <Route path='inscription' element={<Registration />} />
