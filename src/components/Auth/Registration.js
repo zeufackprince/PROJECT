@@ -163,6 +163,7 @@ const Registration = () => {
                             placeholder="ex :2376"
                             value={registration.telephone}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>

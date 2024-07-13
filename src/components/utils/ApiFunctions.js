@@ -50,7 +50,7 @@ export async function loginUser(login) {
 	try {
 		const response = await api.post("/auth/login", login)
 		if (response.data.statusCode >= 200 && response.data.statusCode < 300) {
-			console.log(response)
+			
 			return response.data
 		} else {
 			return null

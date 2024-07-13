@@ -34,7 +34,7 @@ const Details = () => {
                 publicationId: id
             };
             const result = await sendNotification(notificationData);
-            setSuccessMessage("Message sent successfully");
+            setSuccessMessage(result);
             setErrorMessage("");
         } catch (error) {
             setSuccessMessage("");
@@ -111,7 +111,7 @@ const Details = () => {
 
                 <div className="belongInformations">
 
-                    <h1 className='titleBelong'>{bien.nom}</h1>
+                    <h1 className='titleBelong'>{bien.titre}</h1>
                     <h1 className="price">{`${bien.prix} Fcfa`}</h1>
                     <h5 className="belongDescription">{bien.description}</h5>
                     <h5 className="description">{bien.type} - {bien.dimension} (m<sup>2</sup>)</h5>

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import { loginUser } from "../utils/ApiFunctions"
-import { Link, useLocation, useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { useAuth } from "./AuthProvider"
 import './Login.css'
 import agenceImg from '../../images/agence-immo.jpg'
@@ -14,7 +14,7 @@ const Login = () => {
 
 	const navigate = useNavigate()
 	const auth = useAuth()
-	const location = useLocation()
+	
 
 	const handleInputChange = (e) => {
 		setLogin({ ...login, [e.target.name]: e.target.value })
