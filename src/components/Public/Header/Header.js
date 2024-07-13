@@ -167,7 +167,7 @@ function Header() {
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
                         <div className="profileInformation">
-                                <Profil />
+                            <Profil />
                         </div>
                     
                 </div>

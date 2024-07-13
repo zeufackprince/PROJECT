@@ -35,7 +35,7 @@ function AgentMenu() {
     <menu>
        <h1 className='logo'>IMMOBILIUS</h1>
         <ul id="main-Menu">
-          <li><Link to='/'><FaHome /><span>Accuile</span> </Link></li>
+          <li><Link to='/'><FaHome /><span>Accueil</span> </Link></li>
           <li><Link to='/agent/dashboard'><FaBorderAll /><span>Dashboard</span> </Link></li>
           <li><Link to='/agent/notification'><FaEnvelope /><span>Notifications</span></Link></li>
           <li><Link to='/agent/crud-logements'><FaBuilding /><span>Logements</span></Link></li>

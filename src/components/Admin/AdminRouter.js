@@ -4,11 +4,11 @@ import ALayout from './ALayout';
 import DashMain from '../../pages/Admin/DashMain/DashMain'
 import MainList from '../../pages/Admin/crud-app-clients/MainList';
 import CreateNewBelongingForm from '../../pages/Admin/ManageLogement/addlogements/CreateNewBelongingForm'
-import Logements from '../../pages/Admin/crud-app-logements/Main';
+import Logements from '../../pages/Admin/crud-app-logements/Logements';
 import Room from '../../pages/Admin/ManageLogement/Room';
 import Studios from '../../pages/Admin/ManageLogement/Studios';
 import Apartements from '../../pages/Admin/ManageLogement/Apartement';
-import Notification from '../../pages/Admin/Notifications/Main';
+import Notification from '../../pages/Admin/Notifications/NotificationsAdmin';
 import MiseAJourLogementForm from '../../pages/Admin/ManageLogement/updateLogement/miseAJourLogementForm';
 import PublishLogement from '../../pages/Admin/ManageLogement/publicationLogement/Main';
 import Logout from '../Auth/Logout';

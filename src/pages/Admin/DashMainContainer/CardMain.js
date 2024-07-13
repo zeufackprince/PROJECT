@@ -37,8 +37,8 @@ function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localis
         </div>
 
         <div className="card-button">
-            <button onClick={handlePublishClick} className="button1 btn">Publication</button>
-            <button onClick={handleUpdateClick} className="button1 btn">Modifier</button>
+            <button onClick={handlePublishClick} className="button1">Publication</button>
+            <button onClick={handleUpdateClick} className="button1">Modifier</button>
         </div>
     </div>
   );

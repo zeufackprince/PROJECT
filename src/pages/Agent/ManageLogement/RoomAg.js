@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Filters from '../../Admin/crud-app-logements/Filters';
-import { getBelongingsBytype2 } from '../../../components/utils/ApiFunctions'; // Import the API function
+import { getBelongingsBytype1 } from '../../../components/utils/ApiFunctions'; // Import the API function
 import { FaHeart } from 'react-icons/fa'; // Import the FaHeart icon
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing
 import './typebelongings.css'; // Import the CSS file
 
-function Studios() {
+function Room() {
     const [belongings, setBelongings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
@@ -14,7 +14,7 @@ function Studios() {
     useEffect(() => {
         const fetchBelongings = async () => {
             try {
-                const data = await getBelongingsBytype2();
+                const data = await getBelongingsBytype1();
                 setBelongings(data);
                 setIsLoading(false);
             } catch (error) {
@@ -66,8 +66,8 @@ function Studios() {
                         </div>
 
                         <div className="card-button">
-                            <button onClick={() => handlePublishClick(belonging.id)} className="button1 btn">Publication</button>
-                            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
+                            <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
+                            <Link to='/admin/update-Logement' className="button1">Modify</Link>
                         </div>
                     </div>
                 ))}
@@ -76,4 +76,4 @@ function Studios() {
     );
 }
 
-export default Studios;
+export default Room;

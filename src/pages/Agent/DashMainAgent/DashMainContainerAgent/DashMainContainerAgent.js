@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { getAllBelongings } from '../../../components/utils/ApiFunctions.js';
-import './MainContainer.css';
-import Banner from '../../../images/Admin/banner.jpg';
-import CardMain from './CardMain.js';
-import MainRightBottom from './MainRightBottom.js';
+import { getAllBelongings } from '../../../../components/utils/ApiFunctions.js';
+import Banner from '../../../../images/Admin/banner.jpg';
+import CardMain from './CardMainAg.js'
+import MainRightBottom from './AgentMessages.js';
+import '../../../Admin/DashMainContainer/DashMainContainer.css';
+import Filters from '../../crud-app-logements/FiltersAg.js';
 
-import Filters from '../crud-app-logements/Filters.js';
-
-function MainContainer() {
+function MainContainerAgent() {
   const [belongings, setBelongings] = useState([]);
 
   useEffect(() => {
@@ -38,7 +37,7 @@ function MainContainer() {
             <h2>2.500 $</h2>
             <p>Uploaded by Marc Annil</p>
             <div className="bid">
-              <Link to='/' className="button1">Rent now</Link>
+              <Link to='/admin' className="button1">Rent now</Link>
               <p>Ending In <span>5d:13h:20m</span></p>
             </div>
           </div>
@@ -71,4 +70,4 @@ function MainContainer() {
   );
 }
 
-export default MainContainer;
+export default MainContainerAgent;

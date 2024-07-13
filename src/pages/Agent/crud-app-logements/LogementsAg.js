@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import CardMain from '../MainContainer/CardMain';
 import { getAllBelongings } from '../../../components/utils/ApiFunctions';
-import './Main.css';
-import Filters from './Filters';
+import './LogementsAg.css';
+import CardMain from '../DashMainAgent/DashMainContainerAgent/CardMainAg';
+import Filters from '../../Admin/crud-app-logements/Filters';
 
 function Main() {
     const [publications, setPublications] = useState([]);

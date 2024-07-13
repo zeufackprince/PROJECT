@@ -4,12 +4,12 @@ import AgentLayout from './AgentLayout';
 import DashMainAgent from '../../pages/Agent/DashMainAgent/DashMainAgent';
 import ParametreAgent from '../../pages/Agent/Parametre/ParametreAgent';
 import CreateNewBelongingForm from '../../pages/Agent/ManageLogement/addlogements/CreateNewBelongingForm'
-import Logements from '../../pages/Admin/crud-app-logements/Main';
-import Room from '../../pages/Agent/ManageLogement/Room';
-import Studios from '../../pages/Agent/ManageLogement/Studios';
-import Apartement from '../../pages/Agent/ManageLogement/Apartement';
+import Logements from '../../pages/Agent/crud-app-logements/LogementsAg';
+import Room from '../../pages/Agent/ManageLogement/RoomAg';
+import Studios from '../../pages/Agent/ManageLogement/StudiosAg';
+import Apartement from '../../pages/Agent/ManageLogement/ApartementAg';
 import PublishLogement from '../../pages/Agent/ManageLogement/publicationLogement/Main';
-import Notification from '../../pages/Agent/NotificationsAgent/Main';
+import Notification from '../../pages/Agent/NotificationsAgent/NotificationsAg';
 import Logout from '../Auth/Logout';
 import EditAProfile from '../../pages/Admin/_authAdmin/EditAProfile';
 import Acceuil from '../../pages/Accueil/Acceuil';
