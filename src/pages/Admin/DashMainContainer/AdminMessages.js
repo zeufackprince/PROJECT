@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllNotificationAdmin } from '../../../components/utils/ApiFunctions'; // Adjust the import according to your project structure
-import './MainRightBottom.css'; // Add the necessary CSS file if not already added
+import './AdminMessages.css'; // Add the necessary CSS file if not already added
 
 const profile = process.env.PUBLIC_URL + '/images/images.png';
 
@@ -46,7 +46,7 @@ function MainRightBottom() {
                   {notification.publication_name} <span>{notification.not_message}</span>
               </p>
               <p className="notif-time">{new Date(notification.createdAt).toLocaleString()}</p>
-              <button onClick={() => handleMarkAsRead(notification.notif_id)} className="button1 btn">Read</button>
+              <button onClick={() => handleMarkAsRead(notification.notif_id)} className="button1">Read</button>
             </div>
           ))
         }

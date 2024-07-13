@@ -1,13 +1,13 @@
 import React from 'react';
-import TopContainerAgent from './TopContainerAgent';
-import MainContainerAgent from './MainContainerAgent/MainContainerAgent';
-import './dashMainAgent.css';
+import TopContainerAgent from './DashTopContainerAgent';
+import DashMainContainerAgent from './DashMainContainerAgent/DashMainContainerAgent';
+import './DashMainAgent.css';
 
 const DashMainAgent = () => {
     return (
         <div className='dash-container'>
             <TopContainerAgent/>
-            <MainContainerAgent/>
+            <DashMainContainerAgent/>
         </div>
     );
 };

@@ -66,8 +66,8 @@ function Room() {
                         </div>
 
                         <div className="card-button">
-                            <button onClick={() => handlePublishClick(belonging.id)} className="button1 btn">Publication</button>
-                            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
+                            <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
+                            <Link to='/admin/update-Logement' className="button1">Modify</Link>
                         </div>
                     </div>
                 ))}
