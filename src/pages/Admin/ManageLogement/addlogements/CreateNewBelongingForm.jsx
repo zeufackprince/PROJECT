@@ -16,6 +16,7 @@ const CreateNewBelongingForm = () => {
     // status: ''
   });
   const [images, setImages] = useState([]);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -25,8 +26,15 @@ const CreateNewBelongingForm = () => {
   };
 
   const handleFileChange = (e) => {
-    setImages(e.target.files);
-  };
+    const selectedFiles = Array.from(e.target.files);
+    if (selectedFiles.length > 5) {
+      setError('Vous ne pouvez importer que 5 images au maximum.');
+      setImages([]);
+    } else {
+      setError('');
+      setImages(selectedFiles);
+    }
+  };// Imposer un nombre limité d'image
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -173,6 +181,7 @@ const CreateNewBelongingForm = () => {
                   required
                   className="form-control"
                 />
+                {error && <p className="error-message">{error}</p>}
               </div>
             </div>
           </div>
