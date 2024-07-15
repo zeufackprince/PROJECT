@@ -4,7 +4,7 @@ import { getAllNotificationAgent } from '../../../../components/utils/ApiFunctio
 
 const profile = process.env.PUBLIC_URL + '/images/images.png';
 
-function MainRightBottomAg() {
+function AgentMessages() {
   const [notifications, setNotifications] = useState([]);
 
   useEffect(() => {
@@ -27,25 +27,32 @@ function MainRightBottomAg() {
   };
 
   return (
-    <div className='bottomRightCard'>
-      <div className="bottomName">       
+    <div className='MessagesContainer'>
+      <div className="Name">       
         <h2>Messages</h2>
         <Link to='/'>View More</Link>
       </div>
 
-      <div className='notifContainer'>
+      <div className='NotifContainer'>
         {
           notifications && notifications.map((notification) => 
           (
-            <div className={`notifactions ${notification.isRead ? 'read' : ''}`} key={notification.notif_id}>
-              <div className="notif-image">
+            <div className={`Notifactions ${notification.isRead ? 'read' : ''}`} key={notification.notif_id}>
+              <div className="Notif-Profile">
                 <img src={notification.posterUrl || profile} alt="photo de profile" /> {/* Use a default image if posterUrl is not available */}
+                <p className="Notif-Name">
+                  {notification.publication_name}
+                </p>
               </div>
-              <p className="notif-name">
-                  {notification.publication_name} <span>{notification.not_message}</span>
+
+              <p className="Notif-Message">
+                  {notification.not_message}
               </p>
-              <p className="notif-time">{new Date(notification.createdAt).toLocaleString()}</p>
-              <button onClick={() => handleMarkAsRead(notification.notif_id)} className="button1 btn">Read</button>
+
+              <div className="Notif-Extra">
+                <p className="Notif-time">{new Date(notification.createdAt).toLocaleString()}</p>
+                <button onClick={() => handleMarkAsRead(notification.notif_id)} className="button1">Read</button>
+              </div>
             </div>
           ))
         }
@@ -54,4 +61,4 @@ function MainRightBottomAg() {
   )
 }
 
-export default MainRightBottomAg;
+export default AgentMessages;

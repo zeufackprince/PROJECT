@@ -108,6 +108,7 @@ const RegistrationA = () => {
                             className="form-control"
                             value={registration.name}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -122,6 +123,7 @@ const RegistrationA = () => {
                             className="form-control"
                             value={registration.email}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -136,6 +138,7 @@ const RegistrationA = () => {
                             name="password"
                             value={registration.password}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -152,6 +155,7 @@ const RegistrationA = () => {
                             placeholder="ex :2376"
                             value={registration.telephone}
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>
@@ -165,7 +169,9 @@ const RegistrationA = () => {
                             className="form-control"
                             value={registration.role}
                             onChange={handleInputChange}
-                        >
+                            required
+                        >   
+                            <option >----------</option>
                             <option value="AGENT">AGENT</option>
                         </select>
                     </div>
@@ -180,6 +186,7 @@ const RegistrationA = () => {
                             type="file"
                             className="form-control"
                             onChange={handleInputChange}
+                            required
                         />
                     </div>
                 </div>

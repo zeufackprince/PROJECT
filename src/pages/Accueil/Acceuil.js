@@ -65,9 +65,7 @@ const Acceuil = ({ addFavori, favoris }) => {
         <>
             <section className="presentation">
                 {message && <p className="text-warning px-5">{message}</p>}
-                {currentUser && (
-                    <h6 className="text-success text-center succes-message"> You are logged-In as {currentUser}</h6>
-                )}
+                
                 <div className="txtPres">
                     <h1>BIENVENU SUR IMMOBILIUS</h1>
                     <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cum ullam fugiat cupiditate neque, fugit consequuntur reiciendis incidunt quis placeat odio quo, asperiores voluptatum facilis id veritatis expedita corrupti tempore.</h3>
@@ -89,7 +87,7 @@ const Acceuil = ({ addFavori, favoris }) => {
                     {biens.map(bien => (
                         <div className="bienImmo" key={bien.id}>
                             <img src={bien.posterUrl[0]} alt="" /> {/* Assuming posterUrl is an array of URLs */}
-                            <p className="titreArticle">{bien.nom}</p>
+                            <p className="titreArticle">{bien.titre}</p>
                             <p className="price">{`${bien.prix}Fcfa`}</p>
                             {/* <p className='description'>{bien.description}</p> */}
                             <FaHeart 

@@ -1,14 +1,19 @@
 import React from 'react';
 import { FaHeart } from "react-icons/fa";
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localisation, status }) {
-  const navigate = useNavigate();
+function CardMainAg({bienId, imgSrc, title, likes, type, prix, dimension, localisation,status}) {
 
-  const handlePublishClick = () => {
-    navigate('/admin/publish-Logement', { state: { bienId } });
-  };
-
+    const navigate = useNavigate();
+  
+    const handlePublishClick = () => {
+      navigate('/agent/publish-Logement', { state: { bienId } });
+    };
+  
+    const handleUpdateClick = () => {
+      navigate('/agent/update-Logement', { state: { bienId } });
+    };
+  
   return (
     <div className='Card-Main'>
         <img src={imgSrc} alt="" />
@@ -30,14 +35,15 @@ function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localis
             <p>Etat <span>{status}</span></p>
             <p>Dimension<span>{dimension}</span></p>
             <p>Localisation<span>{localisation}</span></p>
+
         </div>
 
         <div className="card-button">
-            <button onClick={handlePublishClick} className="button1 btn">Publication</button>
-            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
+            <button onClick={handlePublishClick} className="button1">Publication</button>
+            <button onClick={handleUpdateClick} className="button1">Modifier</button>
         </div>
     </div>
-  );
+  )
 }
 
-export default CardMain;
+export default CardMainAg;

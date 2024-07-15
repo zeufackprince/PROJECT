@@ -26,8 +26,8 @@ function Apartement() {
         fetchBelongings();
     }, []);
 
-    const handlePublishClick = (id) => {
-        navigate('/admin/publish-Logement', { state: { id } });
+    const handlePublishClick = (bienId) => {
+        navigate('/admin/publish-Logement', { state: { bienId } });
     };
 
     if (isLoading) {
@@ -66,8 +66,8 @@ function Apartement() {
                         </div>
 
                         <div className="card-button">
-                            <button onClick={() => handlePublishClick(belonging.id)} className="button1 btn">Publication</button>
-                            <Link to='/admin/update-Logement' className="button2 btn">Modify</Link>
+                            <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
+                            <Link to='/admin/update-Logement' className="button1">Modify</Link>
                         </div>
                     </div>
                 ))}

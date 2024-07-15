@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Filters from '../crud-app-logements/Filters';
-import { getBelongingsBytype1 } from '../../../components/utils/ApiFunctions'; // Import the API function
+import Filters from '../../Admin/crud-app-logements/Filters';
+import { getBelongingsBytype2 } from '../../../components/utils/ApiFunctions'; // Import the API function
 import { FaHeart } from 'react-icons/fa'; // Import the FaHeart icon
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing
 import './typebelongings.css'; // Import the CSS file
 
-function Room() {
+function Studios() {
     const [belongings, setBelongings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
@@ -14,7 +14,7 @@ function Room() {
     useEffect(() => {
         const fetchBelongings = async () => {
             try {
-                const data = await getBelongingsBytype1();
+                const data = await getBelongingsBytype2();
                 setBelongings(data);
                 setIsLoading(false);
             } catch (error) {
@@ -27,7 +27,7 @@ function Room() {
     }, []);
 
     const handlePublishClick = (id) => {
-        navigate('/admin/publish-Logement', { state: { id } });
+        navigate('/agent/publish-Logement', { state: { id } });
     };
 
     if (isLoading) {
@@ -76,4 +76,4 @@ function Room() {
     );
 }
 
-export default Room;
+export default Studios;

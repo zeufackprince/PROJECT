@@ -1,14 +1,14 @@
 //Tableau de bord 
 import React from 'react'
 import './DashMain.css'
-import TopContainer from './TopContainer.js'
-import MainContainer from '../MainContainer/MainContainer.js';
+import TopContainer from './DashTopContainer.js'
+import DashMainContainer from '../DashMainContainer/DashMainContainer.js';
 
 function DashMain() {
   return (
     <div className='Container'>
         <TopContainer />
-        <MainContainer />
+        <DashMainContainer />
     </div>
   );
 }

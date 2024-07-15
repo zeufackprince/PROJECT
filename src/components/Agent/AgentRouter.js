@@ -3,15 +3,17 @@ import { Routes,Route } from 'react-router-dom';
 import AgentLayout from './AgentLayout';
 import DashMainAgent from '../../pages/Agent/DashMainAgent/DashMainAgent';
 import ParametreAgent from '../../pages/Agent/Parametre/ParametreAgent';
-import CreateNewBelongingForm from '../../pages/Admin/ManageLogement/addlogements/CreateNewBelongingForm'
-import Logements from '../../pages/Admin/crud-app-logements/Main';
-import Room from '../../pages/Admin/ManageLogement/Room';
-import Studios from '../../pages/Admin/ManageLogement/Studios';
-import Apartement from '../../pages/Admin/ManageLogement/Apartement';
-import PublishLogement from '../../pages/Admin/ManageLogement/publicationLogement/Main';
-import Notification from '../../pages/Agent/NotificationsAgent/Main';
+import CreateNewBelongingForm from '../../pages/Agent/ManageLogement/addlogements/CreateNewBelongingForm'
+import Logements from '../../pages/Agent/crud-app-logements/LogementsAg';
+import Room from '../../pages/Agent/ManageLogement/RoomAg';
+import Studios from '../../pages/Agent/ManageLogement/StudiosAg';
+import Apartement from '../../pages/Agent/ManageLogement/ApartementAg';
+import PublishLogement from '../../pages/Agent/ManageLogement/publicationLogement/Main';
+import Notification from '../../pages/Agent/NotificationsAgent/NotificationsAg';
 import Logout from '../Auth/Logout';
 import EditAProfile from '../../pages/Admin/_authAdmin/EditAProfile';
+import Acceuil from '../../pages/Accueil/Acceuil';
+import MiseAJourLogementForm from '../../pages/Agent/ManageLogement/updateLogement/miseAJourLogementForm';
 
 
 const AgentRouter = () => {
@@ -20,6 +22,8 @@ const AgentRouter = () => {
             <Routes>
                 <Route element ={<AgentLayout/>}>
                     <Route index element ={<DashMainAgent/>}/>
+
+                    <Route path='/' element={<Acceuil/>}/>
 
                     <Route path='/dashboard' element ={<DashMainAgent/>}/>
 
@@ -32,7 +36,7 @@ const AgentRouter = () => {
                     <Route path='/studios' element={<Studios />} />
                     <Route path='/apartement' element={<Apartement />} />
                     <Route path='/notification' element={<Notification />} />
-                    <Route path='/update-Logement' element={<miseAJourLogementForm />} />
+                    <Route path='/update-Logement' element={<MiseAJourLogementForm />} />
                     <Route path='/publish-Logement' element={<PublishLogement />} />
                     <Route path='/parametre' element={<ParametreAgent/>} />
                     <Route path='/deconnexion' element={<Logout/>} />

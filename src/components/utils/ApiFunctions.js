@@ -50,7 +50,7 @@ export async function loginUser(login) {
 	try {
 		const response = await api.post("/auth/login", login)
 		if (response.data.statusCode >= 200 && response.data.statusCode < 300) {
-			console.log(response)
+			
 			return response.data
 		} else {
 			return null
@@ -160,9 +160,9 @@ export async function createNewBelonging(createBien) {
 }
 
 //update Belonging information
-export async function updateBelonging(updateBelonging) {
+export async function updateBelonging(bienId ,updateBelonging) {
 	try {
-		const response = await api.post(`/api/agent/update`, updateBelonging, {
+		const response = await api.put(`/api/agent/update/${bienId}`, updateBelonging, {
             headers: getHeaderMul()
         })
 		return response.data
