@@ -1,0 +1,33 @@
+.add-belong-container{
+  position: relative;
+  width: 100%;
+}
+.add-belong-container form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px 20px;
+}
+.add-belong-container  form .top{
+    padding: 10px;
+}
+.add-belong-container form .top .title h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+.add-belong-container .form-input{
+    display: flex;
+    margin: 5px 10px;
+    padding: 0 10px;
+}
+.add-belong-content .form-input input{
+    display: block;
+    width: 300px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--lignt);
+    border-radius: 5px;
+    margin: 10px 15px;
+}

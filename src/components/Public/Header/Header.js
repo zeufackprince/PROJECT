@@ -6,7 +6,7 @@ import Profil from "../../../pages/UserProfile/Profil";
 import avatar from '../../../pages/UserProfile/profilImages/avatar.svg';
 import { FaBars, FaSearch, FaTimes, FaHeart } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
-import { useAuth } from "../../Auth/AuthProvider"; // Import the auth context
+import { AuthProvider, useAuth } from "../../Auth/AuthProvider"; // Import the auth context
 import '../Search/Search.css';
 import { getAllUsersProfile } from "../../../components/utils/ApiFunctions"; // Import the function to fetch user profile
 
