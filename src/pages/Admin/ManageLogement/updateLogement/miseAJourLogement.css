@@ -7,7 +7,7 @@ body {
 }
 
 /* Conteneur principal */
-.create-belonging-container {
+.container {
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -21,13 +21,13 @@ body {
 }
 
 /* Titres */
-.create-belonging-container h2 {
+.container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     text-align: center;
 }
 
-.create-belonging-container h3 {
+.container h3 {
     margin-bottom: 20px;
     font-size: 18px;
     text-align: center;
@@ -35,7 +35,7 @@ body {
 }
 
 /* Formulaire */
-.create-belonging-form {
+form {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -59,7 +59,7 @@ body {
 }
 
 /* Boutons */
-.btn {
+input[type="submit"], input[type="reset"] {
     background-color: var(--fuscha);
     color: white;
     padding: 10px 20px;
@@ -70,10 +70,9 @@ body {
     transition: 0.2s;
     font-weight: bold;
     margin: 10px;
-    text-align: center;
 }
 
-.btn:hover {
+input[type="submit"]:hover, input[type="reset"]:hover {
     background: none;
     color: var(--fuscha);
 }
@@ -87,29 +86,5 @@ body {
 .error-message {
     color: red;
     font-size: 14px;
-    margin-top: 5px;
-}
-
-/* Marges pour le formulaire */
-.form-header {
-    margin-bottom: 20px;
-}
-
-.form-actions {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-}
-
-/* Autres ajustements */
-.mb-3 {
-    margin-bottom: 15px;
-}
-
-.mt-5 {
-    margin-top: 50px;
-}
-
-.mb-5 {
-    margin-bottom: 50px;
+    margin-top: 10px;
 }
