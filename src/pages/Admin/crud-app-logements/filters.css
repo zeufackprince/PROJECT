@@ -2,8 +2,8 @@
     color: var(--lignt);
 }
 
-.filters .button1:hover,
-.filters .button2:hover {
+.filters-container .button1:hover,
+.filters-container .button2:hover {
     color: var(--white);
     font-weight: 600;
     background: linear-gradient(#f83737, #da4343);
@@ -17,39 +17,47 @@
     box-shadow: inset 2px 2px 2px rgba(255, 255, 255, 0.4), inset -5px -10px 10px #d15454;
 }
 
-/*responsive de filter */
+.filters-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    width: 100%;
+}
+.filters-container .mine{
+    display: flex;
+    align-items: baseline;
+}
 
-@media only screen and (max-width: 768px) {
-    .filters {
+
+@media  screen and (max-width: 1100px) {
+    .filters-container {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 20px;
     }
 
-    .filters .mine,
-    .filters .filter_buttons {
+    .filters-container .mine,
+    .filters-container .filter_buttons {
         width: 100%;
-        justify-content: space-between;
+        display: flex;
+        justify-content: center;
     }
 
-    .filters .mine h2 {
-        font-size: 18px;
-    }
+  
 
-    .filters .button1,
-    .filters .button2 {
+    .filters-container .button2 {
         width: 100%;
         text-align: center;
     }
+    
 }
 
-@media only screen and (max-width: 480px) {
-    .filters .mine h2 {
-        font-size: 16px;
-    }
-
-    .filters .button1,
-    .filters .button2 {
-        font-size: 14px;
-    }
+@media only screen and (max-width: 680px) {
+    
+    .filter_buttons .button2{
+        font-size: 12px;
+        font-weight: 600;
+        padding: 8px;
+       }
 }
+

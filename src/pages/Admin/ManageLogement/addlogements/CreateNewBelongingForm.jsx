@@ -16,6 +16,7 @@ const CreateNewBelongingForm = () => {
     // status: ''
   });
   const [images, setImages] = useState([]);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
@@ -25,8 +26,15 @@ const CreateNewBelongingForm = () => {
   };
 
   const handleFileChange = (e) => {
-    setImages(e.target.files);
-  };
+    const selectedFiles = Array.from(e.target.files);
+    if (selectedFiles.length > 5) {
+      setError('Vous ne pouvez importer que 5 images au maximum.');
+      setImages([]);
+    } else {
+      setError('');
+      setImages(selectedFiles);
+    }
+  };// Imposer un nombre limité d'image
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -56,16 +64,16 @@ const CreateNewBelongingForm = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <div className="top">
-            <div className="title">
+    <div className="create-belonging-container">
+      <form onSubmit={handleSubmit} className="create-belonging-form">
+       
+          <div className="form-header">
+            <div className="form-title">
               <h2>Creation D'un Nouveau Bien IMMOBILIER</h2>
               <h3>Veuillez Remplire correctement Chaque Champs</h3>
             </div>
 
-            <div className="content">
+            <div className="form-content">
               <div className="form-input">
                 <label htmlFor="nomBatiment">Nom Du Bien :</label>
                 <input
@@ -75,6 +83,7 @@ const CreateNewBelongingForm = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
+                  className="form-control"
                 />
               </div>
 
@@ -87,6 +96,7 @@ const CreateNewBelongingForm = () => {
                   value={formData.dimension}
                   onChange={handleChange}
                   required
+                  className="form-control"
                 />
               </div>
 
@@ -99,6 +109,7 @@ const CreateNewBelongingForm = () => {
                   value={formData.prix}
                   onChange={handleChange}
                   required
+                  className="form-control"
                 />
               </div>
 
@@ -110,6 +121,7 @@ const CreateNewBelongingForm = () => {
                     value={formData.type}
                     onChange={handleChange}
                     required
+                    className="form-control"
                   >
                     <option value="">------------</option>
                     <option value="APPARTMENT">APPARTMENT</option>
@@ -126,6 +138,7 @@ const CreateNewBelongingForm = () => {
                     value={formData.localisation}
                     onChange={handleChange}
                     required
+                    className="form-control"
                   >
                     <option value="">------------</option>
                     <option value="DOUALA">DOUALA</option>
@@ -149,6 +162,7 @@ const CreateNewBelongingForm = () => {
                     value={formData.status}
                     onChange={handleChange}
                     required
+                    className="form-control"
                   >
                     <option value="">------------</option>
                     <option value="ACHETER">A Vendre</option>
@@ -165,16 +179,18 @@ const CreateNewBelongingForm = () => {
                   multiple
                   onChange={handleFileChange}
                   required
+                  className="form-control"
                 />
+                {error && <p className="error-message">{error}</p>}
               </div>
             </div>
           </div>
 
-          <div className="bottom">
-            <input type="submit" value="Valider" />
-            <input type="reset" value="Annuler Formulaire" />
+          <div className="form-actions">
+            <input type="submit" value="Valider" className="btn btn-primary" />
+            <input type="reset" value="Annuler Formulaire" className="btn btn-secondary" />
           </div>
-        </fieldset>
+        
       </form>
     </div>
   );

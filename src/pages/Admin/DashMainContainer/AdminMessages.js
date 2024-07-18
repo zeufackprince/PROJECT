@@ -31,7 +31,7 @@ function AdminMessages() {
     <div className='MessagesContainer'>
       <div className="Name">       
         <h2>Messages</h2>
-        <Link to='/admin/notification'>View More</Link>
+        <Link to='/admin/notification'>Voir plus</Link>
       </div>
 
       <div className='NotifContainer'>

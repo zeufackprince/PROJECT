@@ -2,12 +2,12 @@
 menu {
     padding-top: 25px;
     height: 100%;
-    background-color: #fff;
+    background-color: var(--white);
     display: flex;
     gap: 4rem;
     flex-direction: column;
     align-items: center;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow);
 }
 
 menu ul {
@@ -30,7 +30,7 @@ menu ul li {
  
 menu ul li a {
     font-size: 24px;
-    color: #8c8a95;
+    color: var(--lignt);
     text-decoration: none;
     transition: all 0.3s;
     padding: 2px 5px;
@@ -86,13 +86,19 @@ menu ul.last-Menu {
     menu ul li a::before {
         top: 5px;
     }
+    menu .logo{
+        display: none;
+    }
+    .logout-button span{
+        display: none;
+    }
 }
 
 /* New styles for the logout button */
 .logout-button {
     font-size: 24px;
-    color: #8c8a95;
-    background-color: #fff;
+    color: var(--lignt);
+    background-color: var(--white);
     border: none;
     cursor: pointer;
     transition: all 0.3s;
