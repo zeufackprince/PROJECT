@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { getAllBelongings } from '../../../../components/utils/ApiFunctions.js';
 import Banner from '../../../../images/Admin/banner.jpg';
@@ -6,9 +6,12 @@ import CardMain from './CardMainAg.js'
 import AdminMessages from './AgentMessages.js';
 import '../../../Admin/DashMainContainer/DashMainContainer.css';
 import Filters from '../../crud-app-logements/FiltersAg.js';
+import { FaEnvelope } from 'react-icons/fa';
 
 function MainContainerAgent() {
   const [belongings, setBelongings] = useState([]);
+  const msgContainerRef = useRef(null); // Référence pour le conteneur des messages
+  const buttonRef = useRef(null); // Référence pour le bouton enveloppe-cont
 
   useEffect(() => {
     const fetchBelongings = async () => {
@@ -22,6 +25,30 @@ function MainContainerAgent() {
     
     fetchBelongings();
   }, []);
+
+  
+  // Gérer le clic sur le bouton enveloppe-cont
+  const handleButtonClick = () => {
+    if (msgContainerRef.current) {
+      msgContainerRef.current.classList.toggle('active-msg');
+    }
+  };
+
+  // Gérer le clic en dehors du conteneur des messages
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (msgContainerRef.current && !msgContainerRef.current.contains(event.target) && !buttonRef.current.contains(event.target)) {
+        msgContainerRef.current.classList.remove('active-msg');
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
 
   return (
     <div className='MainContainer'>
@@ -63,7 +90,12 @@ function MainContainerAgent() {
           </main>
         </div>
       </div>
-      <AdminMessages />
+      <button className='enveloppe-cont' ref={buttonRef} onClick={handleButtonClick}>
+          <FaEnvelope className='enveloppe-msg' />
+        </button>
+        <div className="msg-container" ref={msgContainerRef}>
+          <AdminMessages />
+        </div>
     </div>
   );
 }
