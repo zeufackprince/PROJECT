@@ -5,7 +5,6 @@ import './DashMainContainer.css';
 import Banner from '../../../images/Admin/banner.jpg';
 import CardMain from './CardMain.js';
 import MainRightBottom from './AdminMessages.js';
-
 import Filters from '../crud-app-logements/Filters.js';
 import { FaEnvelope } from 'react-icons/fa';
 
@@ -51,7 +50,7 @@ function MainContainer() {
 
   return (
     <div className='MainContainer'>
-      <div className="Main-Section">
+      <div className="left">
         <div className="banner" style={{
           background: `url(${Banner})`,
           backgroundRepeat: 'no-repeat',
@@ -90,7 +89,12 @@ function MainContainer() {
         </div>
       </div>
       <div className="right">
-        <MainRightBottom />
+        <button className='enveloppe-cont' ref={buttonRef} onClick={handleButtonClick}>
+          <FaEnvelope className='enveloppe-msg' />
+        </button>
+        <div className="msg-container" ref={msgContainerRef}>
+          <MainRightBottom />
+        </div>
       </div>
     </div>
   );
