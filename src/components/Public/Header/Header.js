@@ -10,7 +10,7 @@ import { AuthProvider, useAuth } from "../../Auth/AuthProvider"; // Import the a
 import '../Search/Search.css';
 import { getAllUsersProfile } from "../../../components/utils/ApiFunctions"; // Import the function to fetch user profile
 
-//Couleurs du theme clair
+// Couleurs du thème clair
 const lightTheme = {
     '--white': '#fff',
     '--lignt': '#222831',
@@ -22,7 +22,7 @@ const lightTheme = {
     '--text-color-third': '#9db3be'
 };
 
-//Couleurs du theme sombre
+// Couleurs du thème sombre
 const darkTheme = {
     '--white': '#222831',
     '--lignt': '#fff',
@@ -99,10 +99,8 @@ function Header() {
         }
     };
 
+    const [theme, setTheme] = useState(lightTheme); // Definition de l'etat du theme
 
-    const [theme, setTheme] = useState(lightTheme);// Definition de l'etat du theme
-
-    
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
@@ -110,7 +108,7 @@ function Header() {
             setTheme(parsedTheme);
             applyTheme(parsedTheme);
         }
-    }, []);// Savegarde le theme choisi
+    }, []); // Sauvegarde le theme choisi
 
     const applyTheme = (theme) => {
         for (const [key, value] of Object.entries(theme)) {
@@ -124,7 +122,6 @@ function Header() {
         applyTheme(newTheme);
         localStorage.setItem('theme', JSON.stringify(newTheme));
     };
-
 
     return (
         <>
@@ -158,10 +155,19 @@ function Header() {
                         />
                     </div>
                     <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
-                        {/*Switcher de theme*/}
-                <div className="App">
-                    <button onClick={toggleTheme} className="loginLink">Theme</button>
-                </div>
+
+                    {/* Switcher de theme */}
+                    <div className="theme-switch-container">
+                        <label className="switch">
+                            
+                            <input 
+                                type="checkbox" 
+                                onChange={toggleTheme} 
+                                checked={theme === darkTheme} 
+                            />
+                            <span className="slider"></span>
+                        </label>
+                    </div>
                 </nav>
                 
                 <div className="showProfile" ref={profileContainer}>
@@ -169,9 +175,7 @@ function Header() {
                         <div className="profileInformation">
                             <Profil />
                         </div>
-                    
                 </div>
-               
             </header>
         </>
     );

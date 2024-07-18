@@ -1,108 +1,142 @@
-/* Styles de base */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
+/* Styles pour la section de connexion */
 
-/* Conteneur principal */
-.create-belonging-container {
-    background-color: var(--white);
+
+/* Styles pour le formulaire de connexion */
+.auth-form {
+    background-color: var(--var(--white));
     border-radius: 10px;
     box-shadow: var(--box-shadow);
+    overflow: hidden;
+    width: 100%;
+    max-width: 1000px; 
+    height: 800px;
+    display: flex;
+    flex-direction: row;
+    margin: 0 20px; 
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
-    width: 80%;
-    max-width: 800px;
-    padding: 20px;
+    transform: translate(-50%,-50%);
 }
 
-/* Titres */
-.create-belonging-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    text-align: center;
+.auth-image {
+    flex: 1.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--lignt);
 }
 
-.create-belonging-container h3 {
-    margin-bottom: 20px;
-    font-size: 18px;
-    text-align: center;
-    color: var(--text-color-secondary);
+.auth-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* Formulaire */
-.create-belonging-form {
+form {
+    flex: 1.5; /* Augmenter la proportion du formulaire */
+    padding: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-/* Champs du formulaire */
-.form-control {
-    display: block;
-    width: calc(100% - 20px);
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid var(--light);
-    border-radius: 5px;
-    margin: 10px;
-}
-
-.form-control:focus {
-    border-color: var(--fuscha);
-    outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
-
-/* Boutons */
-.btn {
-    background-color: var(--fuscha);
-    color: white;
-    padding: 10px 20px;
-    border: 1px solid var(--fuscha);
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.2s;
-    font-weight: bold;
-    margin: 10px;
+form h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: var(--lignt);
     text-align: center;
 }
 
-.btn:hover {
-    background: none;
-    color: var(--fuscha);
-}
-
-/* Alignement des labels et des champs */
-.form-input, .form-select {
+.row {
     margin-bottom: 15px;
 }
 
-/* Marges pour le formulaire */
-.form-header {
-    margin-bottom: 20px;
+label {
+    font-size: 16px;
+    color: var(--lignt);
 }
 
-.form-actions {
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--var(--white));
+    border-radius: 5px;
+}
+
+.form-control:focus {
+    border-color: var(--lignt);
+    outline: none;
+}
+
+.auth-btns {
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+    justify-content: center;
     margin-top: 20px;
 }
 
-/* Autres ajustements */
-.mb-3 {
-    margin-bottom: 15px;
+.auth-btns .btn-hotel {
+    background: var(--fuscha);
+    color: var(--white);
+    padding: 10px 20px;
+    border: 1px solid var(--fuscha);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-.mt-5 {
-    margin-top: 50px;
+.auth-btns .btn-hotel:hover {
+    background:none;
+    color: var(--fuscha);
 }
 
-.mb-5 {
-    margin-bottom: 50px;
+.alert-danger {
+    color: red;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.auth-btns span {
+    font-size: 14px;
+    color: var(--lignt);
+}
+
+.auth-btns a {
+    color: var(--lignt);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.auth-btns a:hover {
+    color: var(--fuscha);
+}
+
+/* Styles responsive */
+@media (max-width: 768px) {
+    .auth-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .auth-image {
+        display: none; /* Cacher l'image sur les petits écrans */
+    }
+
+    form {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-hotel {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .auth-btns span {
+        text-align: center;
+        width: 100%;
+    }
 }

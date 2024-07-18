@@ -53,10 +53,9 @@
 }
 .belongInformations h5{
     font-size: 20px;
-    color: #0e0e0e;
+    color: var(--lignt);
     font-weight: 200;
     margin:10px;
-    color: var(--lignt);
 }
 .belongInformations .belongDescription{
     text-align: justify;
