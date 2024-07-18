@@ -1,7 +1,7 @@
 import React from 'react';
 import TopContainerAgent from './DashTopContainerAgent';
 import DashMainContainerAgent from './DashMainContainerAgent/DashMainContainerAgent';
-import './dashMainAgent.css';
+import './DashMainAgent.css';
 
 const DashMainAgent = () => {
     return (

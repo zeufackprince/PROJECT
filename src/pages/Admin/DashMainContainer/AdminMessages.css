@@ -1,4 +1,3 @@
-/* MainRightBottom.css */
 
   .MessagesContainer {
     background: var(--white);
@@ -7,8 +6,8 @@
     border-radius: 0.5em;
     box-shadow: var(--box-shadow);
     padding: 10px 20px;
-    overflow-y: auto;
-    transition: overflow-y 0.3s ease;
+    overflow-y: scroll;
+    transition: all 0.3s ease-in-out;
   }
 
   .MessagesContainer::-webkit-scrollbar {

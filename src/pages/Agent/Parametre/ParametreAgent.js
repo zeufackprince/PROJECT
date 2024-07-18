@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './parametreAgent.css';
+import '../../Parametre/parametre.css';
 import { getAllUsersProfile } from '../../../components/utils/ApiFunctions';
 import { FaPen } from 'react-icons/fa';
 

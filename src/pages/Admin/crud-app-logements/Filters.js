@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import './filters.css';
+import './Filters.css';
 
 function Filters() {
   const location = useLocation();

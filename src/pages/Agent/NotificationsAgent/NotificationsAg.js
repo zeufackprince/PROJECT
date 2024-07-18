@@ -32,11 +32,11 @@ function Main() {
   };
 
   if (loading) {
-    return <div className="container">Chargement...</div>;
+    return <div className="Notif-Container">Chargement...</div>;
   }
 
   return (
-    <div className="container">
+    <div className="Notif-Container">
       <h1>Notifications</h1>
       {notifications.length === 0 ? (
         <p>Aucune notification disponible</p>

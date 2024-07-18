@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import '../../Admin/crud-app-logements/filters.css';
+import '../../Admin/crud-app-logements/Filters.css';
 
 function FiltersAg() {
   const location = useLocation();

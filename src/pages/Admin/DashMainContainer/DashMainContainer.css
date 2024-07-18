@@ -9,30 +9,30 @@
 /*  left  */
 
 .MainContainer .left {
-    width: 100%;
+    width: calc(100% - 30%);
     height: 100vh;
     overflow: scroll;
     transition: all 0.3s ease-in-out
 }
 
-.MainContainer .left::-webkit-scrollbar {
+.MainContainer .Main-Section::-webkit-scrollbar {
     display: none;
 }
 
-.MainContainer .left .banner {
+.MainContainer .Main-Section .banner {
     height: 260px;
     border-radius: 0.5em;
     box-shadow: var(--box-shadow);
     position: relative;
 }
 
-.MainContainer .left .banner .textBanner {
+.MainContainer .Main-Section .banner .textBanner {
     position: absolute;
     bottom: 0;
     right: 20px;
 }
 
-.MainContainer .left .banner .textBanner h1 {
+.MainContainer .Main-Section .banner .textBanner h1 {
     font-size: 3.5em;
     color: #f1f1f1;
     font-weight: 600;
@@ -40,38 +40,38 @@
     margin: 5px 0;
 }
 
-.MainContainer .left .banner .textBanner h2 {
+.MainContainer .Main-Section .banner .textBanner h2 {
     font-size: 2.5em;
     color: #da4343;
     margin: 5px 0;
 }
 
-.MainContainer .left .banner .textBanner p {
+.MainContainer .Main-Section .banner .textBanner p {
     color: #f1f1f1;
     font-size: 18px;
     margin: 5px 0;
 }
 
-.MainContainer .left .banner .textBanner .bid {
+.MainContainer .Main-Section .banner .textBanner .bid {
     display: flex;
     align-items: center; 
     margin: 5px 0;
 }
 
-.MainContainer .left .banner .textBanner .bid p {
+.MainContainer .Main-Section .banner .textBanner .bid p {
     margin-left: 10px;
     font-weight: 600;
 }
 
-.MainContainer .left .banner .textBanner .bid span {
+.MainContainer .Main-Section .banner .textBanner .bid span {
     display: block;
     color: #d15454;
 }
 
-/* left : Cards */
+/* Main-Section : Cards */
 
 .MainContainer .left .Cards {
-    background: var(--white);
+    background: #f8f8f8;
     height: auto;
     padding: 10px 10px 100px 10px;
     margin-top: 20px;
@@ -79,32 +79,32 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-.MainContainer .left .Cards .filters {
+.MainContainer .Main-Section .Cards .filters {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 5px 30px;
 }
 
-.MainContainer .left .Cards .filters .mine {
+.MainContainer .Main-Section .Cards .filters .mine {
     display: flex;
     align-items: baseline;
 }
 
-.MainContainer .left .Cards .filters .mine h2 {
+.MainContainer .Main-Section .Cards .filters .mine h2 {
     font-size: 20px;
     font-weight: bold;
     color: #da4343;
     margin-right: 10px;
 }
 
-.MainContainer .left .Cards .filters .filter_buttons {
+.MainContainer .Main-Section .Cards .filters .filter_buttons {
     display: flex;
     align-items: baseline;
 }
 
 
-.MainContainer .left .Cards main {
+.MainContainer .Main-Section .Cards main {
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -112,7 +112,7 @@
 }
 
 .MainContainer .left .Cards main .Card-Main {
-    background: var(--white);
+    background: #fafcf3;
     border-radius: 0.5em;
     height: auto;
     overflow: hidden;
@@ -122,12 +122,12 @@
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
 }
 
-.MainContainer .left .Cards main .Card-Main img {
+.MainContainer .Main-Section .Cards main .Card-Main img {
     max-width: 100%;
     object-fit: cover;
 }
 
-.MainContainer .left .Cards main .Card-Main .card_main_name {
+.MainContainer .Main-Section .Cards main .Card-Main .card_main_name {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -136,31 +136,31 @@
 }
 
 .MainContainer .left .Cards main .Card-Main .card_main_name h2 {
-    color: var(--lignt);
+    color: #0c0b0f;
     font-size: 16px;
     font-weight: bold;
 }
 
-.MainContainer .left .Cards main .Card-Main .card_main_name .card_icon {
+.MainContainer .Main-Section .Cards main .Card-Main .card_main_name .card_icon {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.MainContainer .left .Cards main .Card-Main .card_main_name .card_icon i {
+.MainContainer .Main-Section .Cards main .Card-Main .card_main_name .card_icon i {
     color: #da4343;
     text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.4);
     font-size: 12px;
 }
 
 .MainContainer .left .Cards main .Card-Main .card_main_name .card_icon i span {
-    color: var(--lignt);
+    color: #0c0b0f;
     font-size: 16px;
     font-weight: bold;
-    margin-left: 5px;
+    margin-Main-Section: 5px;
 }
 
-.MainContainer .left .Cards main .Card-Main .stats {
+.MainContainer .Main-Section .Cards main .Card-Main .stats {
     columns: 2;
     column-rule: 1px solid var(--lignt);
     text-align: center;
@@ -169,28 +169,28 @@
 }
 
 .MainContainer .left .Cards main .Card-Main .stats p {
-    color: var(--lignt);
+    color: #1f1f22;
     font-size: 12px;
     font-weight: bold;
 }
 
-.MainContainer .left .Cards main .Card-Main .stats p span {
+.MainContainer .Main-Section .Cards main .Card-Main .stats p span {
     display: block;
     color: #d15454;
     font-size: 12px;
 }
 
-.MainContainer .left .Cards main .Card-Main .card-button{
+.MainContainer .Main-Section .Cards main .Card-Main .card-button{
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 
-.MainContainer .left .Cards main .Card-Main .card-button .btn {
+.MainContainer .Main-Section .Cards main .Card-Main .card-button .btn {
     font-size: 12px !important;
 }
 
-.MainContainer .left .Cards main .Card-Main .card-button .button1 {
+.MainContainer .Main-Section .Cards main .Card-Main .card-button .button1 {
     margin: 0 !important;
     border: none;
 }
@@ -199,25 +199,74 @@
 
 .MainContainer .right {
     width: calc(100% - 70%);
-    padding: 10px 0;
+    padding: 0 10px;
     padding-left: 20px;
     transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 
+/* Responsive MainContainer left */
+@media only screen and (max-width: 768px) {
+    .MainContainer {
+        flex-direction: column;
+        overflow: scroll;
+    }
 
+    .MainContainer .left {
+        width: 100%;
+        height: auto;
+        min-height: 900px;
+    }
 
-/* en dessous de 480px */
-@media only screen and (max-width: 480px) {
+    .MainContainer .right {
+        width: 100%;
+        padding: 0 10px;
+        padding-top: 20px;
+    }
+
+    .MainContainer .left .banner {
+        height: 200px;
+    }
+
     .MainContainer .left .banner .textBanner h1 {
-        font-size: 2em;
+        font-size: 2.5em;
     }
 
     .MainContainer .left .banner .textBanner h2 {
-        font-size: 1.5em;
+        font-size: 2em;
     }
 
     .MainContainer .left .banner .textBanner p {
+        font-size: 16px;
+    }
+
+    .MainContainer .left .Cards main .Card-Main {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .MainContainer .right .top-Cards, 
+    .MainContainer .right .bottomRightCard {
+        padding: 10px;
+    }
+
+    .MainContainer .right .top-Cards .housing p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* en dessous de 480px */
+@media only screen and (max-width: 480px) {
+    .MainContainer .Main-Section .banner .textBanner h1 {
+        font-size: 2em;
+    }
+
+    .MainContainer .Main-Section .banner .textBanner h2 {
+        font-size: 1.5em;
+    }
+
+    .MainContainer .Main-Section .banner .textBanner p {
         font-size: 14px;
     }
 }
