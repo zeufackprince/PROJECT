@@ -28,7 +28,7 @@ const AdminRouter = () => {
                 {/* vers le menu de l'admin */}
                 <Route path='/dashboard' element ={<DashMain/>}/>
 
-                {/* vers la list des utilisateur */}
+                {/* vers la liste des utilisateur */}
                 <Route path='/crud-client' element={<MainList/>}/>
 
                 {/* vers le formulaire d'ajoute d'agent */}

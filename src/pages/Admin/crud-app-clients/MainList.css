@@ -1,5 +1,5 @@
 .mainList {
-    background: #f1f1f1;
+    background: var(--white);
     width: 100%;
     padding: 20px 10px;
   }
@@ -11,20 +11,20 @@
   
   .mainList table {
     margin-top: 2rem;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow);
   }
   
   .mainList table th {
     background: #f83737;
-    border: 1px solid black;
+    border: 1px solid var(--light);
     border-radius: 0.3em;
-    color: #1f1f22;
+    color: var(--light);
     font-family: 'Times New Roman', Times, serif;
   }
   
   .mainList table tr td{
     text-align: center;
-    border: 1px solid black;
+    border: 1px solid var(--light);
   }
   
   .mainList table tr td.btn-action {
@@ -36,7 +36,7 @@
     font-size: 20px;
     width: 40px;
     border-radius: 0.5em;
-    color: #0c0b0f;
+    color: var(--light);
     text-align: center;
     cursor: pointer;
   }

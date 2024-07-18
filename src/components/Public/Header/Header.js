@@ -4,11 +4,11 @@ import './Header.css';
 import '../../root.css';
 import Profil from "../../../pages/UserProfile/Profil";
 import avatar from '../../../pages/UserProfile/profilImages/avatar.svg';
-import { FaBars, FaSearch, FaTimes, FaHeart } from 'react-icons/fa';
+import { FaBars, FaSearch, FaTimes } from 'react-icons/fa';
 import { NavLink, Link } from "react-router-dom";
-import { AuthProvider, useAuth } from "../../Auth/AuthProvider"; // Import the auth context
+import { useAuth } from "../../Auth/AuthProvider";
 import '../Search/Search.css';
-import { getAllUsersProfile } from "../../../components/utils/ApiFunctions"; // Import the function to fetch user profile
+import { getAllUsersProfile } from "../../../components/utils/ApiFunctions";
 
 // Couleurs du thème clair
 const lightTheme = {
@@ -28,7 +28,7 @@ const darkTheme = {
     '--lignt': '#fff',
     '--desaturate-fuscha': 'hsla(162, 94%, 57%, 0.30)',
     '--desaturate-fuscha-2': 'hsla(160, 94%, 57%, 0.20)',
-    '--color-shadow': 'rgba(255, 255, 255, 0.35)',
+    '--color-shadow': 'rgba(190, 190, 190, 0.35)',
     '--text-color-primary': '#ffffff',
     '--text-color-secondary': '#ffffff',
     '--text-color-third': '#ffffff'
@@ -38,11 +38,11 @@ function Header() {
     const navLinksRef = useRef(null); // Référence pour les liens de navigation
     const profileContainer = useRef(null); // Référence pour le conteneur du profil
     const navigate = useNavigate(); // Utilisation de la navigation
-
     const { user, handleLogout } = useAuth(); // Utiliser le contexte d'authentification
+    const [profileImage, setProfileImage] = useState(avatar); // Image de profil par défaut
+    const [theme, setTheme] = useState(lightTheme); // Définition de l'état du thème
 
-    const [profileImage, setProfileImage] = useState(avatar); // default to avatar
-
+    // Récupérer les données de profil de l'utilisateur
     useEffect(() => {
         const fetchUserProfile = async () => {
             try {
@@ -58,22 +58,20 @@ function Header() {
         fetchUserProfile();
     }, []);
 
+    // Gérer la fermeture du menu
     useEffect(() => {
-        const listMenu = navLinksRef.current.querySelectorAll('ul li'); // Liste des éléments de menu
+        const listMenu = navLinksRef.current.querySelectorAll('ul li');
 
-        // Fermer le menu
         const closeMenu = () => {
             if (navLinksRef.current) {
                 navLinksRef.current.classList.remove('showMenu');
             }
         };
 
-        // Ajouter des gestionnaires d'événements pour chaque élément de menu
         listMenu.forEach(item => {
             item.addEventListener('click', closeMenu);
         });
 
-        // Nettoyer les gestionnaires d'événements
         return () => {
             listMenu.forEach(item => {
                 item.removeEventListener('click', closeMenu);
@@ -81,26 +79,43 @@ function Header() {
         };
     }, []);
 
+    // Rafraîchir la page
     const handleRefresh = () => {
         window.location.reload();
-    }; // Actualise la page lorsqu'elle est appelée
+    };
 
+    // Déconnecter l'utilisateur
     const logOut = () => {
         handleLogout();
-        navigate('/'); // Redirige l'utilisateur vers la route '/'
+        navigate('/');
         handleRefresh();
-    }; // Deconnecte l'utilisateur et rafraichi la page
+    };
 
+    // Gérer le clic sur le profil
     const handleProfileClick = () => {
         if (user) {
-            profileContainer.current.classList.toggle('activeProfile'); // Active le profil si l'utilisateur est connecté
+            profileContainer.current.classList.toggle('activeProfile');
         } else {
-            navigate('/auth/login'); // Redirige vers la route '/auth/login' si l'utilisateur n'est pas connecté
+            navigate('/auth/login');
         }
     };
 
-    const [theme, setTheme] = useState(lightTheme); // Definition de l'etat du theme
+    // Gérer le clic en dehors du profil pour fermer le conteneur du profil
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (profileContainer.current && !profileContainer.current.contains(event.target)) {
+                profileContainer.current.classList.remove('activeProfile');
+            }
+        };
 
+        document.addEventListener('mousedown', handleClickOutside);
+
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
+    // Charger et appliquer le thème sauvegardé
     useEffect(() => {
         const savedTheme = localStorage.getItem('theme');
         if (savedTheme) {
@@ -108,14 +123,16 @@ function Header() {
             setTheme(parsedTheme);
             applyTheme(parsedTheme);
         }
-    }, []); // Sauvegarde le theme choisi
+    }, []);
 
+    // Appliquer les propriétés du thème
     const applyTheme = (theme) => {
         for (const [key, value] of Object.entries(theme)) {
             document.documentElement.style.setProperty(key, value);
         }
     };
 
+    // Basculer entre les thèmes clair et sombre
     const toggleTheme = () => {
         const newTheme = theme === lightTheme ? darkTheme : lightTheme;
         setTheme(newTheme);
@@ -159,7 +176,6 @@ function Header() {
                     {/* Switcher de theme */}
                     <div className="theme-switch-container">
                         <label className="switch">
-                            
                             <input 
                                 type="checkbox" 
                                 onChange={toggleTheme} 
@@ -169,7 +185,7 @@ function Header() {
                         </label>
                     </div>
                 </nav>
-                
+                {/*Informations du profil utilisateur*/}
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
                         <div className="profileInformation">

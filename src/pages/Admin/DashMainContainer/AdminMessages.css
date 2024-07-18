@@ -1,11 +1,11 @@
 /* MainRightBottom.css */
 
   .MessagesContainer {
-    background: #f8f8f8;
+    background: var(--white);
     width: 100%;
     max-height: 840px !important;
     border-radius: 0.5em;
-    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: var(--box-shadow);
     padding: 10px 20px;
     overflow-y: auto;
     transition: overflow-y 0.3s ease;
@@ -22,6 +22,13 @@
     align-items: center;
   }
   
+  .MessagesContainer .Name a{
+    color: var(--lignt);
+    font-weight: bold;
+  }
+  .MessagesContainer .Name a:hover{
+    color: var(--fuscha);
+  }
   .NotifContainer {
     height: auto;
     padding: 5px 10px;
@@ -43,7 +50,7 @@
 
   
   .Notifactions.read {
-    background-color: #f0f0f0; /* Grey background for read messages */
+    background-color: var(--white); /* Grey background for read messages */
   }
   
   .Notif-Profile img {
@@ -74,13 +81,9 @@
   .btn {
     padding: 5px 10px;
     border: none;
-    color: white;
+    color: var(--white);
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  .btn:hover {
-    background-color: #0056b3;
   }
   

@@ -6,10 +6,10 @@ function Filters() {
   const location = useLocation();
 
   return (
-    <div className="filters">
+    <div className="filters-container">
         <div className="mine">
-            <h2>Features</h2>
-            <Link to='/admin/create-new-belonging' className="button2">New Belongings</Link>
+            {/*<h2>Features</h2>*/}
+            <Link to='/admin/create-new-belonging' className="button2">Nouveau logement</Link>
         </div>
         <div className="filter_buttons">
             <Link 
@@ -22,7 +22,7 @@ function Filters() {
               to='/admin/room' 
               className={`button2 ${location.pathname === '/admin/room' ? 'activeF' : ''}`}
             >
-              Room
+              Chambres
             </Link>
             <Link 
               to='/admin/studios' 
@@ -34,7 +34,7 @@ function Filters() {
               to='/admin/apartement' 
               className={`button2 ${location.pathname === '/admin/apartement' ? 'activeF' : ''}`}
             >
-              Apartment
+              Apartments
             </Link>
         </div>
     </div>
