@@ -44,14 +44,14 @@ function ParametreAgent() {
                         <p className='admin-name'>{profile.name}</p>
                         <p className='admin-email'>{profile.email}</p>
                         <p className='admin-role'><strong>Role:</strong> {profile.role}</p>
-                        <Link to='/admin/editer-profil' className="edit-profile-button"><FaPen/> Edit Profile</Link>
+                        <Link to='/agent/editer-profil' className="edit-profile-button"><FaPen/> Edit Profile</Link>
                     </div>
 
                 </div>
                     <h3>PARAMETRES</h3>
                     <p className='barre'></p>
                 <div className="action-buttons">
-                       <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/' className="full-width-button delete-button">Delete Account</Link></div>
+                       <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/agent' className="full-width-button delete-button">Delete Account</Link></div>
                 </div>
             </div>
 
