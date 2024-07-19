@@ -87,8 +87,13 @@ const Acceuil = ({ addFavori, favoris }) => {
                     {biens.map(bien => (
                         <div className="bienImmo" key={bien.id}>
                             <img src={bien.posterUrl[0]} alt="" /> {/* Assuming posterUrl is an array of URLs */}
-                            <p className="titreArticle">{bien.titre}</p>
+                            <div className="bien-immo-name">
+                                <p className="titreArticle">{bien.titre}</p>
+                                <p>{`${bien.type}`}</p>
+                            </div>
+                            
                             <p className="price">{`${bien.prix}Fcfa`}</p>
+                           
                             {/* <p className='description'>{bien.description}</p> */}
                             <FaHeart 
                                 className={`addToFavori ${favoris.some(favori => favori.id === bien.id) ? 'addedFavori' : ''}`} 

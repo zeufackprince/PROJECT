@@ -10,7 +10,7 @@ const Details = () => {
     const [bien, setBien] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
-    const [successMessage, setSuccessMessage] = useState("");
+    const [successMessage, setSuccessMessage] = useState(localStorage.getItem(`successMessage-${id}`) || "");
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedImageIndex, setSelectedImageIndex] = useState(0);
     const [contactMessage, setContactMessage] = useState("");
@@ -35,6 +35,7 @@ const Details = () => {
             };
             const result = await sendNotification(notificationData);
             setSuccessMessage(result);
+            localStorage.setItem(`successMessage-${id}`, result);
             setErrorMessage("");
         } catch (error) {
             setSuccessMessage("");
@@ -43,15 +44,15 @@ const Details = () => {
     };
 
     if (isLoading) {
-        return(
-            <div class="loader-container">
-                <div class="bouncing-dots">
-                    <div class="dot"></div>
-                    <div class="dot"></div>
-                    <div class="dot"></div>
+        return (
+            <div className="loader-container">
+                <div className="bouncing-dots">
+                    <div className="dot"></div>
+                    <div className="dot"></div>
+                    <div className="dot"></div>
                 </div>
             </div>
-        )
+        );
     }
 
     if (errorMessage) {
@@ -110,7 +111,6 @@ const Details = () => {
                 </div>
 
                 <div className="belongInformations">
-
                     <h1 className='titleBelong'>{bien.titre}</h1>
                     <h1 className="price">{`${bien.prix} Fcfa`}</h1>
                     <h5 className="belongDescription">{bien.description}</h5>
@@ -124,8 +124,12 @@ const Details = () => {
                             value={contactMessage}
                             onChange={(e) => setContactMessage(e.target.value)}
                         > Contactez nous...</textarea>
-                        <button onClick={handleSendNotification}>
-                            Contacter l'agent immobilier
+                        <button 
+                            onClick={handleSendNotification} 
+                            disabled={!!successMessage}
+                            className={successMessage ? 'sent' : ''}
+                        >
+                            {successMessage ? 'Message envoyé' : 'Contacter l\'agent immobilier'}
                         </button>
                     </div>
                     {successMessage && <div className="success-message">{successMessage}</div>}
@@ -141,7 +145,6 @@ const Details = () => {
                     <button className="next" onClick={nextImage}>&#10095;</button>
                 </div>
             )}
-            
         </>
     );
 };
