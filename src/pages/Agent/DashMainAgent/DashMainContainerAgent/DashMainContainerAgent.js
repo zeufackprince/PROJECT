@@ -49,7 +49,6 @@ function MainContainerAgent() {
     };
   }, []);
 
-
   return (
     <div className='MainContainer'>
       <div className="left">
@@ -64,8 +63,8 @@ function MainContainerAgent() {
             <h2>2.500 $</h2>
             <p>Uploaded by Marc Annil</p>
             <div className="bid">
-              <Link to='/agent' className="button1">Rent now</Link>
-              <p>Ending In <span>5d:13h:20m</span></p>
+              <Link to='/' className="button1">Publier</Link>
+              <Link to='/' className="button1">Modifier</Link>
             </div>
           </div>
         </div>
@@ -90,12 +89,14 @@ function MainContainerAgent() {
           </main>
         </div>
       </div>
-      <button className='enveloppe-cont' ref={buttonRef} onClick={handleButtonClick}>
+      <div className="right">
+        <button className='enveloppe-cont' ref={buttonRef} onClick={handleButtonClick}>
           <FaEnvelope className='enveloppe-msg' />
         </button>
         <div className="msg-container" ref={msgContainerRef}>
-          <AdminMessages />
+          <AdminMessages/>
         </div>
+      </div>
     </div>
   );
 }
