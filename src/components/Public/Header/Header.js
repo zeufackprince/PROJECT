@@ -155,6 +155,9 @@ function Header() {
                             {role === 'ADMIN' && (
                                 <li><NavLink to='/admin'>Dashboard</NavLink></li>
                             )}
+                            {role === 'AGENT' && (
+                                <li><NavLink to='/agent'>Dashboard</NavLink></li>
+                            )}
                             {user ? (
                                 <button onClick={logOut} className="loginLink">Déconnexion</button>
                             ) : (

@@ -54,6 +54,8 @@ function Parametre() {
                     <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.  <Link to='/admin/new-agent' className="full-width-button">Create New Agent</Link></div>
                     <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/admin' className="full-width-button delete-button">Delete Account</Link></div>
                 </div>
+                
+
             </div>
 
             
