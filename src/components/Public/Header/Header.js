@@ -162,6 +162,17 @@ function Header() {
                         <Link to='/rechercher' className="searchBtn">
                             <FaSearch className="fa-solid faSearch" />
                         </Link>
+                        {/* Switcher de theme */}
+                    <div className="theme-switch-container">
+                        <label className="switch">
+                            <input 
+                                type="checkbox" 
+                                onChange={toggleTheme} 
+                                checked={theme === darkTheme} 
+                            />
+                            <span className="slider"></span>
+                        </label>
+                    </div>
                     </div>
 
                     <div className="profil">
@@ -173,17 +184,7 @@ function Header() {
                     </div>
                     <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
 
-                    {/* Switcher de theme */}
-                    <div className="theme-switch-container">
-                        <label className="switch">
-                            <input 
-                                type="checkbox" 
-                                onChange={toggleTheme} 
-                                checked={theme === darkTheme} 
-                            />
-                            <span className="slider"></span>
-                        </label>
-                    </div>
+                    
                 </nav>
                 {/*Informations du profil utilisateur*/}
                 <div className="showProfile" ref={profileContainer}>
