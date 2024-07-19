@@ -6,9 +6,9 @@ function FiltersAg() {
   const location = useLocation();
 
   return (
-    <div className="filters">
+    <div className="filters-container">
         <div className="mine">
-            <h2>Features</h2>
+            {/* <h2>Features</h2> */}
             <Link to='/agent/create-new-belonging' className="button2">New Belongings</Link>
         </div>
         <div className="filter_buttons">

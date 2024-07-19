@@ -4,7 +4,7 @@ import { getAllBelongings } from '../../../components/utils/ApiFunctions.js';
 import './DashMainContainer.css';
 import Banner from '../../../images/Admin/banner.jpg';
 import CardMain from './CardMain.js';
-import MainRightBottom from './AdminMessages.js';
+import AdminMessages from './AdminMessages.js';
 import Filters from '../crud-app-logements/Filters.js';
 import { FaEnvelope } from 'react-icons/fa';
 
@@ -93,7 +93,7 @@ function MainContainer() {
           <FaEnvelope className='enveloppe-msg' />
         </button>
         <div className="msg-container" ref={msgContainerRef}>
-          <MainRightBottom />
+          <AdminMessages />
         </div>
       </div>
     </div>

@@ -4,7 +4,7 @@ import './LogementsAg.css';
 import CardMain from '../DashMainAgent/DashMainContainerAgent/CardMainAg';
 import Filters from '../../Admin/crud-app-logements/Filters';
 
-function Main() {
+function Logements() {
     const [publications, setPublications] = useState([]);
 
     useEffect(() => {
@@ -43,4 +43,4 @@ function Main() {
   )
 }
 
-export default Main;
+export default Logements;
