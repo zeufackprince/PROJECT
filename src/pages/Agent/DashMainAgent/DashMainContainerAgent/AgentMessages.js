@@ -30,7 +30,7 @@ function AgentMessages() {
     <div className='MessagesContainer'>
       <div className="Name">       
         <h2>Messages</h2>
-        <Link to='/'>View More</Link>
+        <Link to='/agent/notification'>View More</Link>
       </div>
 
       <div className='NotifContainer'>

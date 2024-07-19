@@ -51,7 +51,7 @@ function Main() {
               className={`notification-button ${!notification.isActive ? 'disabled' : ''}`}
               onClick={() => handleToggleNotification(notification.notif_id)}
             >
-              {notification.isActive ? 'Désactiver' : 'Réactiver'}
+              {notification.isActive ? 'Réactiver' : 'Désactiver'}
             </button>
           </div>
         ))

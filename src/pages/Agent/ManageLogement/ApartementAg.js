@@ -67,7 +67,7 @@ function Apartement() {
 
                         <div className="card-button">
                             <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
-                            <Link to='/admin/update-Logement' className="button1">Modify</Link>
+                            <Link to='/agent/update-Logement' className="button1">Modify</Link>
                         </div>
                     </div>
                 ))}
