@@ -38,7 +38,7 @@ function Header() {
     const navLinksRef = useRef(null); // Référence pour les liens de navigation
     const profileContainer = useRef(null); // Référence pour le conteneur du profil
     const navigate = useNavigate(); // Utilisation de la navigation
-    const { user, handleLogout } = useAuth(); // Utiliser le contexte d'authentification
+    const { user, role, handleLogout } = useAuth(); // Utiliser le contexte d'authentification
     const [profileImage, setProfileImage] = useState(avatar); // Image de profil par défaut
     const [theme, setTheme] = useState(lightTheme); // Définition de l'état du thème
 
@@ -148,12 +148,15 @@ function Header() {
                     <div className="nav-links" ref={navLinksRef}>
                         <ul>
                             <FaTimes className="closeMenu" onClick={() => navLinksRef.current.classList.remove('showMenu')} />
-                            <li><NavLink to='/'>Acceuil</NavLink></li>
+                            <li><NavLink to='/'>Accueil</NavLink></li>
                             <li><NavLink to='/acheter'>Acheter</NavLink></li>
                             <li><NavLink to='/louer'>Louer</NavLink></li>
                             <li><NavLink to='/contact'>Contact</NavLink></li>
+                            {role === 'ADMIN' && (
+                                <li><NavLink to='/admin'>Dashboard</NavLink></li>
+                            )}
                             {user ? (
-                                <button onClick={logOut} className="loginLink">Deconnexion</button>
+                                <button onClick={logOut} className="loginLink">Déconnexion</button>
                             ) : (
                                 <NavLink to='/auth/login' className="loginLink"><span>Se connecter</span></NavLink>
                             )}
@@ -162,7 +165,7 @@ function Header() {
                         <Link to='/rechercher' className="searchBtn">
                             <FaSearch className="fa-solid faSearch" />
                         </Link>
-                        {/* Switcher de theme */}
+                        {/* Switcher de thème */}
                     <div className="theme-switch-container">
                         <label className="switch">
                             <input 
@@ -183,15 +186,13 @@ function Header() {
                         />
                     </div>
                     <FaBars className="fa-solid fa-bars" onClick={() => navLinksRef.current.classList.toggle('showMenu')} />
-
-                    
                 </nav>
-                {/*Informations du profil utilisateur*/}
+                {/* Informations du profil utilisateur */}
                 <div className="showProfile" ref={profileContainer}>
                     <FaTimes className="FaTimes" onClick={() => profileContainer.current.classList.remove('activeProfile')} />
-                        <div className="profileInformation">
-                            <Profil />
-                        </div>
+                    <div className="profileInformation">
+                        <Profil />
+                    </div>
                 </div>
             </header>
         </>
