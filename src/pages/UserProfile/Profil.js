@@ -52,7 +52,7 @@ const Profil = () => {
           
           </div>
           <div className='profileBtns'>
-          <button onClick={handleLogOut} >Déconnexion</button>
+          
           <Link to='/UserProfile'>
               <button modifier={modifier}>Modifier</button>
             </Link>

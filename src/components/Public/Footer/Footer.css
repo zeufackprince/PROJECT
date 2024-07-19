@@ -1,6 +1,7 @@
 /* Footer.css */
 
 .footer {
+    position: relative;
     background-color: #000;
     color: white;
     padding: 20px 0;

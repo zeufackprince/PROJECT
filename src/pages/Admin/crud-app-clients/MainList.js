@@ -39,7 +39,6 @@ function MainList() {
 
   return (
     <div className="mainList">
-      <h1>IMMOBILIUS</h1>
       {/* <button onClick={() => alert('Add User')} className='btn-add'>Add an User <span>+</span></button> */}
       <div><h2>LIST OF AGENTS</h2></div>
       <UserList users={agent} onDelete={handleDelete} />

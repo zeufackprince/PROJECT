@@ -32,10 +32,10 @@ const UserList = ({ users, onDelete }) => {
     <table>
       <thead>
         <tr>
+          <th>Profil</th>
           <th>Nom</th>
           <th>Email</th>
           <th>Numero</th>
-          <th>Image</th>
           <th>Actions</th>
         </tr>
       </thead>
