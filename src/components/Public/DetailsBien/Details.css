@@ -165,7 +165,10 @@
     background-color:var(--lignt);
     color: var(--white);
 }
-
+.succes-message{
+    color: green;
+    font-size: 60px;
+}
  /*Responsive */
 @media screen and (max-width:800px) {
     .details{

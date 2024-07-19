@@ -24,16 +24,16 @@
 
 import React from 'react';
 import './MainList.css';
-
+import { FaTimes } from 'react-icons/fa';
 const UserItem = ({ user, onDelete }) => {
   return (
     <tr className='UserCrudContainer'>
+      <td><img src={user.posterUrl} alt={user.name} className="user-image" /></td>
       <td>{user.name}</td>
       <td>{user.email}</td>
       <td>{user.telephone}</td>
-      <td><img src={user.posterUrl} alt={user.name} className="user-image" /></td>
       <td>
-        <button onClick={() => onDelete(user.id)}>Delete</button>
+        <button onClick={() => onDelete(user.id)}><FaTimes className='faTimes'/><span>Delete</span></button>
       </td>
     </tr>
   );

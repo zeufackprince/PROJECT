@@ -2,6 +2,7 @@
     background: var(--white);
     width: 100%;
     padding: 20px 10px;
+    overflow-x: scroll;
   }
   
   .mainList h1 {
@@ -13,25 +14,30 @@
     margin-top: 20px;
   }
   
+  .mainList h2{
+    margin: 20px 0;
+  }
   .mainList table {
     margin-top: 2rem;
     box-shadow: var(--box-shadow);
+    border-radius: 12px;
   }
   
   .mainList table th {
     background: #f83737;
-    border: 1px solid var(--light);
-    border-radius: 0.3em;
+    border: none;
     color: var(--light);
-    font-family: 'Times New Roman', Times, serif;
   }
   
+  .mainList table tr:nth-child(even){
+    background: var(--pinkless);
+  }
   .mainList table tr td{
     text-align: center;
     border: 1px solid var(--light);
   }
   
-  .mainList table tr td.btn-action {
+  /*.mainList table tr td.btn-action {
     display: flex;
     justify-content: space-evenly;
   }
@@ -47,12 +53,37 @@
 
   .mainList table tr td.btn-action i:hover {
     color: #f83737;
-  }
+  }*/
 
+  .UserCrudContainer button{
+    text-align: center;
+    padding: 8px 15px ;
+    font-weight: 700;
+    border: 1px solid var(--fuscha);
+    border-radius: 12px;
+    background: var(--fuscha);
+    color: var(--white);
+    cursor: pointer;
+  }
+  .UserCrudContainer
+  .UserCrudContainer .faTimes{
+    font-size: 15px;
+    margin: 2px 2px -3px 2px;
+  }
   .user-image {
     width: 2cm;    /* Width of the image */
     height: 2cm;   /* Height of the image */
     border-radius: 50%;   /* Makes the image circular */
     object-fit: cover;    /* Ensures the image covers the area without stretching */
+  }
+  
+  @media  screen and (max-width:760px) {
+    .UserCrudContainer .user-image{
+      width: 1.2cm;
+      height: 1.2cm;
+    }
+    .UserCrudContainer button span{
+      display: none;
+    }
   }
   
