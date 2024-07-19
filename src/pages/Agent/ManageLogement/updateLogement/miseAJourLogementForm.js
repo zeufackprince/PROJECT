@@ -53,7 +53,7 @@ const MiseAJourLogementForm = () => {
         try {
             const response = await updateBelonging(belonging_id ,data);
             alert(`Belonging with name ${response.nom} updated successfully`);
-            const destination = "/admin/dashboard"
+            const destination = "/agent/dashboard"
             navigate(destination, { replace: true });
             
           } catch (error) {
