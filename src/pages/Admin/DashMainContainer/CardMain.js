@@ -20,13 +20,6 @@ function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localis
         <div className="card_main_name">
             <h2>{title}</h2>
             <h2>{type}</h2>
-
-            <div className="card_icon">
-                <i>
-                    <FaHeart />
-                    <span>{likes}</span>
-                </i>
-            </div>
         </div>
         
         <div className="stats">

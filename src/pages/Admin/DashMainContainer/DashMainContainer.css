@@ -141,25 +141,6 @@
     font-weight: bold;
 }
 
-.MainContainer .left .Cards main .Card-Main .card_main_name .card_icon {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.MainContainer .left .Cards main .Card-Main .card_main_name .card_icon i {
-    color: #da4343;
-    text-shadow: 3px 5px 20px rgba(0, 0, 0, 0.4);
-    font-size: 12px;
-}
-
-.MainContainer .left .Cards main .Card-Main .card_main_name .card_icon i span {
-    color: var(--lignt);
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 5px;
-}
-
 .MainContainer .left .Cards main .Card-Main .stats {
     columns: 2;
     column-rule: 1px solid var(--lignt);

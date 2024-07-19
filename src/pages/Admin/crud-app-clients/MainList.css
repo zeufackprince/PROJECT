@@ -8,6 +8,10 @@
     display: inline;
     font-family: serif;
   }
+
+  .mainList h2.titleUsers {
+    margin-top: 20px;
+  }
   
   .mainList table {
     margin-top: 2rem;

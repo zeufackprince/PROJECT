@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import Filters from '../../Admin/crud-app-logements/Filters';
+import Filters from '../crud-app-logements/FiltersAg';
 import { getBelongingsBytype2 } from '../../../components/utils/ApiFunctions'; // Import the API function
 import { FaHeart } from 'react-icons/fa'; // Import the FaHeart icon
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing

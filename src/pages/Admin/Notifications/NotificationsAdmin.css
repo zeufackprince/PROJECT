@@ -7,16 +7,22 @@
   
   .Notif-Container {
     width: 100%;
-    margin: 0 auto;
+    background-color: #f8f8f8;
+    margin: 20px;
     padding: 20px;
-    overflow-y: scroll;
   }
   
+.Notif-Main {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+}
+
   .notification-Block {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 500px;
+    width: 100%;
 
   }
 
