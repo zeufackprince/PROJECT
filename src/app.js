@@ -9,7 +9,7 @@ import Registration from "./components/Auth/Registration";
 import Login from "./components/Auth/Login";
 import ResultSearch from "./pages/Public/ResultSearch/ResultSearch";
 import SearchRouter from "./components/Public/Search/SearchRouter";
-import './App.css'
+import './App.css';
 import AgentRouter from "./components/Agent/AgentRouter";
 
 class App extends React.Component {
@@ -26,15 +26,19 @@ class App extends React.Component {
                               </ProtectedRoute>
                         } />
 
-                        <Route path="/agent/*" element = {<AgentRouter />}/>
+                        <Route path="/agent/*" element={
+                             <ProtectedRoute role="AGENT">
+                                <AgentRouter />
+                              </ProtectedRoute>
+                        } />
 
                         <Route path='/auth/*' element={<AuthRouter />}>
                             <Route path='inscription' element={<Registration />} />
                             <Route path='login' element={<Login />} />
                         </Route>
-                        
-                        <Route path="/rechercher/*" element ={<SearchRouter/>}>
-                            <Route path="resultats" element={<ResultSearch/>}/>
+
+                        <Route path="/rechercher/*" element={<SearchRouter />}>
+                            <Route path="resultats" element={<ResultSearch />} />
                         </Route>
                     </Routes>
                 </BrowserRouter>
