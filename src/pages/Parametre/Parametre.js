@@ -51,8 +51,8 @@ function Parametre() {
                     <h3>PARAMETRES</h3>
                     <p className='barre'></p>
                 <div className="action-buttons">
-                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit.  <Link to='/admin/new-agent' className="full-width-button">Create New Agent</Link></div>
-                    <div>Lorem ipsum dolor sit amet consectetur, adipisicing elit. <Link to='/admin' className="full-width-button delete-button">Delete Account</Link></div>
+                    <div>Cliquez ici pour créer un nouvel agent.  <Link to='/admin/new-agent' className="full-width-button">Create New Agent</Link></div>
+                    <div>Cliquez ici pour supprimer votre ccompte. <Link to='/admin' className="full-width-button delete-button">Delete Account</Link></div>
                 </div>
                 
 

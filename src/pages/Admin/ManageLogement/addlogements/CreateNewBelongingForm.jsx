@@ -64,8 +64,8 @@ const CreateNewBelongingForm = () => {
   };
 
   return (
-    <div className="create-belonging-container">
-      <form onSubmit={handleSubmit} className="create-belonging-form">
+    <div className="belonging-container">
+      <form onSubmit={handleSubmit} className="belonging-form">
        
           <div className="form-header">
             <div className="form-title">

@@ -1,6 +1,6 @@
 
 /* Conteneur principal */
-.create-belonging-container {
+.belonging-container {
     background-color: var(--white);
     border-radius: 10px;
     box-shadow: var(--box-shadow);
@@ -14,13 +14,13 @@
 }
 
 /* Titres */
-.create-belonging-container h2 {
+.belonging-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     text-align: center;
 }
 
-.create-belonging-container h3 {
+.belonging-container h3 {
     margin-bottom: 20px;
     font-size: 18px;
     text-align: center;
@@ -28,14 +28,14 @@
 }
 
 /* Formulaire */
-.create-belonging-form {
+.belonging-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
 /* Champs du formulaire */
-.create-belonging-container .form-control {
+.belonging-container .form-control {
     display: block;
     width: calc(100% - 20px);
     padding: 10px;

@@ -71,9 +71,8 @@ const MiseAJourLogementForm = () => {
   };
 
   return (
-    <div className="container">
-      <form onSubmit={handleSubmit}>
-        <fieldset>
+    <div className="form-Ucontainer">
+      <form onSubmit={handleSubmit} className="form">
           <div className="top">
             <div className="title">
               <h2>Modification D'un Bien IMMOBILIER</h2>
@@ -190,7 +189,6 @@ const MiseAJourLogementForm = () => {
             <input type="submit" value="Valider" />
             <input type="reset" value="Annuler Formulaire" />
           </div>
-        </fieldset>
       </form>
     </div>
   );
