@@ -33,7 +33,7 @@ function TopContainerAgent() {
         <i className="notif-icon">
           <Link to='/agent/notification' id=""><FaBell /></Link>     
         </i>
-        <div className="profileImage">
+        <div className="Admin-profileImage">
           <img src={userProfile.posterUrl} alt="User profile" />
         </div>
         <p className="profileName"><span>{userProfile.email}</span></p>

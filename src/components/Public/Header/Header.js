@@ -151,7 +151,7 @@ function Header() {
                             <li><NavLink to='/'>Accueil</NavLink></li>
                             <li><NavLink to='/acheter'>Acheter</NavLink></li>
                             <li><NavLink to='/louer'>Louer</NavLink></li>
-                            <li><NavLink to='/contact'>Contact</NavLink></li>
+                            <li><a href="mailto:immobilius237@gmail.com">Contact</a></li>
                             {role === 'ADMIN' && (
                                 <li><NavLink to='/admin'>Dashboard</NavLink></li>
                             )}

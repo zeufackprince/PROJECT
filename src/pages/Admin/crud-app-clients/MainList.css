@@ -1,89 +1,148 @@
 .mainList {
-    background: var(--white);
-    width: 100%;
-    padding: 20px 10px;
-    overflow-x: scroll;
+  background: var(--white);
+  width: 100%;
+  padding: 20px 10px;
+  overflow-x: scroll;
+}
+
+.mainList h1 {
+  display: inline;
+  font-family: serif;
+}
+
+.mainList h2.titleUsers {
+  margin-top: 20px;
+}
+
+.mainList h2 {
+  margin: 20px 0;
+}
+
+.mainList table {
+  margin-top: 2rem;
+  box-shadow: var(--box-shadow);
+  border-radius: 12px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mainList table th {
+  background: #f83737;
+  border: none;
+  color: var(--light);
+  padding: 10px;
+}
+
+.mainList table tr:nth-child(even) {
+  background: var(--pinkless);
+}
+
+.mainList table tr td {
+  text-align: center;
+  border: 1px solid var(--light);
+  padding: 10px;
+}
+
+/*.mainList table tr td.btn-action {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.mainList table tr td.btn-action i {
+  font-size: 20px;
+  width: 40px;
+  border-radius: 0.5em;
+  color: var(--light);
+  text-align: center;
+  cursor: pointer;
+}
+
+.mainList table tr td.btn-action i:hover {
+  color: #f83737;
+}*/
+
+.UserCrudContainer button {
+  text-align: center;
+  padding: 8px 15px;
+  font-weight: 700;
+  border: 1px solid var(--fuscha);
+  border-radius: 12px;
+  background: var(--fuscha);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.UserCrudContainer .faTimes {
+  font-size: 15px;
+  margin: 2px 2px -3px 2px;
+}
+
+.user-image {
+  width: 2cm; /* Width of the image */
+  height: 2cm; /* Height of the image */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the area without stretching */
+}
+
+@media screen and (max-width: 1024px) {
+  .mainList {
+    padding: 15px 5px;
   }
-  
+
   .mainList h1 {
-    display: inline;
-    font-family: serif;
+    font-size: 1.5rem;
   }
 
-  .mainList h2.titleUsers {
-    margin-top: 20px;
+  .mainList table th,
+  .mainList table td {
+    padding: 8px;
   }
-  
-  .mainList h2{
-    margin: 20px 0;
-  }
-  .mainList table {
-    margin-top: 2rem;
-    box-shadow: var(--box-shadow);
-    border-radius: 12px;
-  }
-  
-  .mainList table th {
-    background: #f83737;
-    border: none;
-    color: var(--light);
-  }
-  
-  .mainList table tr:nth-child(even){
-    background: var(--pinkless);
-  }
-  .mainList table tr td{
-    text-align: center;
-    border: 1px solid var(--light);
-  }
-  
-  /*.mainList table tr td.btn-action {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  
-  .mainList table tr td.btn-action i {
-    font-size: 20px;
-    width: 40px;
-    border-radius: 0.5em;
-    color: var(--light);
-    text-align: center;
-    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .mainList table th,
+  .mainList table td {
+    font-size: 0.9rem;
+    padding: 6px;
   }
 
-  .mainList table tr td.btn-action i:hover {
-    color: #f83737;
-  }*/
+  .UserCrudContainer .user-image {
+    width: 1.5cm;
+    height: 1.5cm;
+  }
 
-  .UserCrudContainer button{
-    text-align: center;
-    padding: 8px 15px ;
-    font-weight: 700;
-    border: 1px solid var(--fuscha);
-    border-radius: 12px;
-    background: var(--fuscha);
-    color: var(--white);
-    cursor: pointer;
+  .UserCrudContainer button {
+    padding: 6px 10px;
+    font-size: 0.9rem;
   }
-  .UserCrudContainer
-  .UserCrudContainer .faTimes{
-    font-size: 15px;
-    margin: 2px 2px -3px 2px;
+
+  .UserCrudContainer button span {
+    display: none;
   }
-  .user-image {
-    width: 2cm;    /* Width of the image */
-    height: 2cm;   /* Height of the image */
-    border-radius: 50%;   /* Makes the image circular */
-    object-fit: cover;    /* Ensures the image covers the area without stretching */
+}
+
+@media screen and (max-width: 480px) {
+  .mainList {
+    padding: 10px 2px;
   }
-  
-  @media  screen and (max-width:760px) {
-    .UserCrudContainer .user-image{
-      width: 1.2cm;
-      height: 1.2cm;
-    }
-    .UserCrudContainer button span{
-      display: none;
-    }
+
+  .mainList h1 {
+    font-size: 1.2rem;
   }
-  
+
+  .mainList table th,
+  .mainList table td {
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+
+  .UserCrudContainer .user-image {
+    width: 1.2cm;
+    height: 1.2cm;
+  }
+
+  .UserCrudContainer button {
+    padding: 3px 6px;
+    font-size: 0.5rem;
+  }
+}
