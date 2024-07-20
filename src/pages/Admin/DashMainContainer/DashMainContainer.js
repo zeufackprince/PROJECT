@@ -71,20 +71,24 @@ function MainContainer() {
         <div className="Cards">
           <Filters />
           <main>
-            {belongings.map(pub => (
-              <CardMain
-                key={pub.id}
-                bienId={pub.id}
-                imgSrc={pub.posterUrl[0]}
-                title={pub.nom}
-                type={pub.type}
-                localisation={pub.localisation}
-                prix={pub.prix}
-                dimension={pub.dimension}
-                status={pub.status}
-                likes={"35"} // This can be replaced with actual data if available
-              />
-            ))}
+            {belongings.length === 0 ? (
+              <p>Pas de bien disponible</p>
+            ) : (
+              belongings.map(pub => (
+                <CardMain
+                  key={pub.id}
+                  bienId={pub.id}
+                  imgSrc={pub.posterUrl[0]}
+                  title={pub.nom}
+                  type={pub.type}
+                  localisation={pub.localisation}
+                  prix={pub.prix}
+                  dimension={pub.dimension}
+                  status={pub.status}
+                  likes={"35"} // This can be replaced with actual data if available
+                />
+              ))
+            )}
           </main>
         </div>
       </div>

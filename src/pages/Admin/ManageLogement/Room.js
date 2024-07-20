@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Filters from '../crud-app-logements/Filters';
 import { getBelongingsBytype1 } from '../../../components/utils/ApiFunctions'; // Import the API function
-import { FaHeart } from 'react-icons/fa'; // Import the FaHeart icon
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing
 import './typebelongings.css'; // Import the CSS file
 
@@ -49,13 +48,6 @@ function Room() {
                         <div className="card_main_name">
                             <h2>{belonging.nom}</h2>
                             <h2>{belonging.type}</h2>
-
-                            <div className="card_icon">
-                                <i>
-                                    <FaHeart />
-                                    <span>{belonging.likes}</span>
-                                </i>
-                            </div>
                         </div>
                         
                         <div className="stats">
