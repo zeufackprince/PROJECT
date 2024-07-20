@@ -34,7 +34,6 @@ function Logements() {
                     localisation={pub.localisation}
                     prix={pub.prix}
                     dimension={pub.dimension}
-                    likes={"35"} // This can be replaced with actual data if available
                 />
                 ))}
             </main>
