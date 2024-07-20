@@ -22,23 +22,26 @@ function Logements() {
 
   return (
     <div className='Main'>
-        <div className="Cards">
-            <Filters/>
-            <main>
-                {publications.map(pub => (
-                <CardMain
-                    key={pub.id}
-                    imgSrc={pub.posterUrl[0]}
-                    title={pub.nom}
-                    type={pub.type}
-                    localisation={pub.localisation}
-                    prix={pub.prix}
-                    dimension={pub.dimension}
-                    likes={"35"} // This can be replaced with actual data if available
-                />
-                ))}
-            </main>
-        </div>
+      <div className="Cards">
+        <Filters />
+        <main>
+          {publications.length === 0 ? (
+            <p>Pas de bien disponible</p>
+          ) : (
+            publications.map(pub => (
+              <CardMain
+                key={pub.id}
+                imgSrc={pub.posterUrl[0]}
+                title={pub.nom}
+                type={pub.type}
+                localisation={pub.localisation}
+                prix={pub.prix}
+                dimension={pub.dimension}
+              />
+            ))
+          )}
+        </main>
+      </div>
     </div>
   )
 }
