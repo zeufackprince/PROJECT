@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import Filters from '../crud-app-logements/FiltersAg';
 import { getBelongingsBytype3 } from '../../../components/utils/ApiFunctions'; // Import the API function
 import { Link, useNavigate } from 'react-router-dom'; // Import Link and useNavigate for routing
-import './typebelongings.css'; // Import the CSS file
+import '../../Admin/ManageLogement/typebelongings.css'; // Importation du fichier css
 
-function Apartement() {
+function ApartementAg() {
     const [belongings, setBelongings] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
@@ -62,7 +62,7 @@ function Apartement() {
         
                         <div className="card-button">
                         <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
-                        <Link to='/admin/update-Logement' className="button1">Modify</Link>
+                        <Link to='/agent/update-Logement' className="button1">Modify</Link>
                         </div>
                     </div>
                     ))
@@ -72,4 +72,4 @@ function Apartement() {
     );
 }
 
-export default Apartement;
+export default ApartementAg;
