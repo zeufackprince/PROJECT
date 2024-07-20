@@ -34,8 +34,8 @@ function TopContainer() {
         <i className="notif-icon">
           <Link to='/' id=""><FaBell /></Link>     
         </i>
-        <div className="profileImage">
-          <img src={userProfile.posterUrl} alt="User profile" />
+        <div className="Admin-profileImage">
+          <img src={userProfile.posterUrl} alt="User profile" className='dash-img' />
         </div>
         <p className="profileName"><span>{userProfile.email}</span></p>
       </div>

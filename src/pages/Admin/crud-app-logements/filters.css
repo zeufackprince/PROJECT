@@ -57,7 +57,10 @@
     .filter_buttons .button2{
         font-size: 12px;
         font-weight: 600;
-        padding: 8px;
-       }
+        padding: 5px;
+    }
+    .filters-container .filter_buttons a{
+        text-transform:lowercase;
+    }
 }
 
