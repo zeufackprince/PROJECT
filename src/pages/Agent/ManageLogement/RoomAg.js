@@ -41,30 +41,34 @@ function Room() {
         <div className="room-container">
             <Filters />
             <main>
-                {belongings.map((belonging) => (
+                {belongings.length === 0 ? (
+                    <p>Pas de bien disponible</p>
+                ) : (
+                    belongings.map((belonging) => (
                     <div key={belonging.id} className='Card-Main'>
                         <img src={belonging.posterUrl[0]} alt={belonging.nom} className="belonging-image" />
-
+        
                         <div className="card_main_name">
-                            <h2>{belonging.nom}</h2>
-                            <h2>{belonging.type}</h2>
+                        <h2>{belonging.nom}</h2>
+                        <h2>{belonging.type}</h2>
                         </div>
                         
                         <div className="stats">
-                            <p>Prix <span>{belonging.prix} FCFA</span></p>
-                            <p>Etat <span>{belonging.status}</span></p>
-                            <p>Dimension <span>{belonging.dimension} m<sup>2</sup></span></p>
-                            <p>Localisation <span>{belonging.localisation}</span></p>
+                        <p>Prix <span>{belonging.prix} FCFA</span></p>
+                        <p>Etat <span>{belonging.status}</span></p>
+                        <p>Dimension <span>{belonging.dimension} m<sup>2</sup></span></p>
+                        <p>Localisation <span>{belonging.localisation}</span></p>
                         </div>
-
+        
                         <div className="card-button">
-                            <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
-                            <Link to='/agent/update-Logement' className="button1">Modify</Link>
+                        <button onClick={() => handlePublishClick(belonging.id)} className="button1">Publication</button>
+                        <Link to='/admin/update-Logement' className="button1">Modify</Link>
                         </div>
                     </div>
-                ))}
+                    ))
+                )}
             </main>
-        </div>
+      </div>
     );
 }
 
