@@ -40,7 +40,7 @@
   .publish-belong-cont select {
     width: 100%;
     padding: 10px;
-    border: 1px solid var(--white);
+    border: 1px solid var(--lignt);
     border-radius: 4px;
   }
   
