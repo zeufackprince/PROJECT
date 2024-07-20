@@ -67,8 +67,8 @@ const Acceuil = ({ addFavori, favoris }) => {
                 {message && <p className="text-warning px-5">{message}</p>}
                 
                 <div className="txtPres">
-                    <h1>BIENVENU SUR IMMOBILIUS</h1>
-                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cum ullam fugiat cupiditate neque, fugit consequuntur reiciendis incidunt quis placeat odio quo, asperiores voluptatum facilis id veritatis expedita corrupti tempore.</h3>
+                    <h1>    BIENVENU SUR IMMOBILIUS</h1>
+                    <h3>    Nous sommes ravis de vous accueillir sur notre plateforme dédiée à l'immobilier. Que vous cherchiez à acheter, louer des propriétés, IMMOBILIUS est là pour simplifier votre expérience. Explorez nos fonctionnalités et trouvez la propriété de vos rêves dès aujourd'hui !</h3>
                 </div>
             </section>
             <section className="aboutUs">
@@ -77,8 +77,8 @@ const Acceuil = ({ addFavori, favoris }) => {
                 </div>
                 <div className="aboutImmo">
                     <h1>À propos de nous</h1>
-                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit...</h2>
-                    <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi cum ullam fugiat cupiditate neque, fugit consequuntur reiciendis incidunt quis placeat odio quo, asperiores voluptatum facilis id veritatis expedita corrupti tempore.</h3>
+                    <h2>IMMOBILIUS est votre plateforme de confiance pour toutes vos transactions immobilières. </h2>
+                    <h3> Nous simplifions la recherche, l'achat et la location de biens immobiliers grâce à notre interface intuitive et nos outils puissants. Que vous soyez à la recherche d'une nouvelle maison ou d'un bien à louer, nous sommes là pour vous accompagner à chaque étape.</h3>
                 </div>
             </section>
             <section className="articlesImmo">
@@ -88,12 +88,15 @@ const Acceuil = ({ addFavori, favoris }) => {
                         <div className="bienImmo" key={bien.id}>
                             <img src={bien.posterUrl[0]} alt="" /> {/* Assuming posterUrl is an array of URLs */}
                             <div className="bien-immo-name">
-                                <p className="titreArticle">{bien.titre}</p>
+                                <p>{bien.titre}</p>
                                 <p>{`${bien.type}`}</p>
                             </div>
-                            
-                            <p className="price">{`${bien.prix}Fcfa`}</p>
-                           
+                            <div className="immo-infos">
+                                <p className="price-home">{`${bien.prix}Fcfa`}</p>
+                                <p>A {`${bien.status}`}</p>
+                                <p>{`${bien.dimension}`} m<sup>2</sup></p>
+                                <p>{`${bien.localisation}`}</p>
+                            </div>
                             {/* <p className='description'>{bien.description}</p> */}
                             <FaHeart 
                                 className={`addToFavori ${favoris.some(favori => favori.id === bien.id) ? 'addedFavori' : ''}`} 

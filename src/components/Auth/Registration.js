@@ -198,7 +198,7 @@ const Registration = () => {
 
                 <div className="auth-btns">
                     <button type="submit" className="btn btn-hotel" >
-                        Register
+                        Inscription
                     </button>
                     <span style={{ marginLeft: "0px" }}>
                         Avez vous déjà un compte? <Link to={"/auth/login"}>Se connecter</Link>
