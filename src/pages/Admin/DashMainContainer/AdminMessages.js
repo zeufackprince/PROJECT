@@ -51,7 +51,7 @@ function AdminMessages() {
               </p>
 
               <div className="Notif-Extra">
-                <p className="Notif-time">{new Date(notification.createdAt).toLocaleString()}</p>
+                <p className="Notif-time"> {new Date(notification.createdAt).toLocaleString()}</p>
                 <button onClick={() => handleMarkAsRead(notification.notif_id)} className="button1">Read</button>
               </div>
             </div>
