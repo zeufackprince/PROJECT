@@ -5,6 +5,14 @@
     overflow-x: scroll;
   }
   
+  .mainList h1 {
+    display: inline;
+    font-family: serif;
+  }
+
+  .mainList h2.titleUsers {
+    margin-top: 20px;
+  }
   
   .mainList h2{
     margin: 20px 0;
