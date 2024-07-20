@@ -25,7 +25,7 @@ function CardMain({ bienId, imgSrc, title, likes, type, prix, dimension, localis
         <div className="stats">
             <p>Prix <span>{prix}FCFA</span></p>
             <p>Etat <span>{status}</span></p>
-            <p>Dimension<span>{dimension}</span></p>
+            <p>Dimension<span>{dimension} m<sup>2</sup></span></p>
             <p>Localisation<span>{localisation}</span></p>
         </div>
 

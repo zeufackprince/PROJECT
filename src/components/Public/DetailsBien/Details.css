@@ -101,7 +101,11 @@
     color: var(--lignt);
     background: none;
 }
-
+.contactAgent .sent:hover{
+    background: var(--fuscha);
+    color: var(--white);
+    cursor: auto;
+}
 /*Agrandir l'image */
 .modal {
     display: flex;
@@ -204,3 +208,5 @@
         width: 350px;
     }
 }
+
+/*Boutton message envoyé*/

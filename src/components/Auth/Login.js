@@ -91,7 +91,7 @@ const Login = () => {
 
 					<div className="auth-btns">
 						<button type="submit" className="btn btn-hotel" >
-							Login
+							Connexion
 						</button>
 						<span style={{ marginLeft: "10px" }}>
 							Vous n'avez pas de compte ?<Link to={"/auth/inscription"}> S'inscrire</Link>
