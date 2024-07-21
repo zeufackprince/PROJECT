@@ -56,16 +56,16 @@ const CreateNewBelongingForm = () => {
   };
 
   return (
-    <div className="container">
+    <div className="belonging-container">
       <form onSubmit={handleSubmit}>
         <fieldset>
-          <div className="top">
-            <div className="title">
+          <div className="form-header">
+            <div className="form-title">
               <h2>Creation D'un Nouveau Bien IMMOBILIER</h2>
               <h3>Veuillez Remplire correctement Chaque Champs</h3>
             </div>
 
-            <div className="content">
+            <div className="form-content">
               <div className="form-input">
                 <label htmlFor="nomBatiment">Nom Du Bien :</label>
                 <input
@@ -170,9 +170,9 @@ const CreateNewBelongingForm = () => {
             </div>
           </div>
 
-          <div className="bottom">
-            <input type="submit" value="Valider" />
-            <input type="reset" value="Annuler Formulaire" />
+          <div className="form-actions">
+            <input type="submit" value="Valider" className='btn' />
+            <input type="reset" value="Annuler Formulaire" className='btn'/>
           </div>
         </fieldset>
       </form>

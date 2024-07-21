@@ -97,7 +97,7 @@ const Acceuil = ({ addFavori, favoris }) => {
                                 <p>{`${bien.dimension}`} m<sup>2</sup></p>
                                 <p>{`${bien.localisation}`}</p>
                             </div>
-                            {/* <p className='description'>{bien.description}</p> */}
+                           
                             <FaHeart 
                                 className={`addToFavori ${favoris.some(favori => favori.id === bien.id) ? 'addedFavori' : ''}`} 
                                 onClick={() => handleAddFavori(bien)} 

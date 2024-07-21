@@ -1,0 +1,107 @@
+
+/* Conteneur principal */
+.belonging-container {
+    background-color: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--box-shadow);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Titres */
+.belonging-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.belonging-container h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    text-align: center;
+    color: var(--text-color-secondary);
+}
+
+/* Formulaire */
+.belonging-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Champs du formulaire */
+.belonging-container .form-control {
+    display: block;
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.form-control:focus {
+    border-color: var(--fuscha);
+    outline: none;
+    box-shadow: 0 0 5px var(--fuscha);
+}
+
+/* Boutons */
+.btn {
+    background-color: var(--fuscha);
+    color: white;
+    padding: 10px 20px;
+    border: 1px solid var(--fuscha);
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-weight: bold;
+    margin: 10px;
+    text-align: center;
+}
+
+.btn:hover {
+    background: none;
+    color: var(--fuscha);
+}
+
+/* Alignement des labels et des champs */
+.form-input, .form-select {
+    margin-bottom: 15px;
+}
+
+/* Message d'erreur */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Marges pour le formulaire */
+.form-header {
+    margin-bottom: 20px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Autres ajustements */
+.mb-3 {
+    margin-bottom: 15px;
+}
+
+.mt-5 {
+    margin-top: 50px;
+}
+
+.mb-5 {
+    margin-bottom: 50px;
+}

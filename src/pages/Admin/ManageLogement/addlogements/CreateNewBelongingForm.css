@@ -35,23 +35,24 @@
 }
 
 /* Champs du formulaire */
-.belonging-container .form-control {
+.belonging-container .form-header .form-input input {
     display: block;
     width: calc(100% - 20px);
     padding: 10px;
     font-size: 16px;
     border-radius: 5px;
     margin: 10px;
+    border: 1px solid #959595;
 }
 
-.form-control:focus {
+.form-header .form-input input:focus {
     border-color: var(--fuscha);
     outline: none;
     box-shadow: 0 0 5px var(--fuscha);
 }
 
 /* Boutons */
-.btn {
+.form-header .form-input .btn {
     background-color: var(--fuscha);
     color: white;
     padding: 10px 20px;
@@ -65,7 +66,7 @@
     text-align: center;
 }
 
-.btn:hover {
+.form-header .form-input button:hover {
     background: none;
     color: var(--fuscha);
 }
