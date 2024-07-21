@@ -92,7 +92,7 @@ const Acceuil = ({ addFavori, favoris }) => {
                                 <p>{`${bien.type}`}</p>
                             </div>
                             <div className="immo-infos">
-                                <p className="price-home">{`${bien.prix}Fcfa`}</p>
+                                <p className="price-home">{`${bien.prix} Fcfa`}</p>
                                 <p>A {`${bien.status}`}</p>
                                 <p>{`${bien.dimension}`} m<sup>2</sup></p>
                                 <p>{`${bien.localisation}`}</p>

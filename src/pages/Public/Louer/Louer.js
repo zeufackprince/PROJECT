@@ -65,10 +65,18 @@ const Louer = ({addFavori, favoris}) => {
              <div className="listBien">
                     {biens.map(bien => (
                     <div className="bienImmo" key={bien.id}>
+                       
                         <img src={bien.posterUrl[0]} alt="" /> {/* Assuming posterUrl is an array of URLs */}
-                            <p className="titreArticle">{bien.nom}</p>
-                            <p className="price">{`${bien.prix}Fcfa`}</p>
-                            {/* <p className='description'>{bien.description}</p> */}
+                            <div className="bien-immo-name">
+                                <p>{bien.titre}</p>
+                                <p>{`${bien.type}`}</p>
+                            </div>
+                            <div className="immo-infos">
+                                <p className="price-home">{`${bien.prix} Fcfa`}</p>
+                                <p>A {`${bien.status}`}</p>
+                                <p>{`${bien.dimension}`} m<sup>2</sup></p>
+                                <p>{`${bien.localisation}`}</p>
+                            </div>
                             <FaHeart 
                                 className={`addToFavori ${favoris.some(favori => favori.id === bien.id) ? 'addedFavori' : ''}`} 
                                 onClick={() => handleAddFavori(bien)} 
