@@ -88,18 +88,20 @@ const MiseAJourLogementForm = () => {
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  className="form-control"
                   required
                 />
               </div>
 
               <div className="form-input">
-                <label htmlFor="Dimension">Dimension :</label>
+                <label htmlFor="dimension">Dimension :</label>
                 <input
-                  id="disponibilite"
+                  id="dimension"
                   type="text"
                   name="dimension"
                   value={formData.dimension}
                   onChange={handleChange}
+                  className="form-control"
                   required
                 />
               </div>
@@ -112,6 +114,7 @@ const MiseAJourLogementForm = () => {
                   name="prix"
                   value={formData.prix}
                   onChange={handleChange}
+                  className="form-control"
                   required
                 />
               </div>
@@ -123,6 +126,7 @@ const MiseAJourLogementForm = () => {
                   name="type"
                   value={formData.type}
                   onChange={handleChange}
+                  className="form-control"
                   required
                 >
                   <option value="">------------</option>
@@ -133,12 +137,13 @@ const MiseAJourLogementForm = () => {
               </div>
 
               <div className="form-select">
-                <label htmlFor="ville/Localisation">Ville :</label>
+                <label htmlFor="ville">Ville :</label>
                 <select
                   id="ville"
                   name="localisation"
                   value={formData.localisation}
                   onChange={handleChange}
+                  className="form-control"
                   required
                 >
                   <option value="">------------</option>
@@ -155,21 +160,6 @@ const MiseAJourLogementForm = () => {
                 </select>
               </div>
 
-              {/* <div className="form-select">
-                <label htmlFor="status">Status :</label>
-                  <select
-                    id=""
-                    name="status"
-                    value={formData.status}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="">------------</option>
-                    <option value="ACHETER">A Vendre</option>
-                    <option value="LOUER">A Louer</option>
-                  </select>
-              </div> */}
-
               <div className="form-input">
                 <label htmlFor="image">Image :</label>
                 <input
@@ -178,6 +168,7 @@ const MiseAJourLogementForm = () => {
                   name="images"
                   multiple
                   onChange={handleFileChange}
+                  className="form-control"
                   required
                 />
                 {error && <p className="error-message">{error}</p>}

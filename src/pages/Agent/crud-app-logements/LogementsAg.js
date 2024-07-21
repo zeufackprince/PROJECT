@@ -21,7 +21,7 @@ function Logements() {
     }, []);
 
   return (
-    <div className='Main'>
+     <div className='Main'>
       <div className="Cards">
         <Filters />
         <main>

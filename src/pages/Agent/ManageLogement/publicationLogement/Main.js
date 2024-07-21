@@ -34,7 +34,7 @@ function MainPublication() {
   };
 
   return (
-    <div className='Main'>
+    <div className='publish-belong-cont'>
       <h1>Créer une nouvelle publication</h1>
       {message && <p>{message}</p>}
       <form onSubmit={handleSubmit}>

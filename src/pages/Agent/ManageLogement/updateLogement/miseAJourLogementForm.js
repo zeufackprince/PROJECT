@@ -64,7 +64,7 @@ const MiseAJourLogementForm = () => {
     }
 
     return (
-        <div className="container">
+        <div className="form-Ucontainer">
           <form onSubmit={handleSubmit}>
             <fieldset>
               <div className="top">
